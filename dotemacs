@@ -1,0 +1,116 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
+(setq-default indent-tabs-mode nil)
+(setq-default make-backup-files nil)
+(setq-default column-number-mode t)
+(setq-default tramp-default-user "brad")
+(setq-default tramp-default-host "localhost")
+(setq-default pgg-default-user-id "Brad Clawsie <brad@b7j0c.org>")
+(setq-default pgg-query-keyserver nil)
+(setq confirm-nonexistent-file-or-buffer nil)
+(setq inhibit-splash-screen t)
+(setq display-time-24hr-format t)
+(setq debug-on-error t)
+(setq next-line-add-newlines nil)
+(setq scroll-step 1)
+(set-input-mode nil nil t)
+
+(global-set-key "\C-l" 'goto-line)
+(global-set-key "\C-h" 'delete-backward-char)
+(global-set-key (kbd "\C-x n") 'next-line)
+(global-set-key (kbd "\C-x m") 'previous-line)
+(global-set-key (kbd "\C-x w") 'kill-region)
+(global-set-key (kbd "\C-x a") 'beginning-of-line)
+(global-set-key (kbd "<f3>") 'magit-status)
+(global-set-key (kbd "<f4>") 'eshell)
+(global-set-key (kbd "<f5>") 'rename-buffer)
+(global-set-key (kbd "<f7>") 'scroll-down)
+(global-set-key (kbd "<f8>") 'scroll-up)
+(global-set-key (kbd "<f9>") 'set-mark-command)
+(global-set-key (kbd "<f10>") 'kill-ring-save)
+
+(global-set-key [mouse-2] 'yank)
+(global-font-lock-mode 1)
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(display-time)
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))
+(setq-default transient-mark-mode t)
+
+;; -------------------------------------------------------------
+;; eshell
+(setq eshell-prompt-function
+  (lambda nil (concat "" " $ ")))
+
+;; -------------------------------------------------------------
+;; various external modes
+(require 'ibuffer)
+(global-set-key (kbd "C-x C-b") 'ibuffer-other-window)
+(setq ibuffer-default-sorting-mode 'major-mode)
+
+;; ido
+(require 'ido)
+(ido-mode t)
+
+;; melpa
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
+;; go save hook
+(setq gofmt-command "goimports")
+(add-hook 'go-mode-hook (lambda ()
+                          (add-hook 'before-save-hook 'gofmt-before-save nil 'local)))
+
+;; .t files perl-mode
+(add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
+
+;; -------------------------------------------------------------
+(defun insert-time ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d-%R")))
+
+(defun insert-unixtime ()
+  (interactive)
+  (insert (format-time-string "%s")))
+
+(defun insert-date ()
+  (interactive)
+  (insert (format-time-string "%Y-%m-%d")))
+
+;; -------------------------------------------------------------
+;; revert all buffers with no confirm, and alias to f6
+(defun revert-all-buffers ()
+  "Refreshes all open buffers from their respective files."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (file-exists-p (buffer-file-name)) (not (buffer-modified-p)))
+        (revert-buffer t t t) )))
+      (message "Refreshed open files."))
+(global-set-key (kbd "<f6>") 'revert-all-buffers)
+
+;; -------------------------------------------------------------
+;; macros
+(fset 'switchbuffers
+   [?\C-x ?b])
+(global-set-key (kbd "C-c b") 'switchbuffers)
+
+;; run auto-fill whenever editing markdown
+(add-hook 'markdown-mode-hook 'auto-fill-mode)
+
+;; no custom!
+(setq custom-file "~/.custom.el")
+(load custom-file :noerror)
+
+;; -------------------------------------------------------------
+;; server
+(server-start)
+

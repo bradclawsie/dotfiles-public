@@ -1,0 +1,48 @@
+export HISTFILE=$HOME/.histfile
+export HISTSIZE=1000
+export SAVEHIST=1000
+bindkey -e
+zstyle :compinstall filename "$HOME/.zshrc"
+autoload -Uz compinit
+compinit
+
+PS1="$ "
+
+# go
+export GOPATH="$HOME/gopath"
+export LOCAL_GO="$HOME/go"
+
+# perl
+export PERL_UNICODE="AS"
+export PERL_READLINE_NOWARN="yes"
+
+# paths
+export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$PERL5/bin:$LOCAL_GO/bin"
+export PATH="$HOMEBINPATHS:$PATH"
+
+# text
+export ALTERNATE_EDITOR="emacs" EDITOR="emacsclient" VISUAL="emacsclient"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+# zsh 
+alias c=clear
+alias h=history
+
+setopt autopushd pushdminus pushdsilent pushdtohome
+setopt autocd
+setopt cdablevars
+setopt interactivecomments
+setopt noclobber
+setopt HIST_REDUCE_BLANKS
+setopt HIST_IGNORE_SPACE
+setopt SH_WORD_SPLIT
+
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*:match:*' original only
+zstyle ':completion:*:approximate:*' max-errors 1 numeric
+zstyle ':completion:*:*:kill:*' menu yes select
+zstyle ':completion:*:kill:*' force-list always
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+clear;

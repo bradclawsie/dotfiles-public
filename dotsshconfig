@@ -1,0 +1,50 @@
+ConnectionAttempts 1
+FallBackToRsh no
+ForwardAgent yes
+ForwardX11 no
+StrictHostKeyChecking no
+KeepAlive yes
+
+Host b7j0c
+	HostName b7j0c.org
+	User brad
+	Port 512
+
+Host grokloc
+	Hostname grokloc.com
+	User brad
+	Port 512
+
+Host debian0
+	HostName 127.0.1.1
+	User brad
+	Port 2222
+
+# git remote add grokloc-grokloc-pl ssh://grokloc-grokloc:/home/brad/bare-repos/grokloc-pl
+Host grokloc-grokloc
+	HostName grokloc.com
+	User brad
+	Port 512
+	IdentityFile ~/.ssh/id_grokloc
+	IdentitiesOnly yes
+
+# git remote add sr.ht-grokloc-pl git@sr.ht-grokloc:~bradclawsie/grokloc-pl 
+Host sr.ht-grokloc
+	HostName git.sr.ht
+	User git
+	IdentityFile ~/.ssh/id_grokloc
+	IdentitiesOnly yes
+
+#  git remote add github-grokloc-pl git@github-grokloc:grokloc/grokloc-pl.git
+Host github-grokloc
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_grokloc
+	IdentitiesOnly yes
+
+# git remote add gitlab-grokloc-pl git@gitlab-grokloc:grokloc/grokloc-pl.git
+Host gitlab-grokloc
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/id_grokloc
+	IdentitiesOnly yes
