@@ -1,0 +1,44 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[remote "gitlab"]
+	url = git@gitlab.com:grokloc/grokloc-raku.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "github"]
+	url = git@github.com:grokloc/grokloc-raku.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "sr.ht"]
+	url = git@git.sr.ht:~bradclawsie/grokloc-raku
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[remote "grokloc"]
+	url = ssh://grokloc:/home/brad/bare-repos/grokloc-raku
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+# git remote add github-grokloc-raku git@github-grokloc:grokloc/grokloc-raku.git
+[remote "github-grokloc-raku"]
+	url = git@github-grokloc:grokloc/grokloc-raku.git
+	fetch = +refs/heads/*:refs/remotes/github-grokloc-raku/*
+
+# git remote add gitlab-grokloc-raku git@gitlab-grokloc:grokloc/grokloc-raku.git
+[remote "gitlab-grokloc-raku"]
+	url = git@gitlab-grokloc:grokloc/grokloc-raku.git
+	fetch = +refs/heads/*:refs/remotes/gitlab-grokloc-raku/*
+
+# git remote add sr.ht-grokloc-raku git@sr.ht-grokloc:~bradclawsie/grokloc-raku 
+[remote "sr.ht-grokloc-raku"]
+	url = git@sr.ht-grokloc:~bradclawsie/grokloc-raku
+	fetch = +refs/heads/*:refs/remotes/sr.ht-grokloc-raku/*
+
+# git remote add grokloc-grokloc-raku ssh://grokloc-grokloc:/home/brad/bare-repos/grokloc-raku
+[remote "grokloc-grokloc-raku"]
+	url = ssh://grokloc-grokloc:/home/brad/bare-repos/grokloc-raku
+	fetch = +refs/heads/*:refs/remotes/grokloc-grokloc-raku/*
+
+[pull]
+	rebase = false
+	ff = only
