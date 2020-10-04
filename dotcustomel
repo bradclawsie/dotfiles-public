@@ -5,8 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode markdown-mode magit go-mode dockerfile-mode)))
- '(typescript-indent-level 2))
+    (yaml-mode markdown-mode magit go-mode dockerfile-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

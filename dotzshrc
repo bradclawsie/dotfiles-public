@@ -8,16 +8,12 @@ compinit
 
 PS1="$ "
 
-# go
-export GOPATH="$HOME/gopath"
-export LOCAL_GO="$HOME/go"
-
 # perl
 export PERL_UNICODE="AS"
 export PERL_READLINE_NOWARN="yes"
 
 # paths
-export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$PERL5/bin:$LOCAL_GO/bin"
+export HOMEBINPATHS="$HOME/local/bin:$HOME/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
