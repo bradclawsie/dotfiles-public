@@ -15,13 +15,14 @@ export LOCAL_GO="$HOME/go"
 # perl
 export PERL_UNICODE="AS"
 export PERL_READLINE_NOWARN="yes"
+export PERL5LIB="$HOME/perl5/lib/perl5:$PERL5LIB"
 
 # raku
 export RAKU_ROOT="$HOME/.raku"
 export RAKUPATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/share/perl6/core/bin:$RAKU_ROOT/share/perl6/site/bin"
 
 # paths
-export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$PERL5/bin:$LOCAL_GO/bin:$RAKUPATHS"
+export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/perl5/bin:$LOCAL_GO/bin:$RAKUPATHS"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
