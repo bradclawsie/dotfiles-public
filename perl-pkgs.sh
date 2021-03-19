@@ -30,5 +30,6 @@ sudo apt-get -y install \
     libmoo-perl \
     libdist-zilla-perl \
     ca-certificates \
-    build-essential
+    build-essential \
+    libdevel-repl-perl
 cpanm -n Mojo::Redis Test2::Harness Perl::Critic::TooMuchCode Dist::Zilla::Plugin::RewriteVersion Dist::Zilla::PluginBundle::Basic Mojolicious Crypt::Argon2
