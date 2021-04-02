@@ -1,3 +1,4 @@
+
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
@@ -21,17 +22,10 @@
 
 (global-set-key "\C-l" 'goto-line)
 (global-set-key "\C-h" 'delete-backward-char)
-(global-set-key (kbd "\C-x n") 'next-line)
-(global-set-key (kbd "\C-x m") 'previous-line)
 (global-set-key (kbd "\C-x w") 'kill-region)
-(global-set-key (kbd "\C-x a") 'beginning-of-line)
 (global-set-key (kbd "<f3>") 'magit-status)
 (global-set-key (kbd "<f4>") 'eshell)
 (global-set-key (kbd "<f5>") 'rename-buffer)
-(global-set-key (kbd "<f7>") 'scroll-down)
-(global-set-key (kbd "<f8>") 'scroll-up)
-(global-set-key (kbd "<f9>") 'set-mark-command)
-(global-set-key (kbd "<f10>") 'kill-ring-save)
 
 (global-set-key [mouse-2] 'yank)
 (global-font-lock-mode 1)
@@ -63,6 +57,9 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
+;; -------------------------------------------------------------
+;; language modes
+
 ;; go save hook
 (setq gofmt-command "goimports")
 (add-hook 'go-mode-hook (lambda ()
@@ -70,6 +67,12 @@
 
 ;; .t files perl-mode
 (add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
+
+;; racket paredit support
+(add-hook 'racket-mode-hook #'enable-paredit-mode)
+
+;; run auto-fill whenever editing markdown
+(add-hook 'markdown-mode-hook 'auto-fill-mode)
 
 ;; -------------------------------------------------------------
 (defun insert-time ()
@@ -101,9 +104,6 @@
 (fset 'switchbuffers
    [?\C-x ?b])
 (global-set-key (kbd "C-c b") 'switchbuffers)
-
-;; run auto-fill whenever editing markdown
-(add-hook 'markdown-mode-hook 'auto-fill-mode)
 
 ;; no custom!
 (setq custom-file "~/.custom.el")
