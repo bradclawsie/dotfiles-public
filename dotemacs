@@ -71,6 +71,9 @@
 ;; racket paredit support
 (add-hook 'racket-mode-hook #'enable-paredit-mode)
 
+;; scheme support with paredit
+(add-hook 'geiser-mode-hook #'enable-paredit-mode)
+
 ;; run auto-fill whenever editing markdown
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 
