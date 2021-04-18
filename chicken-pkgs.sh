@@ -1,4 +1,4 @@
-sudo apt install -y libssl-dev openssl libreadline-dev libreadline8 build-essential pkg-config chicken-bin libchicken-dev libchicken11 ca-certificates
+sudo apt install -y libssl-dev openssl libreadline-dev libreadline8 build-essential pkg-config chicken-bin libchicken-dev libchicken11 ca-certificates sqlite3 libsqlite3-dev
 sudo chicken-install linenoise
 sudo chicken-install openssl
 sudo chicken-install simple-loops
@@ -14,4 +14,6 @@ sudo chicken-install message-digest-primitive
 sudo chicken-install message-digest
 sudo chicken-install string-utils
 sudo chicken-install test
+sudo chicken-install sqlite3
+sudo chicken-install sql-null
 sudo chicken-install coops
