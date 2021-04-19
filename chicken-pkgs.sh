@@ -17,3 +17,4 @@ sudo chicken-install test
 sudo chicken-install sqlite3
 sudo chicken-install sql-null
 sudo chicken-install coops
+sudo chicken-install regex
