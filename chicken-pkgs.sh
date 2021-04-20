@@ -22,4 +22,6 @@ sudo chicken-install miscmacros
 sudo chicken-install coops-utils
 sudo chicken-install list-utils
 sudo chicken-install sequences
+sudo chicken-install medea
+
 
