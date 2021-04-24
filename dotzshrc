@@ -25,8 +25,13 @@ export RAKUPATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/sh
 export RACKET_ROOT="$HOME/racket"
 export RACKETPATHS="$RACKET_ROOT/bin"
 
+# guile
+export GUILE_ROOT="$HOME/guile"
+export GUILE="$GUILE_ROOT/bin/guile"
+export PKG_CONFIG_PATH="$GUILE_ROOT/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 # paths
-export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/perl5/bin:$LOCAL_GO/bin:$RAKUPATHS:$RACKETPATHS"
+export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/perl5/bin:$LOCAL_GO/bin:$RAKUPATHS:$RACKETPATHS:$GUILE_ROOT/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text

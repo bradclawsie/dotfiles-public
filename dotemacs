@@ -116,10 +116,5 @@
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 ;; -------------------------------------------------------------
-;; theme - make sure color-theme-modern is installed
-(load-theme 'tty-dark t t)
-(enable-theme 'tty-dark)
-
-;; -------------------------------------------------------------
 ;; server
 (server-start)
