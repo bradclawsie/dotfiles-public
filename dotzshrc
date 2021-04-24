@@ -29,6 +29,7 @@ export RACKETPATHS="$RACKET_ROOT/bin"
 export GUILE_ROOT="$HOME/guile"
 export GUILE="$GUILE_ROOT/bin/guile"
 export PKG_CONFIG_PATH="$GUILE_ROOT/lib/pkgconfig:$PKG_CONFIG_PATH"
+export GUILE_LOAD_PATH="$HOME/guile-modules/src"
 
 # paths
 export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/perl5/bin:$LOCAL_GO/bin:$RAKUPATHS:$RACKETPATHS:$GUILE_ROOT/bin"
