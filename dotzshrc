@@ -22,7 +22,7 @@ export RAKU_ROOT="$HOME/.raku"
 export RAKUPATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/share/perl6/core/bin:$RAKU_ROOT/share/perl6/site/bin"
 
 # racket 
-export RACKET_ROOT="$HOME/.racket"
+export RACKET_ROOT="$HOME/racket"
 export RACKETPATHS="$RACKET_ROOT/bin"
 
 # guile
