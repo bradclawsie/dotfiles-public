@@ -1,0 +1,13 @@
+.PHONY: libs
+libs:
+	sudo apt install -y make libedit2 libedit-dev && \
+	raco pkg install --skip-installed --auto rackunit && \
+	raco pkg install --skip-installed --auto libuuid && \
+	raco pkg install --skip-installed --auto crypto && \
+	raco pkg install --skip-installed --auto review && \
+	raco pkg install --skip-installed --auto sha && \
+	raco pkg install --skip-installed --auto readline && \
+	raco pkg install --skip-installed --auto xrepl && \
+	raco pkg update --all && \
+	raco setup
+
