@@ -1,4 +1,5 @@
-RACKET_INSTALLER = racket-8.0-x86_64-linux-cs.sh
+RACKET_VERSION = 8.1
+RACKET_INSTALLER = racket-$(RACKET_VERSION)-x86_64-linux-cs.sh
 
 .PHONY: rm-old
 rm-old:
@@ -8,7 +9,7 @@ rm-old:
 install: rm-old
 	sudo apt -y install wget && \
 	cd /tmp && \
-	wget https://download.racket-lang.org/releases/8.0/installers/$(RACKET_INSTALLER) && \
+	wget https://mirror.racket-lang.org/installers/$(RACKET_VERSION)/$(RACKET_INSTALLER) && \
 	sh ./$(RACKET_INSTALLER) --unix-style --create-dir --dest ${HOME}/racket && \
 	rm $(RACKET_INSTALLER) && \
 	raco setup
@@ -21,5 +22,3 @@ libs:
 	raco pkg install --skip-installed --auto crypto && \
 	raco pkg install --skip-installed --auto sha && \
 	raco setup
-
-
