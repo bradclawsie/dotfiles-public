@@ -67,5 +67,9 @@ curl:
 json:
 	zef install JSON::Fast
 
+.PHONY: fez
+fez:
+	zef install fez
+
 .PHONY: libs
-libs: basics uuid cro crypt log db file curl json
+libs: basics uuid cro crypt log db file curl json fez
