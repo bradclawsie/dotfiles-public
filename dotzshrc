@@ -16,23 +16,20 @@ export LOCAL_GO="$HOME/go"
 export PERL_UNICODE="AS"
 export PERL_READLINE_NOWARN="yes"
 export PERL5LIB="$HOME/perl5/lib/perl5:$PERL5LIB"
+export PERLBREW_VERSION="5.34.0"
+export PERLBREW_ROOT="$HOME/perl5/perlbrew/perls/perl-$PERLBREW_VERSION"
+export PERLBREW_PATHS="$PERLBREW_ROOT/bin"
 
 # raku
 export RAKU_ROOT="$HOME/.raku"
-export RAKUPATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/share/perl6/core/bin:$RAKU_ROOT/share/perl6/site/bin"
+export RAKU_PATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/share/perl6/core/bin:$RAKU_ROOT/share/perl6/site/bin"
 
 # racket 
 export RACKET_ROOT="$HOME/racket"
-export RACKETPATHS="$RACKET_ROOT/bin"
-
-# guile
-export GUILE_ROOT="$HOME/guile"
-export GUILE="$GUILE_ROOT/bin/guile"
-export PKG_CONFIG_PATH="$GUILE_ROOT/lib/pkgconfig:$PKG_CONFIG_PATH"
-export GUILE_LOAD_PATH="$HOME/guile-modules/src"
+export RACKET_PATHS="$RACKET_ROOT/bin"
 
 # paths
-export HOMEBINPATHS="$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/perl5/bin:$LOCAL_GO/bin:$RAKUPATHS:$RACKETPATHS:$GUILE_ROOT/bin"
+export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/perl5/bin:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$LOCAL_GO/bin:$RAKU_PATHS:$RACKET_PATHS"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
