@@ -1,5 +1,5 @@
-use v5.32;
+use v5.34;
 use strictures 2;
 use Data::Dumper;
-use experimental qw(signatures switch);
+use experimental qw(signatures switch try);
 

@@ -89,4 +89,7 @@ brew-libs:
 	EV \
 	IO::Socket::Socks \
 	IO::Socket::SSL \
-	strictures
+	strictures \
+	App::Ack \
+	Data::Dumper
+
