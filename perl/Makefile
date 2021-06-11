@@ -91,5 +91,10 @@ brew-libs:
 	IO::Socket::SSL \
 	strictures \
 	App::Ack \
-	Data::Dumper
+	Data::Dumper \
+	Sub::Info \
+	List::SomeUtils \
+	List::UtilsBy \
+	List::MoreUtils \
+	App::perlimports
 
