@@ -1,7 +1,7 @@
 INSTALL_DIR = .raku
 INSTALL_PATH = ${HOME}/$(INSTALL_DIR)
 BUILD_PKGS = wget git build-essential
-RAKU_DISTRO = rakudo-moar-2021.05-01-linux-x86_64-gcc
+RAKU_DISTRO = rakudo-moar-2021.06-01-linux-x86_64-gcc
 RAKU_TGZ = $(RAKU_DISTRO).tar.gz
 RAKU_DL = https://rakudo.org/dl/rakudo/$(RAKU_TGZ)
 
