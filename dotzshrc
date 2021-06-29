@@ -24,10 +24,6 @@ export PERLBREW_PATHS="$PERLBREW_VERSION_ROOT/bin"
 export RAKU_ROOT="$HOME/.raku"
 export RAKU_PATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/share/perl6/core/bin:$RAKU_ROOT/share/perl6/site/bin"
 
-# racket 
-export RACKET_ROOT="$HOME/racket"
-export RACKET_PATHS="$RACKET_ROOT/bin"
-
 # paths
 export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/perl5/bin:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$LOCAL_GO/bin:$RAKU_PATHS:$RACKET_PATHS"
 export PATH="$HOMEBINPATHS:$PATH"
