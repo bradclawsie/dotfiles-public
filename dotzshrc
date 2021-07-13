@@ -10,7 +10,6 @@ PS1="$ "
 
 # go
 export GOPATH="$HOME/gopath"
-export LOCAL_GO="$HOME/go"
 
 # perl
 export PERL_UNICODE="AS"
@@ -24,8 +23,15 @@ export PERLBREW_PATHS="$PERLBREW_VERSION_ROOT/bin"
 export RAKU_ROOT="$HOME/.raku"
 export RAKU_PATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/share/perl6/core/bin:$RAKU_ROOT/share/perl6/site/bin"
 
+# janet
+export JANET_ROOT="$HOME/.janet"
+export JANET_PATH="$HOME/.janet-libs"
+
+# man paths
+export MANPATH="$(manpath -g):$JANET_ROOT/man"
+
 # paths
-export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/perl5/bin:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$LOCAL_GO/bin:$RAKU_PATHS:$RACKET_PATHS"
+export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/perl5/bin:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$home/go/bin:$RAKU_PATHS:$JANET_ROOT/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
