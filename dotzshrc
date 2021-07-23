@@ -14,14 +14,9 @@ export GOPATH="$HOME/gopath"
 # perl
 export PERL_UNICODE="AS"
 export PERL_READLINE_NOWARN="yes"
-export PERL5LIB="$HOME/perl5/lib/perl5:$PERL5LIB"
 export PERLBREW_VERSION="5.34.0"
 export PERLBREW_VERSION_ROOT="$HOME/perl5/perlbrew/perls/perl-$PERLBREW_VERSION"
 export PERLBREW_PATHS="$PERLBREW_VERSION_ROOT/bin"
-
-# raku
-export RAKU_ROOT="$HOME/.raku"
-export RAKU_PATHS="$RAKU_ROOT/bin:$RAKU_ROOT/share/perl6/vendor/bin:$RAKU_ROOT/share/perl6/core/bin:$RAKU_ROOT/share/perl6/site/bin"
 
 # janet
 export JANET_ROOT="$HOME/.janet"
@@ -31,7 +26,7 @@ export JANET_PATH="$HOME/.janet-libs"
 export MANPATH="$(manpath -g):$JANET_ROOT/man"
 
 # paths
-export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/perl5/bin:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$home/go/bin:$RAKU_PATHS:$JANET_ROOT/bin"
+export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/go/bin:$JANET_ROOT/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
@@ -61,6 +56,7 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 clear;
 
+# auto-added by perlbrew
 PATH="/home/brad/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/brad/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/brad/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
