@@ -58,4 +58,6 @@ brew-libs:
 	App::perlimports \
 	Dist::Zilla \
 	Dist::Zilla::Plugin::RewriteVersion \
-	Dist::Zilla::PluginBundle::Basic
+	Dist::Zilla::PluginBundle::Basic \
+	Test::Kwalitee \
+	Dist::Zilla::Plugin::GitHub::Meta
