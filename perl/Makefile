@@ -11,7 +11,8 @@ brew-pkgs:
 	readline-common \
 	sqlite3 \
 	libsqlite3-0 \
-	libsqlite3-dev
+	libsqlite3-dev \
+	libgit2-dev
 
 export PERL_MM_USE_DEFAULT=1
 
@@ -61,4 +62,5 @@ brew-libs:
 	Dist::Zilla::PluginBundle::Basic \
 	Test::Kwalitee \
 	Dist::Zilla::Plugin::GitHub::Meta \
-	Dist::Zilla::Plugin::Git::Contributors
+	Dist::Zilla::Plugin::Git::Contributors \
+	Git::Raw
