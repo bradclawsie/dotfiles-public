@@ -60,4 +60,5 @@ brew-libs:
 	Dist::Zilla::Plugin::RewriteVersion \
 	Dist::Zilla::PluginBundle::Basic \
 	Test::Kwalitee \
-	Dist::Zilla::Plugin::GitHub::Meta
+	Dist::Zilla::Plugin::GitHub::Meta \
+	Dist::Zilla::Plugin::Git::Contributors
