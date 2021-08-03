@@ -29,6 +29,7 @@ brew-libs:
 	Mojolicious \
 	Test2::Suite \
 	Test2::Harness \
+	PEVANS/XS-Parse-Keyword-0.10.tar.gz \
 	Object::Pad \
 	Perl::Tidy \
 	Perl::Critic \
