@@ -18,8 +18,11 @@ export PERLBREW_VERSION="5.34.0"
 export PERLBREW_VERSION_ROOT="$HOME/perl5/perlbrew/perls/perl-$PERLBREW_VERSION"
 export PERLBREW_PATHS="$PERLBREW_VERSION_ROOT/bin"
 
+# deno
+export DENO_INSTALL="$HOME/.deno"
+
 # paths
-export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/go/bin"
+export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/go/bin:$DENO_INSTALL/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
