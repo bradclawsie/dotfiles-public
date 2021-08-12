@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.fontSize": 20,
+    "terminal.integrated.fontSize": 18,
+    "deno.enable": true,
+    "[typescript]": {       
+      "editor.formatOnSave": true,       
+      "editor.defaultFormatter": "denoland.vscode-deno"
+    }
+}
