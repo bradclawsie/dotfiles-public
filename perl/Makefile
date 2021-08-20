@@ -64,4 +64,5 @@ brew-libs:
 	Dist::Zilla::Plugin::GitHub::Meta \
 	Dist::Zilla::Plugin::Git::Contributors \
 	Git::Raw \
-	Future::AsyncAwait
+	Future::AsyncAwait \
+	Perl::LanguageServer
