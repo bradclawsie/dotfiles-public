@@ -9,5 +9,12 @@
     "[typescript]": {       
       "editor.formatOnSave": true,       
       "editor.defaultFormatter": "denoland.vscode-deno"
-    }
+    },
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.activityBar.visible": false,
+    "deno.codeLens.references": true,
+    "deno.codeLens.referencesAllFunctions": true,
+    "deno.suggest.completeFunctionCalls": true,
+    "deno.codeLens.test": false,
+    "window.menuBarVisibility": "toggle"
 }
