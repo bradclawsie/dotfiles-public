@@ -65,4 +65,5 @@ brew-libs:
 	Dist::Zilla::Plugin::Git::Contributors \
 	Git::Raw \
 	Future::AsyncAwait \
-	Perl::LanguageServer
+	Perl::LanguageServer \
+	Syntax::Keyword::Try
