@@ -7,7 +7,7 @@ brew-pkgs:
 	libssl-dev \
 	zlib1g-dev \
 	libreadline-dev \
-	libreadline7 \
+	libreadline8 \
 	readline-common \
 	sqlite3 \
 	libsqlite3-0 \
