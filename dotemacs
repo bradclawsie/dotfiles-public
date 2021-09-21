@@ -34,6 +34,14 @@
 (setq-default transient-mark-mode t)
 
 ;; -------------------------------------------------------------
+;; ido
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+(setq ido-use-filename-at-point 'guess)
+(setq ido-create-new-buffer 'always)
+
+;; -------------------------------------------------------------
 ;; eshell
 (setq eshell-prompt-function
   (lambda nil (concat "" " $ ")))
