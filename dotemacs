@@ -65,13 +65,6 @@
 ;; run auto-fill whenever editing markdown
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 
-;; deno/ts
-(setq lsp-clients-deno-server "deno")
-(setq lsp-clients-deno-enable-lint t)
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-(add-hook 'typescript-mode-hook
-          (lambda () (deno-fmt-mode +1)))
-
 ;; -------------------------------------------------------------
 (defun insert-time ()
   (interactive)

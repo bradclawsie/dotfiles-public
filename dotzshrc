@@ -21,11 +21,8 @@ export PERLBREW_PATHS="$PERLBREW_VERSION_ROOT/bin"
 # perl paths to add to INC
 export LOCAL_INC_PATHS="$HOME/repos/grokloc-perl5/lib"
 
-# deno
-export DENO_INSTALL="$HOME/.deno"
-
 # paths
-export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$HOME/go/bin:$DENO_INSTALL/bin"
+export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
