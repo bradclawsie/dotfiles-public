@@ -21,8 +21,11 @@ export PERLBREW_PATHS="$PERLBREW_VERSION_ROOT/bin"
 # perl paths to add to INC
 export LOCAL_INC_PATHS="$HOME/repos/grokloc-perl5/lib"
 
+# zig
+export ZIG_ROOT="$HOME/.zig/zig-release"
+
 # paths
-export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin"
+export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$ZIG_ROOT"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text

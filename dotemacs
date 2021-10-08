@@ -65,6 +65,10 @@
 ;; run auto-fill whenever editing markdown
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 
+;; zig
+(require 'lsp-mode)
+(setq lsp-zig-zls-executable "~/.zig/zls-release/zls")
+
 ;; -------------------------------------------------------------
 (defun insert-time ()
   (interactive)
