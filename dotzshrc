@@ -26,7 +26,7 @@ export ZIG_ROOT="$HOME/.zig/zig-release"
 export ZIGMOD_ROOT="$HOME/.zigmod/bin"
 
 # paths
-export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$GOPATH/bin:$ZIG_ROOT:$ZIGMOD_ROOT"
+export HOMEBINPATHS="$PERLBREW_PATHS:$HOME/local/bin:$HOME/bin:$HOME/go/bin:$GOPATH/bin:$ZIG_ROOT:$ZIGMOD_ROOT"
 export PATH="$HOMEBINPATHS:$PATH"
 
 # text
