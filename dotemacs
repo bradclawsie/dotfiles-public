@@ -42,6 +42,10 @@
 (setq ido-create-new-buffer 'always)
 
 ;; -------------------------------------------------------------
+;; don't get clever and try to ping things that look like domains
+(setq ffap-machine-p-known 'reject)
+
+;; -------------------------------------------------------------
 ;; eshell
 (setq eshell-prompt-function
   (lambda nil (concat "" " $ ")))
