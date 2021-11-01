@@ -66,4 +66,6 @@ brew-libs:
 	Git::Raw \
 	Future::AsyncAwait \
 	Perl::LanguageServer \
-	Syntax::Keyword::Try
+	Syntax::Keyword::Try \
+	File::Slurp
+
