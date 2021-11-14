@@ -3,6 +3,9 @@ use v5.32;
 use strict;
 use DateTime;
 
+my $ip_out = `ip -4 addr show`;
+die 'not actual b7j0c.org; not running' unless ($ip_out =~ /inet 144.202.72.212/);
+
 my $dt = DateTime->now();
 $dt->set_time_zone('America/Chicago');
 my $prefix = 'b7j0cdebian_';
