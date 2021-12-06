@@ -67,5 +67,8 @@ brew-libs:
 	Future::AsyncAwait \
 	Perl::LanguageServer \
 	Syntax::Keyword::Try \
-	File::Slurp
+	File::Slurp \
+	Minion \
+	Minion::Backend::SQLite
+
 
