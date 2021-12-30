@@ -1,5 +1,7 @@
 (package-initialize)
 
+;; -------------------------------------------------------------
+;; basic editor look and feel
 (setq-default indent-tabs-mode nil)
 (setq-default make-backup-files nil)
 (setq-default column-number-mode t)
@@ -14,24 +16,41 @@
 (setq next-line-add-newlines nil)
 (setq scroll-step 1)
 (set-input-mode nil nil t)
-
-(global-set-key "\C-l" 'goto-line)
-(global-set-key "\C-h" 'delete-backward-char)
-(global-set-key (kbd "\C-x w") 'kill-region)
-(global-set-key (kbd "<f3>") 'magit-status)
-(global-set-key (kbd "<f4>") 'eshell)
-(global-set-key (kbd "<f5>") 'rename-buffer)
-
-(global-set-key [mouse-2] 'yank)
-(global-font-lock-mode 1)
-(fset 'yes-or-no-p 'y-or-n-p)
-
 (display-time)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))
 (setq-default transient-mark-mode t)
+
+;; -------------------------------------------------------------
+;; shortcuts
+(global-set-key "\C-l" 'goto-line)
+(global-set-key "\C-h" 'delete-backward-char)
+(global-set-key (kbd "\C-x w") 'kill-region)
+(global-set-key (kbd "<f3>") 'magit-status)
+(global-set-key (kbd "<f4>") 'eshell)
+(global-set-key (kbd "<f5>") 'rename-buffer)
+(fset 'switchbuffers
+   [?\C-x ?b])
+(global-set-key (kbd "C-c b") 'switchbuffers)
+
+;; -------------------------------------------------------------
+;; common input
+(global-set-key [mouse-2] 'yank)
+(global-font-lock-mode 1)
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; -------------------------------------------------------------
+;; show whitespace
+(setq-default show-trailing-whitespace t)
+(setq-default indicate-empty-lines t)
+(setq-default indicate-buffer-boundaries 'left)
+
+;; -------------------------------------------------------------
+;; highlight matching pairs of parentheses
+(setq show-paren-delay 0)
+(show-paren-mode)
 
 ;; -------------------------------------------------------------
 ;; ido
@@ -74,6 +93,7 @@
 (setq lsp-zig-zls-executable "~/.zig/zls-release/zls")
 
 ;; -------------------------------------------------------------
+;; time-related funcs
 (defun insert-time ()
   (interactive)
   (insert (format-time-string "%Y-%m-%d-%R")))
@@ -99,15 +119,11 @@
 (global-set-key (kbd "<f6>") 'revert-all-buffers)
 
 ;; -------------------------------------------------------------
-;; macros
-(fset 'switchbuffers
-   [?\C-x ?b])
-(global-set-key (kbd "C-c b") 'switchbuffers)
-
-;; no custom!
+;; custom
 (setq custom-file "~/.custom.el")
 (load custom-file :noerror)
 
+;; -------------------------------------------------------------
 ;; fix weird tls issue with packages
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
