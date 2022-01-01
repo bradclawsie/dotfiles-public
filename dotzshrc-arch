@@ -8,25 +8,19 @@ compinit
 
 PS1="$ "
 
-# perl
 export PERL_UNICODE="AS"
 export PERL_READLINE_NOWARN="yes"
-
-# perl paths to add to INC
 export LOCAL_INC_PATHS="$HOME/repos/grokloc-perl5/lib"
 PERL5LIB="$LOCAL_INC_PATHS:$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; 
 export PERL5LIB;
 
-# paths
-export HOMEBINPATHS="$HOME/bin"
+export HOMEBINPATHS="$HOME/bin:$PERL5LIB/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
-# text
 export ALTERNATE_EDITOR="emacs" EDITOR="emacsclient" VISUAL="emacsclient"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-# zsh 
 alias c=clear
 alias h=history
 
