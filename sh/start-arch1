@@ -1,0 +1,2 @@
+sudo systemd-nspawn --bind=/var/local/nspawn-shared:/var/local/nspawn-shared -b -D ./arch1
+
