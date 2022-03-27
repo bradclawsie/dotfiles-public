@@ -15,7 +15,11 @@ Host grokloc
 	User brad
 	Port 512
 
-# git remote add grokloc-grokloc-fs ssh://grokloc-grokloc:/home/brad/bare-repos/grokloc-fs
+Host arch0
+	Hostname arch0
+	User brad
+	Port 22
+
 Host grokloc-grokloc
 	HostName grokloc.com
 	User brad
@@ -23,21 +27,25 @@ Host grokloc-grokloc
 	IdentityFile ~/.ssh/id_grokloc
 	IdentitiesOnly yes
 
-# git remote add sr.ht-grokloc-fs git@sr.ht-grokloc:~bradclawsie/grokloc-fs 
+Host gitea-grokloc
+	HostName grokloc.com
+	User git
+	Port 512
+	IdentityFile ~/.ssh/id_grokloc
+	IdentitiesOnly yes
+
 Host sr.ht-grokloc
 	HostName git.sr.ht
 	User git
 	IdentityFile ~/.ssh/id_grokloc
 	IdentitiesOnly yes
 
-#  git remote add github-grokloc-fs git@github-grokloc:grokloc/grokloc-fs.git
 Host github-grokloc
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/id_grokloc
 	IdentitiesOnly yes
 
-# git remote add gitlab-grokloc-fs git@gitlab-grokloc:grokloc/grokloc-fs.git
 Host gitlab-grokloc
 	HostName gitlab.com
 	User git

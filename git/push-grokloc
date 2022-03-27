@@ -1,0 +1,1 @@
+git push github master; git push gitlab master; git push gitea master; git push grokloc master; git push sr.ht master
