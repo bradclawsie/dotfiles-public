@@ -69,6 +69,6 @@ brew-libs:
 	Syntax::Keyword::Try \
 	File::Slurp \
 	Minion \
-	Minion::Backend::SQLite
-
-
+	Minion::Backend::SQLite \
+	Log::Log4perl \
+	Log::Log4perl::Layout::JSON
