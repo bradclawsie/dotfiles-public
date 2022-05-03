@@ -72,5 +72,4 @@ brew-libs:
 	Minion::Backend::SQLite \
 	Log::Log4perl \
 	Log::Log4perl::Layout::JSON \
-	Scalar::Util \
-	Readonly::XS
+	Scalar::Util 
