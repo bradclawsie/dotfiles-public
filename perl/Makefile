@@ -73,4 +73,5 @@ brew-libs:
 	Log::Log4perl \
 	Log::Log4perl::Layout::JSON \
 	Scalar::Util \
-	Net::SSLeay
+	Net::SSLeay \
+	MooseX::Extended
