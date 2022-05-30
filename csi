@@ -1,0 +1,23 @@
+chicken-csi -qw -R srfi-1\
+                -R srfi-13\
+                -R srfi-145\
+                -R chicken.format\
+                -R test\
+                -R miscmacros\
+                -R clojurian.syntax\
+                -R uuid\
+                -R regex
+
+# https://wiki.call-cc.org/eggref/5/srfi-1
+# https://wiki.call-cc.org/eggref/5/srfi-13
+# https://wiki.call-cc.org/eggref/5/srfi-145
+# https://wiki.call-cc.org/eggref/5/srfi-48 (format)
+# http://wiki.call-cc.org/eggref/5/test
+# http://wiki.call-cc.org/eggref/5/miscmacros
+# https://wiki.call-cc.org/eggref/5/clojurian
+# http://wiki.call-cc.org/eggref/5/uuid
+# https://wiki.call-cc.org/eggref/5/regex
+
+# missing - srfi 99 records
+#   https://srfi.schemers.org/srfi-99/srfi-99.html#History
+#   https://wiki.call-cc.org/eggref/5/srfi-99
