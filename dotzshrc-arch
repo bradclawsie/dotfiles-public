@@ -14,7 +14,7 @@ export LOCAL_INC_PATHS="$HOME/repos/grokloc-perl5/lib"
 PERL5LIB="$LOCAL_INC_PATHS:$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; 
 export PERL5LIB;
 
-export HOMEBINPATHS="$HOME/bin:$HOME/perl5/bin:$HOME/go/bin:$HOME/.local/share/gem/ruby/3.0.0/bin"
+export HOMEBINPATHS="$HOME/bin:$HOME/perl5/bin:$HOME/go/bin"
 export PATH="$HOMEBINPATHS:$PATH"
 
 export ALTERNATE_EDITOR="emacs" EDITOR="emacsclient" VISUAL="emacsclient"
