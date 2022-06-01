@@ -10,7 +10,7 @@ PS1="$ "
 
 export PERL_UNICODE="AS"
 export PERL_READLINE_NOWARN="yes"
-export LOCAL_INC_PATHS="$HOME/repos/grokloc-perl5/lib"
+export LOCAL_INC_PATHS="$HOME/repos/grokloc-perl5/lib:$HOME/repos/grokloc-perl5/service/app/lib"
 PERL5LIB="$LOCAL_INC_PATHS:$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; 
 export PERL5LIB;
 
