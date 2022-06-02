@@ -1,1 +1,4 @@
 sudo machinectl export-tar scheme1 > scheme1-export
+mv scheme1-export scheme1-export.tar
+echo "gziping..."
+gzip scheme1-export.tar
