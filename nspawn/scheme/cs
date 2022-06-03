@@ -1,7 +1,10 @@
 chicken-csi -qw -R srfi-1\
-                -R srfi-13\
                 -R srfi-145\
                 -R chicken.format\
+                -R chicken.random\
+                -R chicken.string\
+                -R chicken.sort\
+                -R chicken.time\
                 -R test\
                 -R miscmacros\
                 -R clojurian.syntax\
@@ -9,9 +12,7 @@ chicken-csi -qw -R srfi-1\
                 -R regex
 
 # https://wiki.call-cc.org/eggref/5/srfi-1
-# https://wiki.call-cc.org/eggref/5/srfi-13
 # https://wiki.call-cc.org/eggref/5/srfi-145
-# https://wiki.call-cc.org/eggref/5/srfi-48 (format)
 # http://wiki.call-cc.org/eggref/5/test
 # http://wiki.call-cc.org/eggref/5/miscmacros
 # https://wiki.call-cc.org/eggref/5/clojurian
