@@ -33,6 +33,9 @@ brew-libs:
 	Perl::Tidy \
 	Perl::Critic \
 	Perl::Critic::TooMuchCode \
+	Perl::Critic::StricterSubs \
+	Perl::Critic::Community \
+	Perl::Critic::Bangs \
 	Perl::Tidy::Sweetened \
 	List::AllUtils \
 	multidimensional \
