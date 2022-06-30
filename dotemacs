@@ -91,6 +91,8 @@
 (setq rustic-format-on-save t)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
 
+(add-hook 'lsp-mode-hook 'company-mode)
+
 ;; -------------------------------------------------------------
 ;; time-related funcs
 (defun insert-time ()
