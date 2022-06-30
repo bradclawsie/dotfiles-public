@@ -88,6 +88,9 @@
 ;; run auto-fill whenever editing markdown
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 
+(setq rust-format-on-save t)
+(global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
+
 ;; -------------------------------------------------------------
 ;; time-related funcs
 (defun insert-time ()
