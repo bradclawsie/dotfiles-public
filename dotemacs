@@ -88,6 +88,7 @@
 ;; run auto-fill whenever editing markdown
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 
+;;; rust-related
 (setq rustic-format-on-save t)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
 
