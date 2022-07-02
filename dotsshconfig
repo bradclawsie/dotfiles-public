@@ -51,3 +51,9 @@ Host gitlab-grokloc
 	User git
 	IdentityFile ~/.ssh/id_grokloc
 	IdentitiesOnly yes
+
+Host codeberg-grokloc
+	HostName codeberg.org
+	User git
+	IdentityFile ~/.ssh/id_grokloc
+	IdentitiesOnly yes
