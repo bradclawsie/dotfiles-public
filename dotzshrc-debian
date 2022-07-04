@@ -21,6 +21,9 @@ export ALTERNATE_EDITOR="emacs" EDITOR="emacsclient" VISUAL="emacsclient"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 # zsh 
 alias c=clear
 alias h=history
