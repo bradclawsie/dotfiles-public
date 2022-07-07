@@ -1,5 +1,3 @@
-(package-initialize)
-
 ;; -------------------------------------------------------------
 ;; basic editor look and feel
 (setq-default indent-tabs-mode nil)
@@ -22,6 +20,25 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))
 (setq-default transient-mark-mode t)
+
+;; -------------------------------------------------------------
+;; packages
+(require 'package)
+(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(package-initialize)
+(use-package company)
+(use-package fish-completion)
+(use-package fish-mode)
+(use-package go-mode)
+(use-package lsp-mode)
+(use-package magit)
+(use-package markdown-mode)
+(use-package pinentry)
+(use-package rust-mode)
+(use-package rustic)
+(use-package toml-mode)
+(use-package yaml-mode)
 
 ;; -------------------------------------------------------------
 ;; shortcuts
@@ -68,11 +85,6 @@
 ;; eshell
 (setq eshell-prompt-function
   (lambda nil (concat "" " $ ")))
-
-;; -------------------------------------------------------------
-;; melpa
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;; -------------------------------------------------------------
 ;; language modes
