@@ -29,7 +29,7 @@ if status is-interactive
     set -gx VISUAL emacsclient
 
     # gnupg
-    set -gx GPG_TTY $(tty)
+    set -gx GPG_TTY (tty)
     gpg-connect-agent updatestartuptty /bye >/dev/null
 
     clear;
