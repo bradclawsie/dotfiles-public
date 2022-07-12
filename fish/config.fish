@@ -8,7 +8,8 @@ set -gx GROKLOC_INCS $GROKLOC_LIB_INC:$GROKLOC_SERVICE_INC
 set -gx PERL5LIB $GROKLOC_INCS:$HOME/perl5/lib/perl5
 
 # paths
-set -gx PATH $HOME/bin:$HOME/perl5/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH
+set -gx BASEPATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+set -gx PATH $HOME/bin:$HOME/perl5/bin:$HOME/go/bin:$HOME/.cargo/bin:$BASEPATH
 
 alias c clear
 alias h history

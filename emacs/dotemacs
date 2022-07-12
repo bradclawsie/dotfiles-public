@@ -28,10 +28,15 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (use-package company)
+;; requires gopls
+(use-package company-go)
+;; requires Perl::LanguageServer in $PERL5LIB
+(use-package company-plsense)
 (use-package fish-completion)
 (use-package fish-mode)
 (use-package go-mode)
 (use-package lsp-mode)
+(use-package lsp-ui)
 (use-package magit)
 (use-package markdown-mode)
 (use-package pinentry)
@@ -39,6 +44,7 @@
 (use-package rustic)
 (use-package toml-mode)
 (use-package yaml-mode)
+(use-package yasnippet)
 
 ;; -------------------------------------------------------------
 ;; shortcuts
@@ -87,24 +93,40 @@
   (lambda nil (concat "" " $ ")))
 
 ;; -------------------------------------------------------------
+;; company
+(setq company-idle-delay 0)
+(setq company-minimum-prefix-length 1)
+
+;; -------------------------------------------------------------
 ;; language modes
 
-;; go save hook
-(setq gofmt-command "goimports")
-(add-hook 'go-mode-hook (lambda ()
-                          (add-hook 'before-save-hook 'gofmt-before-save nil 'local)))
+;; lsp
+(require 'lsp-mode)
+(add-hook 'lsp-mode-hook 'company-mode)
 
+;; go
+(add-hook 'go-mode-hook #'lsp-deferred)
+;; set up before-save hooks to format buffer and add/delete imports
+;; make sure you don't have other gofmt/goimports hooks enabled
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+
+;; perl
 ;; .t files perl-mode
 (add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
+(add-to-list 'lsp-language-id-configuration '(perl-mode . "perl"))
+(add-to-list 'lsp-language-id-configuration '(".*\\.pl$" . "perl"))
+(add-to-list 'lsp-language-id-configuration '(".*\\.pm$" . "perl"))
 
+;; markdown
 ;; run auto-fill whenever editing markdown
 (add-hook 'markdown-mode-hook 'auto-fill-mode)
 
-;;; rust-related
+;;; rust
 (setq rustic-format-on-save t)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
-
-(add-hook 'lsp-mode-hook 'company-mode)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
