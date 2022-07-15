@@ -1,8 +1,8 @@
 ;; -------------------------------------------------------------
 ;; basic editor look and feel
 (setq-default indent-tabs-mode nil)
-(setq-default make-backup-files nil)
 (setq-default column-number-mode t)
+(set-default-coding-systems 'utf-8)
 (setq-default tramp-default-user "brad")
 (setq-default tramp-default-host "localhost")
 (setq-default pgg-default-user-id "Brad Clawsie <brad@b7j0c.org>")
@@ -14,39 +14,41 @@
 (setq next-line-add-newlines nil)
 (setq scroll-step 1)
 (set-input-mode nil nil t)
-(display-time)
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))
 (setq-default transient-mark-mode t)
+(setq-default require-final-newline t)
+
+;; -------------------------------------------------------------
+;; revert from disk automatically
+(setq global-auto-revert-non-file-buffers t)
+(global-auto-revert-mode)
 
 ;; -------------------------------------------------------------
 ;; packages
 (require 'package)
-(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
-(use-package company)
-;; requires gopls
-(use-package company-go)
-;; requires Perl::LanguageServer in $PERL5LIB
-(use-package company-plsense)
-(use-package fish-completion)
-(use-package fish-mode)
-(use-package go-mode)
-(use-package lsp-mode)
-(use-package lsp-ui)
-(use-package magit)
-(use-package markdown-mode)
-(use-package pinentry)
-(use-package rust-mode)
-(use-package rustic)
-(use-package toml-mode)
-;; requires libvterm, cmake
-(use-package vterm)
-(use-package yaml-mode)
-(use-package yasnippet)
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+;; company-go requires gopls
+;; flyspell-correct requires aspell, aspell-en
+;; go-mode requires goimports
+;; vterm requires libvterm, cmake
+(setq package-selected-packages
+      '( company company-go fish-completion fish-mode flyspell-correct
+         go-mode lsp-mode lsp-ui magit markdown-mode pinentry
+         rustic toml-mode vterm yaml-mode yasnippet ))
+
+(setq package-native-compile t
+      native-comp-async-report-warnings-errors nil
+      package-quickstart t
+      vterm-always-compile-module t)
+
+(unless (seq-every-p #'package-installed-p package-selected-packages)
+  (package-refresh-contents)
+  (package-install-selected-packages t))
 
 ;; -------------------------------------------------------------
 ;; shortcuts
@@ -56,6 +58,9 @@
 (global-set-key (kbd "<f3>") 'magit-status)
 (global-set-key (kbd "<f4>") 'eshell)
 (global-set-key (kbd "<f5>") 'rename-buffer)
+;; f6 assigned to a function below
+;; f7 reserved for rust compilation below
+(global-set-key (kbd "<f8>") 'vterm)
 (fset 'switchbuffers
    [?\C-x ?b])
 (global-set-key (kbd "C-c b") 'switchbuffers)
@@ -94,13 +99,41 @@
 (setq eshell-prompt-function
   (lambda nil (concat "" " $ ")))
 
+(defun my-eshell-init ()
+  "Function to run in new eshell buffers."
+  (fish-completion-mode)
+  (setenv "TERM" "dumb-emacs-ansi")
+  (setenv "GIT_PAGER" "cat")
+  (setenv "PAGER" "cat"))
+
+(add-hook 'eshell-mode-hook #'my-eshell-init)
+
 ;; -------------------------------------------------------------
 ;; company
 (setq company-idle-delay 0)
 (setq company-minimum-prefix-length 1)
 
 ;; -------------------------------------------------------------
+;; flyspell
+(setq ispell-dictionary "en_US"
+      ispell-program-name "aspell"
+      ispell-extra-args '("--camel-case")
+      flyspell-issue-message-flag nil
+      flyspell-mode-line-string nil
+      flyspell-duplicate-distance 0
+      flyspell-use-meta-tab nil)
+
+(defun enable-flyspell ()
+  "Enable `flyspell-mode' if buffer can be modified."
+  (unless buffer-read-only (flyspell-mode)))
+
+(add-hook 'markdown-mode-hook #'enable-flyspell)
+(add-hook 'text-mode-hook #'enable-flyspell)
+
+;; -------------------------------------------------------------
 ;; language modes
+
+(global-prettify-symbols-mode)
 
 ;; lsp
 (require 'lsp-mode)
@@ -108,8 +141,6 @@
 
 ;; go
 (add-hook 'go-mode-hook #'lsp-deferred)
-;; set up before-save hooks to format buffer and add/delete imports
-;; make sure you don't have other gofmt/goimports hooks enabled
 (defun lsp-go-install-save-hooks ()
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
@@ -122,13 +153,33 @@
 (add-to-list 'lsp-language-id-configuration '(".*\\.pl$" . "perl"))
 (add-to-list 'lsp-language-id-configuration '(".*\\.pm$" . "perl"))
 
-;; markdown
-;; run auto-fill whenever editing markdown
-(add-hook 'markdown-mode-hook 'auto-fill-mode)
+;; markdown, text
+;; run auto-fill whenever editing
+(add-hook 'markdown-mode-hook #'auto-fill-mode)
+(add-hook 'text-mode-hook #'auto-fill-mode)
 
 ;;; rust
 (setq rustic-format-on-save t)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
+
+;; -------------------------------------------------------------
+;; proced
+(setq proced-auto-update-interval 3)
+
+(setq-default proced-auto-update-flag t
+              proced-tree-flag t
+              proced-format 'custom
+              proced-filter 'non-kernel)
+
+(with-eval-after-load 'proced
+  (add-to-list 'proced-format-alist
+               '(custom pid user nice pcpu pmem tree (args comm)))
+  (add-to-list 'proced-filter-alist
+               '(non-kernel
+                 (args . (lambda (arg)
+                           (not (string-match "\\`\\[.*]\\'" arg)))))))
+
+(add-hook 'proced-mode-hook #'set-header-fixed-pitch)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
@@ -157,9 +208,12 @@
 (global-set-key (kbd "<f6>") 'revert-all-buffers)
 
 ;; -------------------------------------------------------------
-;; custom
-(setq custom-file "~/.custom.el")
-(load custom-file :noerror)
+;; file creation
+(setq auto-save-file-name-transforms
+      `((".*" ,(file-name-concat user-emacs-directory "auto-save/") t))
+      make-backup-files nil
+      create-lockfiles nil
+      custom-file null-device)
 
 ;; -------------------------------------------------------------
 ;; fix weird tls issue with packages
@@ -167,4 +221,5 @@
 
 ;; -------------------------------------------------------------
 ;; server
+(display-time)
 (server-start)
