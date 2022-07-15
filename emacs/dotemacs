@@ -43,6 +43,8 @@
 (use-package rust-mode)
 (use-package rustic)
 (use-package toml-mode)
+;; requires libvterm, cmake
+(use-package vterm)
 (use-package yaml-mode)
 (use-package yasnippet)
 
