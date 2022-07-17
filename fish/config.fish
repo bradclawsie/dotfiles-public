@@ -10,8 +10,10 @@ set -gx PERL5LIB $GROKLOC_INCS:$HOME/perl5/lib/perl5
 # paths
 set -gx PATH $HOME/bin:$HOME/perl5/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/bin/vendor_perl:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
-alias c clear
-alias h history
+# alias
+alias c="clear"
+alias h="history"
+alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
 
 if status is-interactive
     # locale
