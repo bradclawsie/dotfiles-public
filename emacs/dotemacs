@@ -37,9 +37,23 @@
 ;; go-mode requires goimports
 ;; vterm requires libvterm, cmake
 (setq package-selected-packages
-      '( company company-go fish-completion fish-mode flyspell-correct
-         go-mode lsp-mode lsp-ui magit markdown-mode pinentry
-         rustic toml-mode vterm yaml-mode yasnippet ))
+      '( company
+         company-go
+         dockerfile-mode
+         fish-completion
+         fish-mode
+         flyspell-correct
+         go-mode
+         lsp-mode
+         lsp-ui
+         magit
+         markdown-mode
+         pinentry
+         rustic
+         toml-mode
+         vterm
+         yaml-mode
+         yasnippet ))
 
 (setq package-native-compile t
       native-comp-async-report-warnings-errors nil
