@@ -123,6 +123,15 @@
 (add-hook 'eshell-mode-hook #'my-eshell-init)
 
 ;; -------------------------------------------------------------
+;; vterm
+
+(defun my-vterm-init ()
+  (setq-local show-trailing-whitespace nil)
+  (setq-local indicate-empty-lines nil))
+
+(add-hook 'vterm-mode-hook #'my-vterm-init)
+
+;; -------------------------------------------------------------
 ;; company
 (setq company-idle-delay 0)
 (setq company-minimum-prefix-length 1)
