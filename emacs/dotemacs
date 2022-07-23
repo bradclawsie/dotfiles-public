@@ -116,6 +116,8 @@
 (defun my-eshell-init ()
   "Function to run in new eshell buffers."
   (fish-completion-mode)
+  (setq-local show-trailing-whitespace nil)
+  (setq-local indicate-empty-lines nil)
   (setenv "TERM" "dumb-emacs-ansi")
   (setenv "GIT_PAGER" "cat")
   (setenv "PAGER" "cat"))
