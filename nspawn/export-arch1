@@ -1,5 +1,5 @@
 #!/bin/sh
-sudo machinectl export-tar /var/lib/machines/arch1 > arch1-export
+sudo machinectl export-tar arch1 > arch1-export
 mv arch1-export arch1-export.tar
 echo "gziping..."
 gzip arch1-export.tar
