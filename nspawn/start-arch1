@@ -1,3 +1,3 @@
-# make sure ./arch1 -> /var/lib/machines is a symlink
-sudo systemd-nspawn --bind=/var/local/nspawn-shared:/var/local/nspawn-shared -b -D ./arch1
+#!/bin/sh
+sudo systemd-nspawn --bind=/var/local/nspawn-shared:/var/local/nspawn-shared -b -D /var/lib/machines/arch1 -U --machine arch1
 
