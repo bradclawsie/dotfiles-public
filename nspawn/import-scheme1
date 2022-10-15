@@ -1,3 +1,0 @@
-# scheme1 should be tar-export, important file be named scheme1
-# as that is how it will be imported in /var/lib/machines
-sudo machinectl import-tar scheme1

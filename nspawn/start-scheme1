@@ -1,3 +1,0 @@
-# make sure ./scheme1 -> /var/lib/machines is a symlink
-sudo systemd-nspawn --bind=/var/local/nspawn-shared:/var/local/nspawn-shared -b -D ./scheme1
-
