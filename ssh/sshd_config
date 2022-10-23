@@ -4,5 +4,5 @@ PasswordAuthentication no
 ChallengeResponseAuthentication no
 PermitRootLogin no
 UsePAM yes
-Subsystem       sftp    /usr/lib/ssh/sftp-server
+Subsystem sftp /usr/lib/openssh/sftp-server
 AllowUsers brad
