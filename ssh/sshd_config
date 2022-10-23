@@ -1,0 +1,8 @@
+Port 512
+ListenAddress 0.0.0.0
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+PermitRootLogin no
+UsePAM yes
+Subsystem       sftp    /usr/lib/ssh/sftp-server
+AllowUsers brad
