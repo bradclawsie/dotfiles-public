@@ -1,14 +1,9 @@
 # perl
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
-set -gx GROKLOC_REPO $HOME/repos/grokloc-perl5
-set -gx GROKLOC_LIB_INC $GROKLOC_REPO/lib
-set -gx GROKLOC_SERVICE_INC $GROKLOC_REPO/service/app/lib
-set -gx GROKLOC_INCS $GROKLOC_LIB_INC:$GROKLOC_SERVICE_INC
-set -gx PERL5LIB $GROKLOC_INCS:$HOME/perl5/lib/perl5
 
-# paths
-set -gx PATH $HOME/bin:$HOME/perl5/bin:$HOME/go/bin:$HOME/.cargo/bin:/usr/bin/vendor_perl:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# system paths
+set -gx PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 # alias
 alias c="clear"
@@ -36,3 +31,19 @@ if status is-interactive
 
     clear
 end
+
+# local bin
+set --export PATH $HOME/bin $PATH
+
+# go
+set --export PATH $HOME/go/bin $PATH
+
+# cargo/rust
+set --export PATH $HOME/.cargo/bin $PATH
+
+# perl
+set --export PATH /usr/bin/vendor_perl $PATH
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
