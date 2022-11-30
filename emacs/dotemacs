@@ -252,5 +252,6 @@
 
 ;; -------------------------------------------------------------
 ;; server
+(pinentry-start)
 (display-time)
 (server-start)
