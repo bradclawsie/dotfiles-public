@@ -34,6 +34,7 @@
 
 ;; company-go requires gopls
 ;; flyspell-correct requires aspell, aspell-en
+;; pinentry requires pinentry
 ;; go-mode requires goimports
 ;; vterm requires libvterm, cmake
 (setq package-selected-packages
