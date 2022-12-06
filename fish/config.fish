@@ -1,6 +1,7 @@
 # perl
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
+set -gx PERL5LIB $HOME/perl5/lib/perl5
 
 # system paths
 set -gx PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -42,6 +43,7 @@ set --export PATH $HOME/go/bin $PATH
 set --export PATH $HOME/.cargo/bin $PATH
 
 # perl
+set --export PATH $HOME/perl5/bin $PATH
 set --export PATH /usr/bin/vendor_perl $PATH
 
 # bun
