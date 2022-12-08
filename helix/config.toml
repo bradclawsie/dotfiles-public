@@ -3,3 +3,20 @@ theme = "base16_default"
 [editor]
 shell = ["fish", "-c"]
 gutters = ["diagnostics"]
+auto-save = true
+
+[keys.normal]
+"0" = "goto_line_start"
+"$" = "goto_line_end"
+G = "goto_file_end"
+
+[keys.select]
+"0" = "goto_line_start"
+"$" = "goto_line_end"
+G = "goto_file_end"
+d = ["yank_main_selection_to_clipboard", "delete_selection"]
+x = ["yank_main_selection_to_clipboard", "delete_selection"]
+y = ["yank_main_selection_to_clipboard", "normal_mode", "flip_selections", "collapse_selection"]
+Y = ["extend_to_line_bounds", "yank_main_selection_to_clipboard", "goto_line_start", "collapse_selection", "normal_mode"]
+p = "replace_selections_with_clipboard"
+P = "paste_clipboard_before"
