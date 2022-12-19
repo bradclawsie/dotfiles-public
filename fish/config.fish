@@ -45,6 +45,7 @@ set --export PATH $HOME/.cargo/bin $PATH
 # perl
 set --export PATH $HOME/perl5/bin $PATH
 set --export PATH /usr/bin/vendor_perl $PATH
+set --export PATH /usr/bin/core_perl $PATH
 
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
