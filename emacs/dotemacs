@@ -182,13 +182,6 @@
 (add-to-list 'lsp-language-id-configuration '(".*\\.pl$" . "perl"))
 (add-to-list 'lsp-language-id-configuration '(".*\\.pm$" . "perl"))
 
-(defun override-perl-mode-indent ()
-  "override perl mode indent"
-  (setq perl-indent-level 2)
-  (setq perl-continued-brace-offset -2)
-  (setq perl-continued-statement-offset 2))
-(add-hook 'perl-mode-hook #'override-perl-mode-indent)
-
 ;; markdown, text
 ;; run auto-fill whenever editing
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
