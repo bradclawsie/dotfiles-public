@@ -9,11 +9,15 @@ Host b7j0c
 	HostName b7j0c.org
 	User brad
 	Port 512
+        IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
 
 Host grokloc
 	Hostname grokloc.com
 	User brad
 	Port 512
+        IdentityFile ~/.ssh/grokloc_ed25519_20230101
+	IdentitiesOnly yes
 
 Host arch0
 	Hostname arch0
@@ -24,36 +28,36 @@ Host grokloc-grokloc
 	HostName grokloc.com
 	User brad
 	Port 512
-	IdentityFile ~/.ssh/id_grokloc
+	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
 
 Host gitea-grokloc
 	HostName grokloc.com
 	User git
 	Port 512
-	IdentityFile ~/.ssh/id_grokloc
+	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
 
 Host sr.ht-grokloc
 	HostName git.sr.ht
 	User git
-	IdentityFile ~/.ssh/id_grokloc
+	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
 
 Host github-grokloc
 	HostName github.com
 	User git
-	IdentityFile ~/.ssh/id_grokloc
+	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
 
 Host gitlab-grokloc
 	HostName gitlab.com
 	User git
-	IdentityFile ~/.ssh/id_grokloc
+	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
 
 Host codeberg-grokloc
 	HostName codeberg.org
 	User git
-	IdentityFile ~/.ssh/id_grokloc
+	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
