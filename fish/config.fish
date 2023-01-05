@@ -36,6 +36,9 @@ end
 # local bin
 set --export PATH $HOME/bin $PATH
 
+# pager
+set --export PAGER moar
+
 # go
 set --export PATH $HOME/go/bin $PATH
 
