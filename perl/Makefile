@@ -21,7 +21,7 @@ export PERL_MM_USE_DEFAULT=1
 PHONY: brew
 brew: brew-pkgs
 	perlbrew init && \
-	perlbrew install perl-5.34.0 && \
+	perlbrew install perl-5.36.0 && \
 	cpan install App::cpanminus
 
 PHONY: brew-libs
