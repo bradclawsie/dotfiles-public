@@ -12,6 +12,8 @@ brew-pkgs:
 	sqlite3 \
 	libsqlite3-0 \
 	libsqlite3-dev \
+	libpq5 \
+	postgresql-client \
 	libgit2-dev
 
 export PERL_MM_USE_DEFAULT=1
