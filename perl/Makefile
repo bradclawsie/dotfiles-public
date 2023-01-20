@@ -42,6 +42,7 @@ libs:
 	Log::Log4perl::Layout::JSON \
 	Minion \
 	Minion::Backend::SQLite \
+	Moo \
 	Mojolicious \
 	Mojo::Pg \
 	Mojo::SQLite \
@@ -65,6 +66,8 @@ libs:
 	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
-	Test2::Suite
+	Test2::Suite \
+	Type::Tiny
+
 
 
