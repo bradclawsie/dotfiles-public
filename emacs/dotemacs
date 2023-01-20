@@ -33,6 +33,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 ;; company-go requires gopls
+;; docker is documented at https://github.com/Silex/docker.el
 ;; flyspell-correct requires aspell, aspell-en
 ;; pinentry requires pinentry
 ;; go-mode requires goimports
@@ -40,7 +41,9 @@
 (setq package-selected-packages
       '( company
          company-go
+         docker
          dockerfile-mode
+         elpl
          fish-completion
          fish-mode
          flyspell-correct
@@ -48,6 +51,7 @@
          lsp-mode
          lsp-ui
          magit
+         magit-delta
          markdown-mode
          perl-doc
          pinentry
@@ -97,6 +101,10 @@
 ;; highlight matching pairs of parentheses
 (setq show-paren-delay 0)
 (show-paren-mode)
+
+;; -------------------------------------------------------------
+;; magit addons
+(add-hook 'magit-mode-hook (lambda () (magit-delta-mode +1)))
 
 ;; -------------------------------------------------------------
 ;; ido
