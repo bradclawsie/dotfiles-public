@@ -2,7 +2,7 @@ PHONY: pkgs
 pkgs:
 	sudo pacman -S \
 	ca-certificates \
-	openssl
+	openssl \
 	readline \
 	sqlite \
 	postgresql-libs \
