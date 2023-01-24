@@ -45,6 +45,11 @@ set --export PATH $HOME/go/bin $PATH
 # cargo/rust
 set --export PATH $HOME/.cargo/bin $PATH
 
+# perlbrew, if used
+if test -e $HOME/perl5/perlbrew/etc/perlbrew.fish
+    source $HOME/perl5/perlbrew/etc/perlbrew.fish
+end
+
 # perl
 set --export PATH $HOME/perl5/bin $PATH
 set --export PATH /usr/bin/vendor_perl $PATH

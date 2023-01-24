@@ -44,6 +44,7 @@ libs:
 	Minion::Backend::SQLite \
 	Moo \
 	Mojolicious \
+	Mojo::Log::JSON \
 	Mojo::Pg \
 	Mojo::SQLite \
 	MooseX::Types::Structured \
