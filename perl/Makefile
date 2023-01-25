@@ -19,6 +19,7 @@ libs:
 	Crypt::Argon2 \
 	Crypt::JWT \
 	Data::Dumper \
+	DateTime \
 	DBD::SQLite \
 	DBI \
 	Devel::REPL \
