@@ -34,6 +34,7 @@ libs:
 	indirect \
 	IO::Socket::Socks \
 	IO::Socket::SSL \
+	Lang::Go::Mod \
 	List::AllUtils \
 	List::SomeUtils \
 	List::UtilsBy \
