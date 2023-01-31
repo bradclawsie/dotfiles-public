@@ -31,6 +31,7 @@ libs:
 	EV \
 	File::Slurp \
 	Future::AsyncAwait \
+	Future::IO \
 	Git::Raw \
 	indirect \
 	IO::Socket::Socks \
