@@ -30,6 +30,7 @@ libs:
 	Dist::Zilla::PluginBundle::Basic \
 	EV \
 	File::Slurp \
+	Future \
 	Future::AsyncAwait \
 	Future::IO \
 	Git::Raw \
