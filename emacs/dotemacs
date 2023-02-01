@@ -48,6 +48,9 @@
          fish-mode
          flyspell-correct
          go-mode
+         helm
+         helm-ag
+         helm-perldoc
          lsp-mode
          lsp-ui
          magit
@@ -105,6 +108,11 @@
 ;; -------------------------------------------------------------
 ;; magit addons
 (add-hook 'magit-mode-hook (lambda () (magit-delta-mode +1)))
+
+;; -------------------------------------------------------------
+;; helm
+(custom-set-variables
+ '(helm-ag-base-command "ack --nocolor --nogroup"))
 
 ;; -------------------------------------------------------------
 ;; ido
