@@ -65,6 +65,7 @@ libs:
 	Perl::Tidy::Sweetened \
 	Scalar::Util \
 	strictures \
+	Struct::Dumb \
 	Sub::Info \
 	Syntax::Keyword::Try \
 	Term::ReadLine::Gnu \
