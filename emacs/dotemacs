@@ -46,7 +46,9 @@
          elpl
          fish-completion
          fish-mode
+         flycheck-guile
          flyspell-correct
+         geiser-guile
          go-mode
          helm
          helm-ag
