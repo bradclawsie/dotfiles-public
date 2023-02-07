@@ -34,16 +34,16 @@ if status is-interactive
 end
 
 # local bin
-set --export PATH $HOME/bin $PATH
+set -gx PATH $HOME/bin $PATH
 
 # pager
-set --export PAGER moar
+set -gx PAGER moar
 
 # go
-set --export PATH $HOME/go/bin $PATH
+set -gx PATH $HOME/go/bin $PATH
 
 # cargo/rust
-set --export PATH $HOME/.cargo/bin $PATH
+set -gx PATH $HOME/.cargo/bin $PATH
 
 # perlbrew, if used
 if test -e $HOME/perl5/perlbrew/etc/perlbrew.fish
@@ -51,10 +51,6 @@ if test -e $HOME/perl5/perlbrew/etc/perlbrew.fish
 end
 
 # perl
-set --export PATH $HOME/perl5/bin $PATH
-set --export PATH /usr/bin/vendor_perl $PATH
-set --export PATH /usr/bin/core_perl $PATH
-
-# bun
-set --export BUN_INSTALL "$HOME/.bun"
-set --export PATH $BUN_INSTALL/bin $PATH
+set -gx PATH $HOME/perl5/bin $PATH
+set -gx PATH /usr/bin/vendor_perl $PATH
+set -gx PATH /usr/bin/core_perl $PATH
