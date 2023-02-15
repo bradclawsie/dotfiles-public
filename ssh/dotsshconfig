@@ -4,25 +4,19 @@ ForwardAgent yes
 ForwardX11 no
 StrictHostKeyChecking no
 KeepAlive yes
+IdentityFile ~/.ssh/id_ed25519_20230101
 
 Host b7j0c
 	HostName b7j0c.org
 	User brad
 	Port 512
-        IdentityFile ~/.ssh/id_ed25519_20230101
-	IdentitiesOnly yes
 
 Host grokloc
 	Hostname grokloc.com
 	User brad
-	Port 512
-        IdentityFile ~/.ssh/grokloc_ed25519_20230101
+	Port 512 
+	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
-
-Host arch0
-	Hostname arch0
-	User brad
-	Port 22
 
 Host grokloc-grokloc
 	HostName grokloc.com
