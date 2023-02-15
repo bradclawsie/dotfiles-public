@@ -37,18 +37,17 @@
 ;; flyspell-correct requires aspell, aspell-en
 ;; pinentry requires pinentry
 ;; go-mode requires goimports
+;; magit-delta requires git-delta
 ;; vterm requires libvterm, cmake
 (setq package-selected-packages
       '( company
          company-go
          docker
          dockerfile-mode
-         elpl
          fish-completion
          fish-mode
          flycheck-guile
          flyspell-correct
-         geiser-guile
          go-mode
          helm
          helm-ag
@@ -63,6 +62,7 @@
          pinentry
          rustic
          toml-mode
+         typescript-mode
          vterm
          yaml-mode
          yasnippet ))
@@ -193,6 +193,14 @@
   (add-hook 'before-save-hook #'lsp-format-buffer t t)
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
+
+;; typescript
+(add-hook 'typescript-mode-hook #'lsp-deferred)
+(add-hook 'typescript-mode-hook #'yas-minor-mode-on)
+
+(defun lsp-typescript-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
 
 ;; paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
