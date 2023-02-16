@@ -42,6 +42,7 @@
 (setq package-selected-packages
       '( company
          company-go
+         deno-fmt
          docker
          dockerfile-mode
          fish-completion
@@ -147,7 +148,6 @@
 
 ;; -------------------------------------------------------------
 ;; vterm
-
 (defun my-vterm-init ()
   (setq-local show-trailing-whitespace nil)
   (setq-local indicate-empty-lines nil))
@@ -194,13 +194,13 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
-;; typescript
+;; typescript/js/deno
 (add-hook 'typescript-mode-hook #'lsp-deferred)
 (add-hook 'typescript-mode-hook #'yas-minor-mode-on)
-
-(defun lsp-typescript-install-save-hooks ()
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'typescript-mode-hook 'deno-fmt-mode)
+(add-hook 'js2-mode-hook 'deno-fmt-mode)
+;; be like deno fmt
+(setq typescript-indent-level 2)
 
 ;; paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
@@ -228,25 +228,6 @@
 (add-hook 'rustic-mode-hook #'yas-minor-mode-on)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
 (global-set-key (kbd "<f8>") 'rustic-cargo-build)
-
-;; -------------------------------------------------------------
-;; proced
-(setq proced-auto-update-interval 3)
-
-(setq-default proced-auto-update-flag t
-              proced-tree-flag t
-              proced-format 'custom
-              proced-filter 'non-kernel)
-
-(with-eval-after-load 'proced
-  (add-to-list 'proced-format-alist
-               '(custom pid user nice pcpu pmem tree (args comm)))
-  (add-to-list 'proced-filter-alist
-               '(non-kernel
-                 (args . (lambda (arg)
-                           (not (string-match "\\`\\[.*]\\'" arg)))))))
-
-(add-hook 'proced-mode-hook #'set-header-fixed-pitch)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
