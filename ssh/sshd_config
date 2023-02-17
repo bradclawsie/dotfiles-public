@@ -1,11 +1,11 @@
-# Port 512
-# edit with
-#   systemctl edit sshd.socket
+Port 22
 ListenAddress 0.0.0.0
 PasswordAuthentication no
 ChallengeResponseAuthentication no
 PermitRootLogin no
 PermitEmptyPasswords no
+PubkeyAuthentication yes
 UsePAM yes
-Subsystem sftp /usr/lib/openssh/sftp-server
+Subsystem sftp /usr/lib/ssh/sftp-server
 AllowUsers brad
+

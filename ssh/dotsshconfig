@@ -1,5 +1,4 @@
 ConnectionAttempts 1
-FallBackToRsh no
 ForwardAgent yes
 ForwardX11 no
 StrictHostKeyChecking no
