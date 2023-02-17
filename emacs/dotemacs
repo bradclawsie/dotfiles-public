@@ -49,6 +49,7 @@
          fish-mode
          flycheck-guile
          flyspell-correct
+         git-modes
          go-mode
          helm
          helm-ag

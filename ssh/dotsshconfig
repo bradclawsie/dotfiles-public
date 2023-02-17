@@ -3,17 +3,40 @@ ForwardAgent yes
 ForwardX11 no
 StrictHostKeyChecking no
 KeepAlive yes
-IdentityFile ~/.ssh/id_ed25519_20230101
+
+# b7j0c
 
 Host b7j0c
 	HostName b7j0c.org
 	User brad
-	Port 512
+        Port 512
+        IdentityFile ~/.ssh/id_ed25519_20230101
+        IdentitiesOnly yes
+
+Host sr.ht
+	HostName git.sr.ht
+	User git
+	IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
+
+Host github
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
+
+Host gitlab
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
+
+# grokloc
 
 Host grokloc
 	Hostname grokloc.com
 	User brad
-	Port 512 
+	Port 512
 	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
 
