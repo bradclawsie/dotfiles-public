@@ -1,4 +1,6 @@
-Port 512
+# Port 512
+# edit with
+#   systemctl edit sshd.socket
 ListenAddress 0.0.0.0
 PasswordAuthentication no
 ChallengeResponseAuthentication no
