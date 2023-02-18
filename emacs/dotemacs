@@ -196,12 +196,13 @@
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
 ;; typescript/js/deno
+(add-hook 'typescript-mode-hook #'lsp)
 (add-hook 'typescript-mode-hook #'lsp-deferred)
+(add-hook 'typescript-mode-hook (lambda () (setq lsp-disabled-clients '(ts-ls)))) ;; play nice with deno
 (add-hook 'typescript-mode-hook #'yas-minor-mode-on)
 (add-hook 'typescript-mode-hook 'deno-fmt-mode)
 (add-hook 'js2-mode-hook 'deno-fmt-mode)
-;; be like deno fmt
-(setq typescript-indent-level 2)
+(setq typescript-indent-level 2) ;; like deno fmt
 
 ;; paredit
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
