@@ -1,3 +1,7 @@
 [[language]]
 name = "typescript"
 language-server = { command = "deno", args = ["lsp"] }
+
+[[language]]
+name = "dockerfile"
+file-types = ["Dockerfile", "Dockerfile.base", "Dockerfile.dev"]
