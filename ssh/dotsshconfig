@@ -9,9 +9,9 @@ KeepAlive yes
 Host b7j0c
 	HostName b7j0c.org
 	User brad
-        Port 512
-        IdentityFile ~/.ssh/id_ed25519_20230101
-        IdentitiesOnly yes
+	Port 512
+	IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
 
 Host sr.ht
 	HostName git.sr.ht
@@ -27,6 +27,12 @@ Host github
 
 Host gitlab
 	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
+
+Host codeberg
+	HostName codeberg.org
 	User git
 	IdentityFile ~/.ssh/id_ed25519_20230101
 	IdentitiesOnly yes
