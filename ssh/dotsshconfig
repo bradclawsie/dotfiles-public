@@ -53,13 +53,6 @@ Host grokloc-grokloc
 	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
 
-Host gitea-grokloc
-	HostName grokloc.com
-	User git
-	Port 512
-	IdentityFile ~/.ssh/grokloc_ed25519_20230101
-	IdentitiesOnly yes
-
 Host sr.ht-grokloc
 	HostName git.sr.ht
 	User git
