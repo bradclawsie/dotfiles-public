@@ -22,9 +22,9 @@ if status is-interactive
     set -gx SAVEHIST 10000
 
     # default editor
-    set -gx EDITOR helix
-    set -gx ALTERNATE_EDITOR helix
-    set -gx VISUAL helix
+    set -gx EDITOR emacs
+    set -gx ALTERNATE_EDITOR emacs
+    set -gx VISUAL emacs
 
     # gnupg
     set -gx GPG_TTY (tty)
