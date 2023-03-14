@@ -54,6 +54,7 @@ libs:
 	MooseX::Types::Structured \
 	MooseX::Extended \
 	multidimensional \
+	Neovim::Ext \
 	Net::SSLeay \
 	Object::Pad \
 	Perl::Critic \
