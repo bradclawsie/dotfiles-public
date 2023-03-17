@@ -22,9 +22,9 @@ if status is-interactive
     set -gx SAVEHIST 10000
 
     # default editor
-    set -gx EDITOR emacs
-    set -gx ALTERNATE_EDITOR emacs
-    set -gx VISUAL emacs
+    set -gx EDITOR nvim
+    set -gx ALTERNATE_EDITOR nvim
+    set -gx VISUAL nvim
 
     # gnupg
     set -gx GPG_TTY (tty)
