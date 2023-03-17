@@ -1,8 +1,3 @@
-# perl
-set -gx PERL_UNICODE AS
-set -gx PERL_READLINE_NOWARN yes
-set -gx PERL5LIB $HOME/perl5/lib/perl5
-
 # system paths
 set -gx PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
@@ -44,13 +39,3 @@ set -gx PATH $HOME/go/bin $PATH
 
 # cargo/rust
 set -gx PATH $HOME/.cargo/bin $PATH
-
-# perlbrew, if used
-if test -e $HOME/perl5/perlbrew/etc/perlbrew.fish
-    source $HOME/perl5/perlbrew/etc/perlbrew.fish
-end
-
-# perl
-set -gx PATH $HOME/perl5/bin $PATH
-set -gx PATH /usr/bin/vendor_perl $PATH
-set -gx PATH /usr/bin/core_perl $PATH
