@@ -39,3 +39,5 @@ set -gx PATH $HOME/go/bin $PATH
 
 # cargo/rust
 set -gx PATH $HOME/.cargo/bin $PATH
+
+starship init fish | source
