@@ -18,12 +18,20 @@ return {
                 prefix = "self",
               },
               cargo = {
+                allFeatures = true,
+                loadOutDirsFromCheck = true,
+                runBuildScripts = true,
                 buildScripts = {
                   enable = true,
                 },
               },
               procMacro = {
                 enable = true,
+              },
+              checkOnSave = {
+                allFeatures = true,
+                command = "clippy",
+                extraArgs = { "--no-deps" },
               },
             },
           },
