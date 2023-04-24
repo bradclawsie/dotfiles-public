@@ -8,7 +8,7 @@ return {
       servers = {
         rust_analyzer = {
           mason = false,
-          cmd = { vim.fn.expand("/usr/sbin/rust-analyzer") },
+          cmd = { vim.fn.expand("~/.cargo/bin/rust-analyzer") },
           settings = {
             ["rust-analyzer"] = {
               imports = {
