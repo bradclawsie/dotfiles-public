@@ -32,7 +32,7 @@ end
 set -gx PATH $HOME/bin $PATH
 
 # pager
-set -gx PAGER moar
+set -gx PAGER bat
 
 # go
 set -gx PATH $HOME/go/bin $PATH
