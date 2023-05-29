@@ -7,5 +7,6 @@
     "workbench.startupEditor": "none",
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
-    "terminal.integrated.fontSize": 24
+    "terminal.integrated.fontSize": 24,
+    "security.workspace.trust.untrustedFiles": "open"
 }
