@@ -3,5 +3,9 @@
     "editor.fontSize": 24,
     "editor.minimap.enabled": false,
     "scm.alwaysShowActions": true,
-    "terminal.external.linuxExec": "kitty"
+    "terminal.external.linuxExec": "kitty",
+    "workbench.startupEditor": "none",
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "block",
+    "terminal.integrated.fontSize": 24
 }
