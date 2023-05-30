@@ -40,4 +40,9 @@ set -gx PATH $HOME/go/bin $PATH
 # cargo/rust
 set -gx PATH $HOME/.cargo/bin $PATH
 
+# grokloc-related
+set -gx REPOSITORY_BASE /tmp
+set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
+
+# ui
 starship init fish | source
