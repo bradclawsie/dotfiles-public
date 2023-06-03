@@ -8,5 +8,9 @@
     "editor.cursorBlinking": "solid",
     "editor.cursorStyle": "block",
     "terminal.integrated.fontSize": 24,
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.restoreFullscreen": true,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.editor.untitled.hint": "hidden"
 }
