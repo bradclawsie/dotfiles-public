@@ -48,7 +48,7 @@ Host grokloc
 
 Host grokloc-grokloc
 	HostName grokloc.com
-	User brad
+	User grokloc
 	Port 512
 	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
