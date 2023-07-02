@@ -24,12 +24,13 @@
   smtpencryption = ssl
   smtpserverport = 465
   smtppass = GET FROM PASSWORD MANAGER
+  confirm = auto
 
 [pull]
   ff = only
 
 [init]
-	defaultBranch = master
+  defaultBranch = master
 
 [commit]
-	gpgSign = true
+  gpgSign = true
