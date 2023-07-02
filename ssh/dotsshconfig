@@ -19,6 +19,12 @@ Host sr.ht
 	IdentityFile ~/.ssh/id_ed25519_20230101
 	IdentitiesOnly yes
 
+Host git.sr.ht
+	HostName git.sr.ht
+	User git
+	IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
+
 Host github
 	HostName github.com
 	User git
