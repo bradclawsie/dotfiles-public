@@ -1,27 +1,35 @@
 [core]
-        pager = delta
+  pager = delta
 
 [interactive]
-        diffFilter = delta --color-only
+  diffFilter = delta --color-only
 
 [delta]
-        navigate = true  # use n and N to move between diff sections
+  navigate = true  # use n and N to move between diff sections
 
 [merge]
-        conflictstyle = diff3
+  conflictstyle = diff3
 
 [diff]
-        colorMoved = default
+  colorMoved = default
 
 [user]
-	name = Brad Clawsie
-	email = brad@b7j0c.org
-	signingkey = B1C1F1462CE76E5F2D994FB3D817E42DCCB5AB08
+  name = Brad Clawsie
+  email = brad@b7j0c.org
+  signingkey = B1C1F1462CE76E5F2D994FB3D817E42DCCB5AB08
+
+[sendmail]
+  smtpserver = smtp.fastmail.com
+  smtpuser = clawsie@fastmail.fm
+  smtpencryption = ssl
+  smtpserverport = 465
+  smtppass = GET FROM PASSWORD MANAGER
 
 [pull]
-	ff = only
+  ff = only
 
 [init]
 	defaultBranch = master
+
 [commit]
 	gpgSign = true
