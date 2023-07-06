@@ -5,6 +5,7 @@ set -gx PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 alias c="clear"
 alias h="history"
 alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
+alias glhut="hut --config=$HOME/.grokloc/.config/hut/config"
 
 if status is-interactive
     # locale
