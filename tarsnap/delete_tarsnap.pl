@@ -1,14 +1,14 @@
 #!/usr/bin/env perl
-use v5.32;
+use v5.36;
 use strict;
 use DateTime;
 
 my $ip_out = `ip -4 addr show`;
-die 'not actual b7j0c.org; not running' unless ($ip_out =~ /inet 144.202.72.212/);
+die 'not actual b7j0c.org; not running' unless ($ip_out =~ /inet 149.28.248.5/);
 
 my $dt = DateTime->now();
 $dt->set_time_zone('America/Chicago');
-my $prefix = 'b7j0cdebian_';
+my $prefix = 'b7j0c_';
 my $prefix_yyyymmdd = $prefix . $dt->ymd('');
 my $prefix_reserve_yyyymmdd = $prefix . $dt->subtract('days'=>1)->ymd('');
 say "today:\t\t" . $prefix_yyyymmdd;
