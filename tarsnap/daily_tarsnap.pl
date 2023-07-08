@@ -3,19 +3,16 @@ use v5.36;
 use strict;
 use DateTime;
 
-my $ip_out = `ip -4 addr show`;
-die 'not actual b7j0c.org; not running' unless ($ip_out =~ /inet 149.28.248.5/);
-
 my $dt = DateTime->now();
 $dt->set_time_zone('America/Chicago');
-my $prefix = 'b7j0c_';
+my $prefix = 'arch_';
 my $prefix_yyyymmdd = $prefix . $dt->ymd('');
 my $prefix_reserve_yyyymmdd = $prefix . $dt->subtract('days'=>1)->ymd('');
 say "today:\t\t" . $prefix_yyyymmdd;
 say "yesterday:\t" . $prefix_reserve_yyyymmdd;
 my $tarsnap = 'tarsnap --cachedir /root/tarsnap-cache --keyfile /root/tarsnap.key';
 my $list_archives = `$tarsnap --list-archives`;
-my $backup_paths = '/home /usr/local/www';
+my $backup_paths = '/home';
 my $excludes = '';
 chomp($list_archives);
 my @archives = split(/\n/,$list_archives);
