@@ -6,6 +6,7 @@ alias c="clear"
 alias h="history"
 alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
 alias glhut="hut --config=$HOME/.grokloc/.config/hut/config"
+alias format-patch="git format-patch --subject-prefix="PATCH" -o ~/patches HEAD^"
 
 if status is-interactive
     # locale
