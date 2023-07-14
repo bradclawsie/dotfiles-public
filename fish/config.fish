@@ -48,3 +48,8 @@ set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
 
 # ui
 starship init fish | source
+
+# rakubrew
+$HOME/.rakubrew/bin/rakubrew init Fish | source
+set -gx PATH $HOME/.rakubrew/bin $PATH
+set -gx RAKUBREW_HOME $HOME/.rakubrew
