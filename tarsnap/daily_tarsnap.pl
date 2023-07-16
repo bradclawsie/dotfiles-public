@@ -10,10 +10,10 @@ my $prefix_yyyymmdd = $prefix . $dt->ymd('');
 my $prefix_reserve_yyyymmdd = $prefix . $dt->subtract('days'=>1)->ymd('');
 say "today:\t\t" . $prefix_yyyymmdd;
 say "yesterday:\t" . $prefix_reserve_yyyymmdd;
-my $tarsnap = 'tarsnap --cachedir /root/tarsnap-cache --keyfile /root/tarsnap.key';
+my $tarsnap = 'tarsnap --cachedir=/root/tarsnap-cache --keyfile=/root/tarsnap.key';
 my $list_archives = `$tarsnap --list-archives`;
-my $backup_paths = '/home';
-my $excludes = '';
+my $backup_paths = '/home/brad/repos /home/brad/.ssh /home/brad/.gnupg /home/brad/.random /home/brad/.passage';
+my $excludes = '--exclude=/home/brad/repos/aur --exclude=target';
 chomp($list_archives);
 my @archives = split(/\n/,$list_archives);
 my $make_yyyymmdd = 1;
@@ -27,7 +27,7 @@ for my $archive (@archives) {
 my $tarsnap_cmd = '';
 if (1 == $make_yyyymmdd) {
     say "make for today";
-    my $yyyymmdd_cmd = $tarsnap . ' -c -f ' . $prefix_yyyymmdd . ' ' . $backup_paths . ' ' . $excludes;
+    my $yyyymmdd_cmd = $tarsnap . ' -c -f ' . $prefix_yyyymmdd . ' ' . $excludes . ' ' . $backup_paths;
     say $yyyymmdd_cmd;
     $tarsnap_cmd = $yyyymmdd_cmd . ';';
 }
