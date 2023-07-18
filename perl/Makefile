@@ -22,13 +22,11 @@ libs:
 	DateTime \
 	DBD::SQLite \
 	DBI \
-	Devel::REPL \
 	Dist::Zilla \
 	Dist::Zilla::Plugin::GitHub::Meta \
 	Dist::Zilla::Plugin::Git::Contributors \
 	Dist::Zilla::Plugin::RewriteVersion \
 	Dist::Zilla::PluginBundle::Basic \
-	EV \
 	File::Slurp \
 	Future \
 	Future::AsyncAwait \
@@ -37,7 +35,6 @@ libs:
 	indirect \
 	IO::Socket::Socks \
 	IO::Socket::SSL \
-	Lang::Go::Mod \
 	List::AllUtils \
 	List::SomeUtils \
 	List::UtilsBy \
@@ -46,13 +43,10 @@ libs:
 	Log::Log4perl::Layout::JSON \
 	Minion \
 	Minion::Backend::SQLite \
-	Moo \
 	Mojolicious \
 	Mojo::Log::JSON \
 	Mojo::Pg \
 	Mojo::SQLite \
-	MooseX::Types::Structured \
-	MooseX::Extended \
 	multidimensional \
 	Neovim::Ext \
 	Net::SSLeay \
@@ -67,14 +61,12 @@ libs:
 	Perl::Tidy::Sweetened \
 	Scalar::Util \
 	strictures \
-	Struct::Dumb \
 	Sub::Info \
 	Syntax::Keyword::Try \
 	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
-	Test2::Suite \
-	Type::Tiny
+	Test2::Suite 
 
 
 
