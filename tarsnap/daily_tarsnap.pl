@@ -13,7 +13,7 @@ say "yesterday:\t" . $prefix_reserve_yyyymmdd;
 my $tarsnap = 'tarsnap --cachedir=/root/tarsnap-cache --keyfile=/root/tarsnap.key';
 my $list_archives = `$tarsnap --list-archives`;
 my $backup_paths = '/home/brad/repos /home/brad/.ssh /home/brad/.gnupg /home/brad/.random /home/brad/.passage';
-my $excludes = '--exclude=/home/brad/repos/aur --exclude=target';
+my $excludes = '--exclude=/home/brad/repos/aur --exclude=target --exclude=/home/brad/perl5';
 chomp($list_archives);
 my @archives = split(/\n/,$list_archives);
 my $make_yyyymmdd = 1;
