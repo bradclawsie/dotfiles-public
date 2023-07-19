@@ -1,0 +1,39 @@
+severity = 1
+[-Bangs::ProhibitNumberedNames]
+[-BuiltinFunctions::ProhibitUniversalIsa]
+[-CodeLayout::ProhibitParensWithBuiltins]
+[-CodeLayout::RequireFinalSemicolon]
+[-CodeLayout::RequireTidyCode]
+[-Community::DiscouragedModules]
+[-Community::PreferredAlternatives]
+[-Compatibility::PodMinimumVersion]
+[-ControlStructures::ProhibitCascadingIfElse]
+[ControlStructures::ProhibitPostfixControls]
+allow = for if unless
+[-ControlStructures::ProhibitUnlessBlocks]
+[-Documentation::RequirePodSections]
+[-Freenode::DiscouragedModules]
+[-Freenode::PreferredAlternatives]
+[InputOutput::RequireCheckedSyscalls]
+functions = :builtins
+exclude_functions = print
+[Modules::ProhibitExcessMainComplexity]
+max_mccabe = 50
+[-Modules::RequireEndWithOne]
+[-Modules::RequireExplicitInclusion]
+[NamingConventions::ProhibitAmbiguousNames]
+forbid = abstract bases close contract last left no record right second
+[-RegularExpressions::RequireDotMatchAnything]
+[-RegularExpressions::RequireLineBoundaryMatching]
+[-Subroutines::ProhibitBuiltinHomonyms]
+[Subroutines::ProhibitExcessComplexity]
+max_mccabe = 50
+[-Subroutines::ProhibitSubroutinePrototypes]
+[-Subroutines::ProhibitExplicitReturnUndef]
+[-Subroutines::ProhibitCallsToUndeclaredSubs]
+[-Subroutines::ProhibitCallsToUnexportedSubs]
+[-Subroutines::RequireFinalReturn]
+[-TooMuchCode::ProhibitDuplicateLiteral]
+[ValuesAndExpressions::ProhibitMagicNumbers]
+allowed_values = -1000..1000
+
