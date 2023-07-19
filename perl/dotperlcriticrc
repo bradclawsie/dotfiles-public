@@ -36,4 +36,5 @@ max_mccabe = 50
 [-TooMuchCode::ProhibitDuplicateLiteral]
 [ValuesAndExpressions::ProhibitMagicNumbers]
 allowed_values = -1000..1000
+[-ValuesAndExpressions::ProhibitVersionStrings]
 
