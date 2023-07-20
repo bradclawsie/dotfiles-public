@@ -21,6 +21,7 @@ exclude_functions = print
 max_mccabe = 50
 [-Modules::RequireEndWithOne]
 [-Modules::RequireExplicitInclusion]
+[-Modules::RequireExplicitPackage]
 [NamingConventions::ProhibitAmbiguousNames]
 forbid = abstract bases close contract last left no record right second
 [-RegularExpressions::RequireDotMatchAnything]
