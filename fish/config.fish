@@ -57,8 +57,8 @@ set -gx RAKUBREW_HOME $HOME/.rakubrew
 # perl vars
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
-set -gx PERL5LIB $HOME/perl5/lib/perl5
-
+set -gx LOCAL_PERL5 $HOME/perl5/perlbrew/perls/perl-5.38.0
+set -gx PERL5LIB $LOCAL_PERL5/lib
 
 # perlbrew, if used
 if test -e $HOME/perl5/perlbrew/etc/perlbrew.fish
@@ -66,6 +66,6 @@ if test -e $HOME/perl5/perlbrew/etc/perlbrew.fish
 end
 
 # perl paths
-set -gx PATH $HOME/perl5/bin $PATH
 set -gx PATH /usr/bin/vendor_perl $PATH
 set -gx PATH /usr/bin/core_perl $PATH
+set -gx PATH $LOCAL_PERL5/bin $PATH

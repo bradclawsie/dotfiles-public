@@ -59,6 +59,7 @@ libs:
 	Perl::LanguageServer \
 	Perl::Tidy \
 	Perl::Tidy::Sweetened \
+	Pod::Perldoc \
 	Scalar::Util \
 	strictures \
 	Sub::Info \
