@@ -16,7 +16,7 @@ allow = for if unless
 [-Freenode::PreferredAlternatives]
 [InputOutput::RequireCheckedSyscalls]
 functions = :builtins
-exclude_functions = print
+exclude_functions = print say
 [Modules::ProhibitExcessMainComplexity]
 max_mccabe = 50
 [-Modules::RequireEndWithOne]
