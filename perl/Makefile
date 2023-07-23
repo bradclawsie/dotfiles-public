@@ -47,7 +47,9 @@ libs:
 	Mojo::Log::JSON \
 	Mojo::Pg \
 	Mojo::SQLite \
+	Moo \
 	multidimensional \
+	namespace::autoclean \
 	Neovim::Ext \
 	Net::SSLeay \
 	Object::Pad \
@@ -67,7 +69,8 @@ libs:
 	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
-	Test2::Suite 
+	Test2::Suite \
+	Type::Tiny
 
 
 
