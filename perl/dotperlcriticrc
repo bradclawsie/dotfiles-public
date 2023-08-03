@@ -34,6 +34,7 @@ max_mccabe = 50
 [-Subroutines::ProhibitExplicitReturnUndef]
 [-Subroutines::ProhibitCallsToUndeclaredSubs]
 [-Subroutines::ProhibitCallsToUnexportedSubs]
+[-Subroutines::ProhibitManyArgs]
 [-Subroutines::RequireFinalReturn]
 [-TestingAndDebugging::ProhibitNoWarnings]
 [-TooMuchCode::ProhibitDuplicateLiteral]
@@ -41,4 +42,3 @@ max_mccabe = 50
 allowed_values = -1000..1000
 [-ValuesAndExpressions::ProhibitVersionStrings]
 [-ValuesAndExpressions::RequireInterpolationOfMetachars]
-
