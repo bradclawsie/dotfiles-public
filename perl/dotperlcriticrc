@@ -41,4 +41,5 @@ max_mccabe = 50
 [ValuesAndExpressions::ProhibitMagicNumbers]
 allowed_values = -1000..1000
 [-ValuesAndExpressions::ProhibitVersionStrings]
+[-ValuesAndExpressions::ProhibitLongChainsOfMethodCalls]
 [-ValuesAndExpressions::RequireInterpolationOfMetachars]
