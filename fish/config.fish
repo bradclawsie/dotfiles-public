@@ -52,13 +52,8 @@ starship init fish | source
 # perl vars
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
-set -gx LOCAL_PERL5 $HOME/perl5/perlbrew/perls/perl-5.38.0
-set -gx PERL5LIB $LOCAL_PERL5/lib
-
-# perlbrew, if used
-if test -e $HOME/perl5/perlbrew/etc/perlbrew.fish
-    source $HOME/perl5/perlbrew/etc/perlbrew.fish
-end
+set -gx LOCAL_PERL5 $HOME/perl5
+set -gx PERL5LIB $LOCAL_PERL5/lib/perl5
 
 # perl paths
 set -gx PATH /usr/bin/vendor_perl $PATH
