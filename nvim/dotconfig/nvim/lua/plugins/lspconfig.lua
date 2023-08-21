@@ -6,9 +6,6 @@ return {
     },
     opts = {
       servers = {
-	dartls = {         
-          cmd = { "dart", "language-server", "--protocol=lsp" },       
-        },  
         rust_analyzer = {
           mason = false,
           cmd = { vim.fn.expand("~/.cargo/bin/rust-analyzer") },
