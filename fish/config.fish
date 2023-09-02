@@ -19,9 +19,9 @@ if status is-interactive
     set -gx SAVEHIST 10000
 
     # default editor
-    set -gx EDITOR nvim
+    set -gx EDITOR helix
     set -gx ALTERNATE_EDITOR nvim
-    set -gx VISUAL nvim
+    set -gx VISUAL helix
 
     # gnupg
     set -gx GPG_TTY (tty)
