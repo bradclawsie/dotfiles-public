@@ -20,7 +20,7 @@ if status is-interactive
 
     # default editor
     set -gx EDITOR helix
-    set -gx ALTERNATE_EDITOR nvim
+    set -gx ALTERNATE_EDITOR nano
     set -gx VISUAL helix
 
     # gnupg
