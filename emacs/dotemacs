@@ -38,16 +38,13 @@
 ;; pinentry requires pinentry
 ;; go-mode requires goimports
 ;; magit-delta requires git-delta
-;; vterm requires libvterm, cmake
 (setq package-selected-packages
       '( company
          company-go
-         deno-fmt
          docker
          dockerfile-mode
          fish-completion
          fish-mode
-         flycheck-guile
          flyspell-correct
          git-modes
          go-mode
@@ -59,20 +56,16 @@
          magit
          magit-delta
          markdown-mode
-         paredit
          perl-doc
          pinentry
          rustic
          toml-mode
-         typescript-mode
-         vterm
          yaml-mode
          yasnippet ))
 
 (setq package-native-compile t
       native-comp-async-report-warnings-errors nil
-      package-quickstart t
-      vterm-always-compile-module t)
+      package-quickstart t)
 
 (unless (seq-every-p #'package-installed-p package-selected-packages)
   (package-refresh-contents)
@@ -148,14 +141,6 @@
 (add-hook 'eshell-mode-hook #'my-eshell-init)
 
 ;; -------------------------------------------------------------
-;; vterm
-(defun my-vterm-init ()
-  (setq-local show-trailing-whitespace nil)
-  (setq-local indicate-empty-lines nil))
-
-(add-hook 'vterm-mode-hook #'my-vterm-init)
-
-;; -------------------------------------------------------------
 ;; company
 (setq company-idle-delay 0)
 (setq company-minimum-prefix-length 1)
@@ -195,30 +180,13 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
-;; typescript/js/deno
-(add-hook 'typescript-mode-hook #'lsp)
-(add-hook 'typescript-mode-hook #'lsp-deferred)
-(add-hook 'typescript-mode-hook (lambda () (setq lsp-disabled-clients '(ts-ls)))) ;; play nice with deno
-(add-hook 'typescript-mode-hook #'yas-minor-mode-on)
-(add-hook 'typescript-mode-hook 'deno-fmt-mode)
-(add-hook 'js2-mode-hook 'deno-fmt-mode)
-(setq typescript-indent-level 2) ;; like deno fmt
-
-;; paredit
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-
 ;; perl
 (add-to-list 'auto-mode-alist '("\\.\\(p\\([lm]\\)\\)\\'" . perl-mode))
 (add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
 (add-to-list 'lsp-language-id-configuration '(perl-mode . "perl"))
 (add-to-list 'lsp-language-id-configuration '(".*\\.pl$" . "perl"))
 (add-to-list 'lsp-language-id-configuration '(".*\\.pm$" . "perl"))
+(setq perl-indent-level 2)
 
 ;; markdown, text
 ;; run auto-fill whenever editing

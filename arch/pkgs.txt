@@ -17,6 +17,8 @@ apr 1.7.3-1
 apr-util 1.6.3-1
 archlinux-keyring 20230918-1
 argon2 20190702-5
+aspell 0.60.8-3
+aspell-en 2020.12.07-1
 at-spi2-core 2.50.0-1
 atkmm 2.28.3-1
 attr 2.5.1-3
@@ -47,7 +49,7 @@ c-ares 1.19.1-1
 ca-certificates 20220905-1
 ca-certificates-mozilla 3.93-1
 ca-certificates-utils 20220905-1
-cairo 1.17.8-2
+cairo 1.18.0-1
 cairomm 1.14.4-1
 cantarell-fonts 1:0.303.1-1
 ccid 1.5.2-1
@@ -95,6 +97,7 @@ editorconfig-core-c 0.12.6-1
 efibootmgr 18-2
 efivar 38-3
 ell 0.58-1
+emacs-nox 29.1-4
 enchant 2.5.0-1
 eog 44.3-1
 epiphany 44.7-1
@@ -179,7 +182,7 @@ gnome-music 1:44.0-2
 gnome-online-accounts 3.48.0-2
 gnome-photos 1:44.0-3
 gnome-remote-desktop 44.2-1
-gnome-session 44.0-1
+gnome-session 44.0-2
 gnome-settings-daemon 44.1-1
 gnome-shell 1:44.5-1
 gnome-shell-extensions 44.0-1
@@ -261,7 +264,7 @@ iio-sensor-proxy 3.5-1
 ijs 0.35-5
 imagemagick 7.1.1.18-1
 imath 3.1.9-2
-imlib2 1.12.0-1
+imlib2 1.12.1-1
 iniparser 4.1-4
 intel-gmmlib 22.3.11-1
 intel-media-driver 23.3.3-1
@@ -533,7 +536,7 @@ libyaml 0.2.5-2
 libyuv r2322+3aebf69d-1
 licenses 20230917-1
 lilv 0.24.20-2
-linux 6.5.4.arch2-1
+linux 6.5.5.arch1-1
 linux-api-headers 6.4-1
 linux-firmware 20230804.7be2766d-2
 linux-firmware-whence 20230804.7be2766d-2
@@ -744,6 +747,7 @@ tpm2-tss 4.0.1-1
 tracker3 3.6.0-1
 tracker3-miners 3.6.0-1
 tree 2.1.1-1
+tree-sitter 0.20.10-2
 ttf-fira-code 6.2-2
 ttf-firacode-nerd 3.0.2-1
 ttf-liberation 2.1.5-1
