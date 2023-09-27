@@ -38,7 +38,8 @@
 ;; go-mode requires goimports
 ;; magit-delta requires git-delta
 (setq package-selected-packages
-      '( company
+      '( color-theme-modern
+         company
          company-go
          dockerfile-mode
          fish-completion
@@ -253,6 +254,10 @@
 
 ;; -------------------------------------------------------------
 ;; server
+
+(load-theme 'dark-laptop t t)
+ (enable-theme 'dark-laptop)
+
 (pinentry-start)
 (display-time)
 (server-start)
