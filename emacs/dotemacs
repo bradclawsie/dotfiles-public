@@ -186,19 +186,7 @@
 ;; perl
 (add-to-list 'auto-mode-alist '("\\.\\(p\\([lm]\\)\\)\\'" . perl-mode))
 (add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
-(add-to-list 'lsp-language-id-configuration '(perl-mode . "perl"))
-(add-to-list 'lsp-language-id-configuration '(cperl-mode . "perl"))
-(add-to-list 'lsp-language-id-configuration '(".*\\.pl$" . "perl"))
-(add-to-list 'lsp-language-id-configuration '(".*\\.pm$" . "perl"))
 (setq perl-indent-level 2)
-
-;; perlnavigator
-(lsp-register-client
-(make-lsp-client :new-connection (lsp-stdio-connection '("node" "/usr/lib/node_modules/perlnavigator-server/out/server.js" "--stdio"))
-;; :activation-fn (lsp-activate-on "perl")
-:major-modes '(cperl-mode perl-mode)
-:priority 10
-:server-id 'perl-ls))
 
 ;; markdown, text
 ;; run auto-fill whenever editing
