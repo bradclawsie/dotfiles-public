@@ -39,6 +39,7 @@ libs:
 	List::SomeUtils \
 	List::UtilsBy \
 	List::MoreUtils \
+	Log::Dispatch \
 	Log::Log4perl \
 	Log::Log4perl::Layout::JSON \
 	Minion \
