@@ -183,7 +183,7 @@
   (add-hook 'before-save-hook #'lsp-organize-imports t t))
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
-;; perl
+;; perl/cperl
 (add-to-list 'major-mode-remap-alist '(perl-mode . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.\\(p\\([lm]\\)\\)\\'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
