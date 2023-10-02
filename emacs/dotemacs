@@ -184,8 +184,9 @@
 (add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
 ;; perl
-(add-to-list 'auto-mode-alist '("\\.\\(p\\([lm]\\)\\)\\'" . perl-mode))
-(add-to-list 'auto-mode-alist '("\\.t\\'" . perl-mode))
+(add-to-list 'major-mode-remap-alist '(perl-mode . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(p\\([lm]\\)\\)\\'" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
 (setq perl-indent-level 2)
 
 ;; markdown, text
