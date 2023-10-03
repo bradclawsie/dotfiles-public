@@ -9,3 +9,4 @@ config = { "formatting.gofumpt" = true, "ui.diagnostic.staticcheck" = true }
 [[language]]
 name = "perl"
 file-types = ["t", "pl", "pm"]
+indent = { tab-width = 2, unit = "  " }
