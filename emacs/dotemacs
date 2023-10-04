@@ -58,6 +58,7 @@
          perl-doc
          pinentry
          rustic
+         sublime-themes
          toml-mode
          yaml-mode
          yasnippet ))
@@ -188,6 +189,7 @@
 (add-to-list 'auto-mode-alist '("\\.\\(p\\([lm]\\)\\)\\'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.t\\'" . cperl-mode))
 (setq perl-indent-level 2)
+(setq cperl-hairy t)
 
 ;; markdown, text
 ;; run auto-fill whenever editing
@@ -244,8 +246,9 @@
 ;; -------------------------------------------------------------
 ;; server
 
-(load-theme 'dark-laptop t t)
- (enable-theme 'dark-laptop)
+;; previously - dark-laptop
+(load-theme 'spolsky t t)
+ (enable-theme 'spolsky)
 
 (pinentry-start)
 (display-time)
