@@ -59,3 +59,6 @@ set -gx PERL5LIB $LOCAL_PERL5/lib/perl5
 set -gx PATH /usr/bin/vendor_perl $PATH
 set -gx PATH /usr/bin/core_perl $PATH
 set -gx PATH $LOCAL_PERL5/bin $PATH
+
+# rakubrew
+$HOME/.rakubrew/bin/rakubrew init Fish | source
