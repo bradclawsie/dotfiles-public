@@ -7,3 +7,4 @@ libs:
 	zef install --force-install UUID::V4
 	zef install --force-install String::CRC32
 	zef install --force-install Subsets::Common
+	zef install --force-install Crypt::Argon2
