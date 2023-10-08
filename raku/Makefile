@@ -8,3 +8,5 @@ libs:
 	zef install --force-install String::CRC32
 	zef install --force-install Subsets::Common
 	zef install --force-install Crypt::Argon2
+	zef install --force-install Net::Postgres
+	zef install --force-install Humming-Bird
