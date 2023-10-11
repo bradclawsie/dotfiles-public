@@ -10,3 +10,4 @@ libs:
 	zef install --force-install Crypt::Argon2
 	zef install --force-install Net::Postgres
 	zef install --force-install Humming-Bird
+	zef install --force-install JSON::Tiny
