@@ -63,3 +63,6 @@ set -gx PATH $LOCAL_PERL5/bin $PATH
 
 # rakubrew
 $HOME/.rakubrew/bin/rakubrew init Fish | source
+
+# gerbil
+set -gx PATH /opt/gerbil/bin $PATH
