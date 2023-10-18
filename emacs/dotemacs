@@ -205,6 +205,7 @@
 (global-set-key (kbd "<f8>") 'rustic-cargo-build)
 
 ;;; gerbil
+(load "~/.emacs.d/gerbil-mode.el")
 (autoload 'gerbil-mode "gerbil-mode" "Gerbil editing mode." t)
 (load "~/.emacs.d/gambit.el")
 (add-hook 'inferior-scheme-mode-hook 'gambit-inferior-mode)
@@ -220,6 +221,7 @@
 (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
 (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+(add-hook 'gerbil-mode-hook           #'enable-paredit-mode)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
