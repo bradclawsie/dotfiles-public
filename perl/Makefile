@@ -18,6 +18,7 @@ libs:
 	CryptX \
 	Crypt::Argon2 \
 	Crypt::JWT \
+	Crypt::Random \
 	Data::Dumper \
 	DateTime \
 	DBD::SQLite \
