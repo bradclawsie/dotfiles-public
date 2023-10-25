@@ -55,7 +55,6 @@
          magit
          magit-delta
          markdown-mode
-         paredit
          perl-doc
          pinentry
          rustic
@@ -202,25 +201,6 @@
 (add-hook 'rustic-mode-hook #'yas-minor-mode-on)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
 (global-set-key (kbd "<f8>") 'rustic-cargo-build)
-
-;;; gerbil
-(load "~/.emacs.d/gerbil-mode.el")
-(autoload 'gerbil-mode "gerbil-mode" "Gerbil editing mode." t)
-(load "~/.emacs.d/gambit.el")
-(add-hook 'inferior-scheme-mode-hook 'gambit-inferior-mode)
-(defvar gerbil-program-name
-  (expand-file-name "/opt/gerbil/bin/gxi")) 
-(setq scheme-program-name gerbil-program-name)
-
-;;; paredit
-(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
-(add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
-(add-hook 'ielm-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             #'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-(add-hook 'gerbil-mode-hook           #'enable-paredit-mode)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
