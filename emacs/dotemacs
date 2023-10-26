@@ -41,6 +41,7 @@
       '( color-theme-modern
          company
          company-go
+         d-mode
          dockerfile-mode
          fish-completion
          fish-mode
