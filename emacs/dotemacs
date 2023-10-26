@@ -58,7 +58,6 @@
          markdown-mode
          perl-doc
          pinentry
-         rustic
          sublime-themes
          toml-mode
          yaml-mode
@@ -196,12 +195,6 @@
 ;; run auto-fill whenever editing
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 (add-hook 'text-mode-hook #'auto-fill-mode)
-
-;;; rust
-(setq rustic-format-on-save t)
-(add-hook 'rustic-mode-hook #'yas-minor-mode-on)
-(global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
-(global-set-key (kbd "<f8>") 'rustic-cargo-build)
 
 ;;; d
 (add-hook 'd-mode-hook #'electric-pair-mode)
