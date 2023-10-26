@@ -4,7 +4,7 @@ file-types = ["Dockerfile", "Dockerfile.base", "Dockerfile.dev"]
 
 [[language]]
 name = "go"
-config = { "formatting.gofumpt" = true, "ui.diagnostic.staticcheck" = true }
+formatter = { command = "gofumpt" }
 
 [[language]]
 name = "perl"
