@@ -80,8 +80,6 @@
 (global-set-key (kbd "<f4>") 'eshell)
 (global-set-key (kbd "<f5>") 'rename-buffer)
 ;; f6 assigned to a function below
-;; f7 reserved for rust testing below
-;; f8 reserved for rust compilation below
 (fset 'switchbuffers
    [?\C-x ?b])
 (global-set-key (kbd "C-c b") 'switchbuffers)
