@@ -41,6 +41,7 @@
       '( color-theme-modern
          company
          company-go
+         d-mode
          dockerfile-mode
          fish-completion
          fish-mode
@@ -192,6 +193,9 @@
 ;; run auto-fill whenever editing
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 (add-hook 'text-mode-hook #'auto-fill-mode)
+
+;;; d
+(add-hook 'd-mode-hook #'electric-pair-mode)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
