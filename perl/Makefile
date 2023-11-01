@@ -20,6 +20,7 @@ libs:
 	Crypt::JWT \
 	Crypt::Random \
 	Data::Dumper \
+	Data::TreeDumper \
 	DateTime \
 	DBD::SQLite \
 	DBI \
