@@ -1,0 +1,4 @@
+librewolf-bin
+passage-git
+piavpn-bin
+tor-browser

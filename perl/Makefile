@@ -3,9 +3,8 @@ pkgs:
 	sudo pacman -S \
 	ca-certificates \
 	openssl \
-	readline \
-	sqlite \
 	postgresql-libs \
+	sqlite \
 	libgit2
 
 PHONY: libs
@@ -13,15 +12,13 @@ libs:
 	cpanm -n \
 	App::Ack \
 	App::perlimports \
-	bareword::filehandles \
 	Cpanel::JSON::XS \
 	CryptX \
 	Crypt::Argon2 \
 	Crypt::JWT \
 	Crypt::Random \
-	Data::Dumper \
-	Data::TreeDumper \
 	DateTime \
+	DBD::Pg \
 	DBD::SQLite \
 	DBI \
 	Dist::Zilla \
@@ -30,50 +27,25 @@ libs:
 	Dist::Zilla::Plugin::RewriteVersion \
 	Dist::Zilla::PluginBundle::Basic \
 	File::Slurp \
-	Future \
-	Future::AsyncAwait \
-	Future::IO \
 	Git::Raw \
-	indirect \
 	IO::Socket::Socks \
 	IO::Socket::SSL \
 	List::AllUtils \
-	List::SomeUtils \
-	List::UtilsBy \
-	List::MoreUtils \
-	Log::Dispatch \
-	Log::Log4perl \
-	Log::Log4perl::Layout::JSON \
-	Minion \
-	Minion::Backend::SQLite \
 	Mojolicious \
 	Mojo::Log::JSON \
 	Mojo::Pg \
 	Mojo::SQLite \
-	Moo \
-	multidimensional \
-	namespace::autoclean \
-	Neovim::Ext \
-	Net::SSLeay \
-	Object::Pad \
 	Perl::Critic \
 	Perl::Critic::TooMuchCode \
 	Perl::Critic::StricterSubs \
 	Perl::Critic::Community \
 	Perl::Critic::Bangs \
-	Perl::LanguageServer \
 	Perl::Tidy \
 	Perl::Tidy::Sweetened \
 	Pod::Perldoc \
 	Scalar::Util \
 	strictures \
-	Sub::Info \
 	Syntax::Keyword::Try \
-	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
-	Test2::Suite \
-	Type::Tiny
-
-
-
+	Test2::Suite
