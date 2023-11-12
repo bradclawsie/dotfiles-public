@@ -41,10 +41,12 @@
       '( color-theme-modern
          company
          company-go
+         consult
          dockerfile-mode
          fish-completion
          fish-mode
          flyspell-correct
+         geiser-chicken
          git-modes
          go-mode
          helm
@@ -55,6 +57,7 @@
          magit
          magit-delta
          markdown-mode
+         paredit
          perl-doc
          pinentry
          rustic
@@ -200,6 +203,13 @@
 (add-hook 'rustic-mode-hook #'electric-pair-mode)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
 (global-set-key (kbd "<f8>") 'rustic-cargo-build)
+
+;; paredit
+(autoload 'enable-paredit-mode "paredit" "Turn on paredit" t)
+(add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
+(add-hook 'lisp-mode-hook             'enable-paredit-mode)
+(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
+(add-hook 'scheme-mode-hook           'enable-paredit-mode)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
