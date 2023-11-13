@@ -211,6 +211,9 @@
 (add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           'enable-paredit-mode)
 
+(add-to-list 'auto-mode-alist '(".csirc" . scheme-mode))
+(add-to-list 'auto-mode-alist '("dotcsirc" . scheme-mode))
+
 ;; -------------------------------------------------------------
 ;; time-related funcs
 (defun insert-time ()

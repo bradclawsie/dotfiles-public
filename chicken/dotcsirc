@@ -38,7 +38,7 @@
 ;; http-client
 (import http-client (chicken port) (chicken io))
 
-;;sqlite
+;; sqlite3
 (import sqlite3)
 (import sql-null)
 
