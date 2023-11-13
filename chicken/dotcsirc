@@ -1,6 +1,62 @@
--(import (chicken load))
+(import (chicken load))
+
+;; base modules
+(import (chicken sort))
+(import (chicken random))
+(import (chicken condition))
+(import (chicken irregex))
+
+;; srfis
+(import srfi-1)  ;; lists
+(import srfi-13) ;; strings
+(import srfi-69) ;; hashtables
+
+;; eggs
+
+;; string-utils
+(import string-hexadecimal)
+(import to-hex)
+
+;; brev-separate
+(import brev-separate)
+
+;; defstruct
+(import defstruct)
+
+;; miscmacros
+(import miscmacros)
+
+;; regex-case
+(import regex-case)
+
+;; simple-exceptions
+(import simple-exceptions)
+
+;; simple-loops
+(import simple-loops)
+
+;; http-client
+(import http-client (chicken port) (chicken io))
+
+;; sql-de-lite
+(import sql-de-lite)
+
+;; slice
+;; (import slice) ;; already imported at this point
+
+;; sha2
+(import sha2)
+
+;; uuid
+(import uuid)
+
+;; medea
+(import medea)
+
 (load-verbose #f)
+
 (let ()
+  (import (chicken base))
   (import (chicken format))
   (import (chicken process-context))
   (import (chicken process signal))
