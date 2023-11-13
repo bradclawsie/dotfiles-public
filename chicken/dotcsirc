@@ -38,8 +38,9 @@
 ;; http-client
 (import http-client (chicken port) (chicken io))
 
-;; sql-de-lite
-(import sql-de-lite)
+;;sqlite
+(import sqlite3)
+(import sql-null)
 
 ;; slice
 ;; (import slice) ;; already imported at this point
