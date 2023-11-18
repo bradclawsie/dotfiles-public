@@ -104,6 +104,7 @@ in
 	librewolf
   nerdfonts
   pinentry
+  pinentry-curses
 	tmux
   unstable.bat
   unstable.delta
@@ -137,12 +138,13 @@ in
     pkgs.yubikey-personalization
   ];
   
-  #programs.gnupg.agent = {
-  #  enable = true;
-  #  enableSSHSupport = true;
-  #};
-
   services.pcscd.enable = true;
+  
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryFlavor = "curses";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
