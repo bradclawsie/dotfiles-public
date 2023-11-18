@@ -79,79 +79,6 @@ in
     pulse.enable = true;
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.brad = {
-    isNormalUser = true;
-    description = "Brad Clawsie";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
-    packages = with pkgs; [
-      firefox
-    ];
-  };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  docker-buildx
-  docker-compose
-  fira-code
-  fira-code-symbols
-  fish
-  fzf
-  gnome.gnome-tweaks
-  gnumake
-  gnupg
-  librewolf
-  mullvad
-  mullvad-vpn
-  nerdfonts
-  noto-fonts
-  pinentry
-  pinentry-curses
-  ripgrep
-  rlwrap
-  tig
-  tmux
-  unstable.bat
-  unstable.delta
-  unstable.gerbil
-  unstable.git
-  unstable.go
-  unstable.golangci-lint
-  unstable.gofumpt
-  unstable.goimports-reviser
-  unstable.gopls
-  unstable.go-tools
-  unstable.helix
-  unstable.hut
-  unstable.kitty
-  unstable.libgcc
-  unstable.passage
-  unstable.perl
-  unstable.perl538Packages.CryptX
-  unstable.perl538Packages.DataDumperConcise
-  unstable.perl538Packages.FileSlurper
-  unstable.rustc
-  unstable.rust-analyzer
-  unstable.yubikey-manager
-  wget
-  ];
-
-  # note after 23.05 fonts.fonts -> fonts.packages
-  # see https://nixos.wiki/wiki/Fonts
-  fonts.fonts = with pkgs; [
-    fira-code
-    fira-code-symbols
-    nerdfonts
-    noto-fonts
-  ];
-
-  programs.fish.enable = true;
-  users.users.brad.shell = pkgs.fish;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   services.udev.packages = [
@@ -167,6 +94,79 @@ in
   };
 
   services.mullvad-vpn.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.brad = {
+    isNormalUser = true;
+    description = "Brad Clawsie";
+    extraGroups = [ "networkmanager" "wheel" "docker"];
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    curl
+    docker-buildx
+    docker-compose
+    dos2unix
+    fira-code
+    fira-code-symbols
+    firefox
+    fish
+    fzf
+    gnome.gnome-tweaks
+    gnumake
+    gnupg
+    librewolf
+    mullvad
+    mullvad-vpn
+    nerdfonts
+    noto-fonts
+    pinentry
+    pinentry-curses
+    ripgrep
+    rlwrap
+    tig
+    tmux
+    unstable.bat
+    unstable.delta
+    unstable.gerbil
+    unstable.git
+    unstable.go
+    unstable.golangci-lint
+    unstable.gofumpt
+    unstable.goimports-reviser
+    unstable.gopls
+    unstable.go-tools
+    unstable.helix
+    unstable.hut
+    unstable.kitty
+    unstable.libgcc
+    unstable.passage
+    unstable.perl
+    unstable.perl538Packages.CryptX
+    unstable.perl538Packages.DataDumperConcise
+    unstable.perl538Packages.FileSlurper
+    unstable.rustc
+    unstable.rust-analyzer
+    unstable.yubikey-manager
+    wget
+  ];
+
+  # note after 23.05 fonts.fonts -> fonts.packages
+  # see https://nixos.wiki/wiki/Fonts
+  fonts.fonts = with pkgs; [
+    fira-code
+    fira-code-symbols
+    nerdfonts
+    noto-fonts
+  ];
+
+  programs.fish.enable = true;
+  users.users.brad.shell = pkgs.fish;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
