@@ -95,38 +95,56 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  docker-buildx
+  docker-compose
   fira-code
   fira-code-symbols
-	fish
-	gnome.gnome-tweaks
+  fish
+  fzf
+  gnome.gnome-tweaks
   gnumake
   gnupg
-	librewolf
+  librewolf
   nerdfonts
+  noto-fonts
   pinentry
   pinentry-curses
-	tmux
+  ripgrep
+  rlwrap
+  tig
+  tmux
   unstable.bat
   unstable.delta
-  unstable.docker-buildx
-  unstable.docker-compose
-	unstable.git
+  unstable.gerbil
+  unstable.git
   unstable.go
   unstable.golangci-lint
   unstable.gofumpt
   unstable.goimports-reviser
   unstable.gopls
   unstable.go-tools
-	unstable.helix
+  unstable.helix
+  unstable.hut
   unstable.kitty
   unstable.libgcc
   unstable.passage
-	unstable.perl
+  unstable.perl
+  unstable.perl538Packages.CryptX
+  unstable.perl538Packages.DataDumperConcise
+  unstable.perl538Packages.FileSlurper
   unstable.rustc
   unstable.rust-analyzer
-  unstable.starship
   unstable.yubikey-manager
-	wget
+  wget
+  ];
+
+  # note after 23.05 fonts.fonts -> fonts.packages
+  # see https://nixos.wiki/wiki/Fonts
+  fonts.fonts = with pkgs; [
+    fira-code
+    fira-code-symbols
+    nerdfonts
+    noto-fonts
   ];
 
   programs.fish.enable = true;
