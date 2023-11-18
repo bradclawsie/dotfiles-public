@@ -108,6 +108,7 @@ in
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    age-plugin-yubikey
     curl
     docker-buildx
     docker-compose
@@ -133,6 +134,7 @@ in
     tmux
     unstable.bat
     unstable.delta
+    unstable.cargo
     unstable.gerbil
     unstable.git
     unstable.go
