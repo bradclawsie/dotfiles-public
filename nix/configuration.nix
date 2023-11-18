@@ -105,6 +105,8 @@ in
   gnumake
   gnupg
   librewolf
+  mullvad
+  mullvad-vpn
   nerdfonts
   noto-fonts
   pinentry
@@ -163,6 +165,8 @@ in
     enableSSHSupport = true;
     pinentryFlavor = "curses";
   };
+
+  services.mullvad-vpn.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
