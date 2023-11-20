@@ -4,10 +4,10 @@
 	bare = false
 	logallrefupdates = true
 [remote "upstream"]
-	url = git@git.sr.ht:~grokloc/grokloc-app
+	url = git@git.sr.ht:~grokloc/grokloc-prototype
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [remote "origin"]
-	url = git@git.sr.ht:~bradclawsie/grokloc-app
+	url = git@git.sr.ht:~bradclawsie/grokloc-prototype
 	fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
 	remote = origin
