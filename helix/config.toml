@@ -12,11 +12,12 @@ hidden = false
 enable = true
 
 [keys.normal]
-"0" = "goto_line_start"
+0 = "goto_line_start"
 "$" = "goto_line_end"
 G = "goto_file_end"
+C-s = ":w"
 
 [keys.select]
-"0" = "goto_line_start"
+0 = "goto_line_start"
 "$" = "goto_line_end"
 G = "goto_file_end"
