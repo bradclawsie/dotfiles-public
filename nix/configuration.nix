@@ -133,9 +133,9 @@ in
     tig
     tmux
     unstable.bat
+    unstable.deno
     unstable.delta
     unstable.cargo
-    unstable.gerbil
     unstable.git
     unstable.go
     unstable.golangci-lint
@@ -147,6 +147,7 @@ in
     unstable.hut
     unstable.kitty
     unstable.libgcc
+    unstable.nodePackages_latest.typescript-language-server
     unstable.passage
     unstable.perl
     unstable.perl538Packages.CryptX
@@ -154,6 +155,7 @@ in
     unstable.perl538Packages.FileSlurper
     unstable.rustc
     unstable.rust-analyzer
+    unstable.starship
     unstable.yubikey-manager
     wget
   ];

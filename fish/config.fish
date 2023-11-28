@@ -1,7 +1,3 @@
-# system paths
-set -gx PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-# alias
 alias c="clear"
 alias h="history"
 alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
@@ -19,9 +15,9 @@ if status is-interactive
     set -gx SAVEHIST 10000
 
     # default editor
-    set -gx EDITOR emacsclient
+    set -gx EDITOR hx
     set -gx ALTERNATE_EDITOR nano
-    set -gx VISUAL emacsclient
+    set -gx VISUAL hx
 
     # gnupg
     set -gx GPG_TTY (tty)
@@ -36,26 +32,14 @@ set -gx PATH $HOME/bin $PATH
 # pager
 set -gx PAGER bat
 
-# go
-set -gx PATH $HOME/go/bin $PATH
-
 # grokloc-related
 set -gx REPOSITORY_BASE /tmp
 set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
 
-# ui
-starship init fish | source
-
 # perl vars
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
-set -gx LOCAL_PERL5 $HOME/perl5
-set -gx PERL5LIB $LOCAL_PERL5/lib/perl5
 
-# perl paths
-set -gx PATH /usr/bin/vendor_perl $PATH
-set -gx PATH /usr/bin/core_perl $PATH
-set -gx PATH $LOCAL_PERL5/bin $PATH
+# ui
+starship init fish | source
 
-# gerbil
-set -gx PATH /opt/gerbil/bin $PATH
