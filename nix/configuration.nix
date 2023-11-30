@@ -160,9 +160,8 @@ in
     wget
   ];
 
-  # note after 23.05 fonts.fonts -> fonts.packages
   # see https://nixos.wiki/wiki/Fonts
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
     nerdfonts
