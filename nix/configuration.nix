@@ -50,25 +50,17 @@ in
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
   };
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
+  services.printing.enable = false;
   virtualisation.docker.enable = true;
 
-  # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -79,8 +71,6 @@ in
     pulse.enable = true;
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
   services.udev.packages = [
     pkgs.yubikey-personalization
   ];
@@ -95,20 +85,20 @@ in
 
   services.mullvad-vpn.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.brad = {
     isNormalUser = true;
     description = "Brad Clawsie";
     extraGroups = [ "networkmanager" "wheel" "docker"];
   };
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
+    abseil-cpp
     age-plugin-yubikey
+    cmake
+    cmake-format
+    cmake-language-server
     curl
     docker-buildx
     docker-compose
@@ -121,11 +111,16 @@ in
     gnome.gnome-tweaks
     gnumake
     gnupg
+    gtest
     librewolf
+    llvmPackages_15.libcxxClang
+    llvmPackages_15.stdenv
     mullvad
     mullvad-vpn
     nerdfonts
     noto-fonts
+    openssl
+    pkg-config
     pinentry
     pinentry-curses
     ripgrep
@@ -171,12 +166,5 @@ in
   programs.fish.enable = true;
   users.users.brad.shell = pkgs.fish;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.05"; # Did you read the comment?
-
+  system.stateVersion = "23.05"; # do not touch
 }
