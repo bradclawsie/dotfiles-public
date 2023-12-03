@@ -96,6 +96,7 @@ in
   environment.systemPackages = with pkgs; [
     abseil-cpp
     age-plugin-yubikey
+    bear
     cmake
     cmake-format
     cmake-language-server
@@ -113,7 +114,7 @@ in
     gnupg
     gtest
     librewolf
-    llvmPackages_15.libcxxClang
+    llvmPackages_15.clang-unwrapped
     llvmPackages_15.stdenv
     mullvad
     mullvad-vpn
