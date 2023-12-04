@@ -94,12 +94,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    abseil-cpp
     age-plugin-yubikey
-    bear
-    cmake
-    cmake-format
-    cmake-language-server
     curl
     docker-buildx
     docker-compose
@@ -112,20 +107,14 @@ in
     gnome.gnome-tweaks
     gnumake
     gnupg
-    gtest
     librewolf
-    llvmPackages_15.clang-unwrapped
-    llvmPackages_15.stdenv
     mullvad
     mullvad-vpn
     nerdfonts
     noto-fonts
-    openssl
-    pkg-config
     pinentry
     pinentry-curses
     ripgrep
-    rlwrap
     tig
     tmux
     unstable.bat
