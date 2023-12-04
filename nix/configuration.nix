@@ -96,6 +96,7 @@ in
   environment.systemPackages = with pkgs; [
     age-plugin-yubikey
     curl
+    docker
     docker-buildx
     docker-compose
     dos2unix
