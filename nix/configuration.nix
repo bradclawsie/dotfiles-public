@@ -107,11 +107,14 @@ in
     gnome.gnome-tweaks
     gnumake
     gnupg
+    libgcc
     librewolf
     mullvad
     mullvad-vpn
     nerdfonts
     noto-fonts
+    openssl
+    pkg-config
     pinentry
     pinentry-curses
     ripgrep
