@@ -101,8 +101,6 @@ in
     docker-buildx
     docker-compose
     dos2unix
-    fira-code
-    fira-code-symbols
     firefox
     fish
     fzf
@@ -135,7 +133,6 @@ in
     unstable.go-tools
     unstable.helix
     unstable.hut
-    unstable.kitty
     unstable.libgcc
     unstable.nodePackages_latest.typescript-language-server
     unstable.passage
@@ -152,8 +149,6 @@ in
 
   # see https://nixos.wiki/wiki/Fonts
   fonts.packages = with pkgs; [
-    fira-code
-    fira-code-symbols
     nerdfonts
     noto-fonts
   ];
