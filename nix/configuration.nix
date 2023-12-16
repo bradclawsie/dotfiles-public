@@ -95,6 +95,7 @@ in
 
   environment.systemPackages = with pkgs; [
     age-plugin-yubikey
+    alacritty
     curl
     docker
     docker-buildx
