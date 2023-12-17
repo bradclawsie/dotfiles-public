@@ -59,7 +59,10 @@ in
   };
 
   services.printing.enable = false;
+
   virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -88,7 +91,7 @@ in
   users.users.brad = {
     isNormalUser = true;
     description = "Brad Clawsie";
-    extraGroups = [ "networkmanager" "wheel" "docker"];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
   };
 
   nixpkgs.config.allowUnfree = true;
