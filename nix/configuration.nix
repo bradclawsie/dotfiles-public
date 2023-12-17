@@ -27,7 +27,10 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "nixos";
+  networking.extraHosts = ''
+    192.168.122.11 archlinux
+  '';
 
   # Enable networking
   networking.networkmanager.enable = true;
