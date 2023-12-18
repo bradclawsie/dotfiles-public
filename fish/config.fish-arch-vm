@@ -1,0 +1,41 @@
+alias c="clear"
+alias h="history"
+alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
+alias format-patch="git format-patch --subject-prefix="PATCH" -o ~/patches HEAD^"
+
+if status is-interactive
+    # locale
+    set -gx LANG en_US.UTF-8
+    set -gx LC_ALL en_US.UTF-8
+
+    # history
+    set -gx HISTFILE $HOME/.histfile
+    set -gx HISTSIZE 10000
+    set -gx SAVEHIST 10000
+
+    # default editor
+    set -gx EDITOR hx
+    set -gx ALTERNATE_EDITOR nano
+    set -gx VISUAL hx
+
+    # gnupg
+    set -gx GPG_TTY (tty)
+    gpg-connect-agent updatestartuptty /bye >/dev/null
+
+    clear
+end
+
+# local bin
+set -gx PATH $HOME/bin $PATH
+
+# pager
+set -gx PAGER bat
+
+# perl vars
+set -gx PERL_UNICODE AS
+set -gx PERL_READLINE_NOWARN yes
+
+# cpp-related (install clang, libc++, lld, gtest, poco, cmake)
+set -gx CC clang
+set -gx CXX clang++
+
