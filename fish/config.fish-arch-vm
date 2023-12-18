@@ -34,8 +34,3 @@ set -gx PAGER bat
 # perl vars
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
-
-# cpp-related (install clang, libc++, lld, gtest, poco, cmake)
-set -gx CC clang
-set -gx CXX clang++
-
