@@ -151,6 +151,8 @@ in
     unstable.starship
     unstable.yubikey-manager
     wget
+    zig
+    zls
   ];
 
   # see https://nixos.wiki/wiki/Fonts
