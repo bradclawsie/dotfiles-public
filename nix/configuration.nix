@@ -100,6 +100,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    age
     age-plugin-yubikey
     alacritty
     curl
@@ -107,6 +108,8 @@ in
     docker-buildx
     docker-compose
     dos2unix
+    fira-code
+    fira-code-symbols
     firefox
     fish
     fzf
@@ -150,6 +153,7 @@ in
     unstable.rust-analyzer
     unstable.starship
     unstable.yubikey-manager
+    unzip
     wget
     zig
     zls
@@ -157,6 +161,8 @@ in
 
   # see https://nixos.wiki/wiki/Fonts
   fonts.packages = with pkgs; [
+    fira-code
+    fira-code-symbols
     nerdfonts
     noto-fonts
   ];

@@ -10,7 +10,7 @@ window:
 
 font:
   normal:
-    family: monospace
+    family: Fira Code
   size: 26.0
   
   offset:
