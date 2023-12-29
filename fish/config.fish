@@ -42,6 +42,8 @@ set -gx PERL_READLINE_NOWARN yes
 
 # local zig
 set -gx PATH $HOME/.zig $PATH
+# local zls (https://github.com/zigtools/zls/wiki/Installation)
+set -gx PATH $HOME/.zls $PATH
 
 # ui
 starship init fish | source
