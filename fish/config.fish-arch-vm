@@ -34,3 +34,6 @@ set -gx PAGER bat
 # perl vars
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
+
+# local zig
+set -gx PATH $HOME/.zig $PATH
