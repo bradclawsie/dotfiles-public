@@ -40,6 +40,9 @@ set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
+# local zig
+set -gx PATH $HOME/.zig $PATH
+
 # ui
 starship init fish | source
 
