@@ -133,6 +133,7 @@ in
     unstable.deno
     unstable.delta
     unstable.cargo
+    unstable.clippy
     unstable.git
     unstable.go
     unstable.golangci-lint
