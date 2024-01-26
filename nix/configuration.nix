@@ -118,6 +118,8 @@ in
     gnupg
     libgcc
     librewolf
+    llvmPackages_17.clangUseLLVM
+    llvmPackages_17.libcxxClang
     mullvad
     mullvad-vpn
     nerdfonts
