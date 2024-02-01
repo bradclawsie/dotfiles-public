@@ -103,6 +103,8 @@ in
     age
     age-plugin-yubikey
     alacritty
+    aspell
+    aspellDicts.en
     curl
     docker
     docker-buildx
@@ -113,6 +115,7 @@ in
     firefox
     fish
     fzf
+    gcc13
     gnome.gnome-tweaks
     gnumake
     gnupg
@@ -131,18 +134,19 @@ in
     ripgrep
     tig
     tmux
+    unstable.ack
     unstable.bat
     unstable.deno
     unstable.delta
     unstable.cargo
     unstable.clippy
+    unstable.emacs-nox
     unstable.git
     unstable.go
     unstable.golangci-lint
     unstable.gofumpt
-    unstable.goimports-reviser
     unstable.gopls
-    unstable.go-tools
+    unstable.gotools
     unstable.helix
     unstable.hut
     unstable.libgcc

@@ -17,7 +17,7 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'blink-cursor-mode) (blink-cursor-mode 0))
+(if (fboundp 'blink-cursor-mode) (blink-cursor-mode nil))
 (setq-default transient-mark-mode t)
 (setq-default require-final-newline t)
 
@@ -56,7 +56,6 @@
          magit
          magit-delta
          markdown-mode
-         paredit
          perl-doc
          pinentry
          rustic
@@ -174,6 +173,7 @@
 ;; go
 (add-hook 'go-mode-hook #'lsp-deferred)
 (add-hook 'go-mode-hook #'yas-minor-mode-on)
+(add-hook 'go-mode-hook #'electric-pair-mode)
 
 (lsp-register-custom-settings
  '(("gopls.staticcheck" t t)))
@@ -203,37 +203,11 @@
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
 (global-set-key (kbd "<f8>") 'rustic-cargo-build)
 
-;;; gerbil
-(load "~/.emacs.d/gerbil-mode.el")
-(autoload 'gerbil-mode "gerbil-mode" "Gerbil editing mode." t)
-(load "~/.emacs.d/gambit.el")
-(add-hook 'inferior-scheme-mode-hook 'gambit-inferior-mode)
-(defvar gerbil-program-name
-  (expand-file-name "/opt/gerbil/bin/gxi")) 
-(setq scheme-program-name gerbil-program-name)
-
-;; paredit
-(autoload 'enable-paredit-mode "paredit" "Turn on paredit" t)
-(add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
-(add-hook 'lisp-mode-hook             'enable-paredit-mode)
-(add-hook 'lisp-interaction-mode-hook 'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           'enable-paredit-mode)
-(add-hook 'scheme-mode-hook           #'enable-paredit-mode)
-(add-hook 'gerbil-mode-hook           #'enable-paredit-mode)
-
 ;; -------------------------------------------------------------
 ;; time-related funcs
-(defun insert-time ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d-%R")))
-
 (defun insert-unixtime ()
   (interactive)
   (insert (format-time-string "%s")))
-
-(defun insert-date ()
-  (interactive)
-  (insert (format-time-string "%Y-%m-%d")))
 
 ;; -------------------------------------------------------------
 ;; revert all buffers with no confirm, and alias to f6
@@ -264,10 +238,6 @@
 
 ;; -------------------------------------------------------------
 ;; server
-
-;; previously - dark-laptop
-(load-theme 'spolsky t t)
- (enable-theme 'spolsky)
 
 (pinentry-start)
 (display-time)
