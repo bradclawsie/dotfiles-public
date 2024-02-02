@@ -80,9 +80,9 @@ in
   services.udev.packages = [
     pkgs.yubikey-personalization
   ];
-  
+
   services.pcscd.enable = true;
-  
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -156,8 +156,6 @@ in
     unstable.perl538Packages.CryptX
     unstable.perl538Packages.DataDumperConcise
     unstable.perl538Packages.FileSlurper
-    unstable.rustc
-    unstable.rust-analyzer
     unstable.starship
     unstable.yubikey-manager
     unzip

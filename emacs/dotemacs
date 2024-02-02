@@ -56,13 +56,14 @@
          magit
          magit-delta
          markdown-mode
+         nix-mode
          perl-doc
          pinentry
-         rustic
          sublime-themes
          toml-mode
          yaml-mode
-         yasnippet ))
+         yasnippet
+         zig-mode ))
 
 (setq package-native-compile t
       native-comp-async-report-warnings-errors nil
@@ -196,12 +197,8 @@
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 (add-hook 'text-mode-hook #'auto-fill-mode)
 
-;;; rust
-(setq rustic-format-on-save t)
-(add-hook 'rustic-mode-hook #'yas-minor-mode-on)
-(add-hook 'rustic-mode-hook #'electric-pair-mode)
-(global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
-(global-set-key (kbd "<f8>") 'rustic-cargo-build)
+;; zig
+(setq lsp-zig-zls-executable "~/.zls/zls")
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
