@@ -147,6 +147,7 @@ in
     unstable.gofumpt
     unstable.gopls
     unstable.gotools
+    unstable.go-tools
     unstable.helix
     unstable.hut
     unstable.libgcc
