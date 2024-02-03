@@ -136,10 +136,7 @@ in
     tmux
     unstable.ack
     unstable.bat
-    unstable.deno
     unstable.delta
-    unstable.cargo
-    unstable.clippy
     unstable.emacs-nox
     unstable.git
     unstable.go
@@ -148,6 +145,7 @@ in
     unstable.gopls
     unstable.gotools
     unstable.go-tools
+    unstable.govulncheck
     unstable.helix
     unstable.hut
     unstable.libgcc
