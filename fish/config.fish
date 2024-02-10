@@ -15,9 +15,9 @@ if status is-interactive
     set -gx SAVEHIST 10000
 
     # default editor
-    set -gx EDITOR hx
+    set -gx EDITOR emacsclient
     set -gx ALTERNATE_EDITOR nano
-    set -gx VISUAL hx
+    set -gx VISUAL emacsclient
 
     # gnupg
     set -gx GPG_TTY (tty)
