@@ -26,9 +26,6 @@ if status is-interactive
     clear
 end
 
-# local bin
-set -gx PATH $HOME/bin $PATH
-
 # pager
 set -gx PAGER bat
 
@@ -40,6 +37,12 @@ set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
+# $PATH modifiers
+# 
+# go
+set -gx PATH $HOME/go/bin $PATH
+# local bin
+set -gx PATH $HOME/bin $PATH
 # local zig
 set -gx PATH $HOME/.zig $PATH
 # local zls (https://github.com/zigtools/zls/wiki/Installation)
