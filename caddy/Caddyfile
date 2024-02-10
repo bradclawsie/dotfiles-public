@@ -1,0 +1,10 @@
+b7j0c.org {
+	root * /usr/local/www
+	file_server
+}
+
+grokloc.com {
+	root * /usr/local/www-grokloc
+	file_server
+}
+

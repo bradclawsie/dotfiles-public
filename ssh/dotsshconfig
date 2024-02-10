@@ -46,10 +46,10 @@ Host codeberg
 # grokloc
 
 Host grokloc
-	Hostname grokloc.com
+	Hostname b7j0c.org
 	User brad
 	Port 512
-	IdentityFile ~/.ssh/grokloc_ed25519_20230101
+	IdentityFile ~/.ssh/id_ed25519_20230101
 	IdentitiesOnly yes
 
 Host grokloc-grokloc
