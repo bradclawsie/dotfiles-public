@@ -37,8 +37,11 @@ set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
-# $PATH modifiers
-set -gx PATH $HOME/bin:$HOME/go/bin:$HOME/.zig:$HOME/.zls $PATH
+# $PATH modifier
+fish_add_path $HOME/.zls
+fish_add_path $HOME/.zig
+fish_add_path $HOME/go/bin
+fish_add_path $HOME/bin
 
 # ui
 starship init fish | source
