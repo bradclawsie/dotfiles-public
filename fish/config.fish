@@ -38,15 +38,7 @@ set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
 # $PATH modifiers
-# 
-# go
-set -gx PATH $HOME/go/bin $PATH
-# local bin
-set -gx PATH $HOME/bin $PATH
-# local zig
-set -gx PATH $HOME/.zig $PATH
-# local zls (https://github.com/zigtools/zls/wiki/Installation)
-set -gx PATH $HOME/.zls $PATH
+set -gx PATH $HOME/bin:$HOME/go/bin:$HOME/.zig:$HOME/.zls $PATH
 
 # ui
 starship init fish | source
