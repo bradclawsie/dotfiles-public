@@ -37,9 +37,14 @@ set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
+# go related
+set -gx GOROOT $HOME/go-sdk
+set -gx GOPATH $HOME/go
+
 # $PATH modifier
-fish_add_path $HOME/go/bin
-fish_add_path $HOME/bin
+fish_add_path -p $GOROOT/bin
+fish_add_path -p $GOPATH/bin
+fish_add_path -p $HOME/bin
 
 # ui
 starship init fish | source
