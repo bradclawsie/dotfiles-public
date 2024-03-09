@@ -62,8 +62,7 @@
          sublime-themes
          toml-mode
          yaml-mode
-         yasnippet
-         zig-mode ))
+         yasnippet ))
 
 (setq package-native-compile t
       native-comp-async-report-warnings-errors nil
@@ -196,9 +195,6 @@
 ;; run auto-fill whenever editing
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 (add-hook 'text-mode-hook #'auto-fill-mode)
-
-;; zig
-(setq lsp-zig-zls-executable "~/.zls/zls")
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
