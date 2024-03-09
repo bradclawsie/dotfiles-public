@@ -38,11 +38,8 @@ set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
 # $PATH modifier
-fish_add_path $HOME/.zls
-fish_add_path $HOME/.zig
 fish_add_path $HOME/go/bin
 fish_add_path $HOME/bin
 
 # ui
 starship init fish | source
-
