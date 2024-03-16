@@ -150,6 +150,7 @@ in
     unstable.perl538Packages.DataDumperConcise
     unstable.perl538Packages.FileSlurper
     unstable.rustc
+    unstable.rustfmt
     unstable.rust-analyzer
     unstable.starship
     unstable.yubikey-manager
