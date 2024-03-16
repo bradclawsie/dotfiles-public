@@ -136,6 +136,8 @@ in
     tmux
     unstable.ack
     unstable.bat
+    unstable.cargo
+    unstable.clippy
     unstable.delta
     unstable.emacs-nox
     unstable.git
@@ -147,6 +149,8 @@ in
     unstable.perl538Packages.CryptX
     unstable.perl538Packages.DataDumperConcise
     unstable.perl538Packages.FileSlurper
+    unstable.rustc
+    unstable.rust-analyzer
     unstable.starship
     unstable.yubikey-manager
     unzip
