@@ -141,6 +141,13 @@ in
     unstable.delta
     unstable.emacs-nox
     unstable.git
+    unstable.go
+    unstable.golangci-lint
+    unstable.gofumpt
+    unstable.gopls
+    unstable.gotools
+    unstable.go-tools
+    unstable.govulncheck
     unstable.hut
     unstable.libgcc
     unstable.nodePackages_latest.typescript-language-server
