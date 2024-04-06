@@ -174,7 +174,7 @@
 
 ;; go
 (add-hook 'go-mode-hook #'lsp-deferred)
-(add-hook 'go-mode-hook #'yas-minor-mode)
+(add-hook 'go-mode-hook #'yas-minor-mode 1)
 (add-hook 'go-mode-hook #'electric-pair-mode)
 
 (lsp-register-custom-settings
@@ -201,7 +201,7 @@
 
 ;; rust
 (setq rustic-format-on-save t)
-(add-hook 'rustic-mode-hook #'yas-minor-mode)
+(add-hook 'rustic-mode-hook #'yas-minor-mode 1)
 (add-hook 'rustic-mode-hook #'electric-pair-mode)
 (global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
 (global-set-key (kbd "<f8>") 'rustic-cargo-build)
