@@ -1,0 +1,33 @@
+live_config_reload = true
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[env]
+TERM = "alacritty"
+
+[font]
+size = 26.0
+
+[font.glyph_offset]
+x = 0
+y = 1
+
+[font.normal]
+family = "Fira Code"
+
+[font.offset]
+x = 0
+y = 2
+
+[selection]
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+
+[window]
+startup_mode = "Maximized"
+
+[window.padding]
+x = 5
+y = 5
