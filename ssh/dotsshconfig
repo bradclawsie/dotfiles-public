@@ -3,6 +3,7 @@ ForwardAgent yes
 ForwardX11 no
 StrictHostKeyChecking no
 KeepAlive yes
+AddKeysToAgent yes
 
 # b7j0c
 
