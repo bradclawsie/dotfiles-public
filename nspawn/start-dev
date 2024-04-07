@@ -1,0 +1,2 @@
+#!/bin/sh
+systemd-nspawn --bind=/var/local/nspawn-shared:/var/local/nspawn-shared -b -D /var/lib/machines/dev -U --machine dev
