@@ -61,6 +61,7 @@
          pinentry
          rustic
          sublime-themes
+         systemd
          toml-mode
          yaml-mode
          yasnippet

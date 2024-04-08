@@ -21,11 +21,14 @@ if status is-interactive
     set -gx GPG_TTY (tty)
     gpg-connect-agent updatestartuptty /bye >/dev/null
 
+    # ssh-agent
+    set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
+
     clear
 end
 
 # pager
-set -gx PAGER bat
+set -gx PAGER less
 
 # grokloc-related
 set -gx REPOSITORY_BASE /tmp
