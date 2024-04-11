@@ -1,3 +1,0 @@
-# arch1 should be tar-export, important file be named arch1
-# as that is how it will be imported in /var/lib/machines
-sudo machinectl import-tar arch1
