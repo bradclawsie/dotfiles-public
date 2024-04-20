@@ -38,7 +38,7 @@
 ;; go-mode requires goimports
 ;; magit-delta requires git-delta
 (setq package-selected-packages
-      '( color-theme-modern
+      '(
          company
          company-go
          consult
@@ -56,11 +56,8 @@
          magit
          magit-delta
          markdown-mode
-         nix-mode
          perl-doc
          pinentry
-         rustic
-         sublime-themes
          systemd
          toml-mode
          yaml-mode
@@ -83,7 +80,6 @@
 (global-set-key (kbd "<f3>") 'magit-status)
 (global-set-key (kbd "<f4>") 'eshell)
 (global-set-key (kbd "<f5>") 'rename-buffer)
-;; f6 assigned to a function below
 (fset 'switchbuffers
    [?\C-x ?b])
 (global-set-key (kbd "C-c b") 'switchbuffers)
@@ -199,13 +195,6 @@
 ;; run auto-fill whenever editing
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 (add-hook 'text-mode-hook #'auto-fill-mode)
-
-;; rust
-(setq rustic-format-on-save t)
-(add-hook 'rustic-mode-hook #'yas-minor-mode 1)
-(add-hook 'rustic-mode-hook #'electric-pair-mode)
-(global-set-key (kbd "<f7>") 'rustic-cargo-current-test)
-(global-set-key (kbd "<f8>") 'rustic-cargo-build)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
