@@ -27,14 +27,7 @@ if status is-interactive
     clear
 end
 
-# pager
-set -gx PAGER bat
-
-# grokloc-related
-set -gx REPOSITORY_BASE /tmp
-set -gx POSTGRES_APP_URL postgres://grokloc:grokloc@localhost:5432/app
-
-# perl vars
+set -gx PAGER less
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
