@@ -28,7 +28,7 @@ if status is-interactive
 end
 
 # pager
-set -gx PAGER less
+set -gx PAGER bat
 
 # grokloc-related
 set -gx REPOSITORY_BASE /tmp
@@ -39,6 +39,8 @@ set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
 fish_add_path -p $HOME/bin
+fish_add_path -p $HOME/go/bin
 
-# ui
-starship init fish | source
+function fish_prompt
+    echo '> '
+end
