@@ -41,6 +41,3 @@ set -gx PERL_READLINE_NOWARN yes
 fish_add_path -p $HOME/bin
 fish_add_path -p $HOME/go/bin
 
-function fish_prompt
-    echo '> '
-end
