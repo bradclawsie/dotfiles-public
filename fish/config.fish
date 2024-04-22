@@ -34,3 +34,8 @@ set -gx PERL_READLINE_NOWARN yes
 fish_add_path -p $HOME/bin
 fish_add_path -p $HOME/go/bin
 fish_add_path -p $HOME/.zig
+
+# optional env vars
+if test -f ~/.config/fish/env.fish
+    source ~/.config/fish/env.fish
+end
