@@ -1,6 +1,4 @@
 #!/bin/sh
-git push origin master
-git push codeberg master
 git push github master
-git push gitlab master
+git push sr.ht master
 git push grokloc master
