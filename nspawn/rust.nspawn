@@ -1,0 +1,10 @@
+# /etc/systemd/nspawn/dev.nspawn
+
+[Exec]
+Boot=on
+
+[Files]
+Bind=/var/local/nspawn-shared:/var/local/nspawn-shared
+
+[Network]
+VirtualEthernet=no
