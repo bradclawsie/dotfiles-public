@@ -32,3 +32,7 @@ fish_add_path -p $HOME/go/bin
 if test -f ~/.config/fish/env.fish
     source ~/.config/fish/env.fish
 end
+
+if test -f . ~/perl5/perlbrew/etc/perlbrew.fish
+    source . ~/perl5/perlbrew/etc/perlbrew.fish
+end
