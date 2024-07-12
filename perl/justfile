@@ -1,4 +1,9 @@
-PHONY: pkgs
+set shell := ["fish", "-c"]
+set dotenv-load
+
+default:
+    @just --list
+
 pkgs:
 	sudo pacman -S \
 	ca-certificates \
@@ -7,10 +12,8 @@ pkgs:
 	sqlite \
 	libgit2
 
-PHONY: libs
 libs:
 	cpanm -n \
-	App::Ack \
 	App::perlimports \
 	Cpanel::JSON::XS \
 	CryptX \
@@ -28,6 +31,7 @@ libs:
 	Dist::Zilla::PluginBundle::Basic \
 	File::Slurp \
 	Git::Raw \
+	IO::All \
 	IO::Socket::Socks \
 	IO::Socket::SSL \
 	List::AllUtils \
