@@ -33,3 +33,7 @@ fish_add_path -p $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
 if test -f ~/.config/fish/env.fish
     source ~/.config/fish/env.fish
 end
+
+if test -f ~/perl5/perlbrew/etc/perlbrew.fish
+    source perl5/perlbrew/etc/perlbrew.fish
+end
