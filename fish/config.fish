@@ -26,14 +26,22 @@ set -gx PAGER less
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
-fish_add_path -p $HOME/bin
-fish_add_path -p $HOME/go/bin
-fish_add_path -p $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
-
-if test -f ~/.config/fish/env.fish
-    source ~/.config/fish/env.fish
+if test -f $HOME/bin
+    fish_add_path -p $HOME/bin
 end
 
-if test -f ~/perl5/perlbrew/etc/perlbrew.fish
-    source perl5/perlbrew/etc/perlbrew.fish
+if test -f $HOME/go/bin
+    fish_add_path -p $HOME/go/bin
+end
+
+if test -f $HOME/.rustup/toolchains/stable-x86_64-linux-gnu/bin
+    fish_add_path -p $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+end
+
+if test -f $HOME/.config/fish/env.fish
+    source $HOME/.config/fish/env.fish
+end
+
+if test -f $HOME/perl5/perlbrew/etc/perlbrew.fish
+    source $HOME/perl5/perlbrew/etc/perlbrew.fish
 end
