@@ -34,6 +34,8 @@ libs:
 	IO::All \
 	IO::Socket::Socks \
 	IO::Socket::SSL \
+	Kelp \
+	Log::Dispatch \
 	List::AllUtils \
 	Mojolicious \
 	Mojo::Log::JSON \
@@ -50,6 +52,7 @@ libs:
 	Scalar::Util \
 	strictures \
 	Syntax::Keyword::Try \
+	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
 	Test2::Suite
