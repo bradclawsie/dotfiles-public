@@ -55,4 +55,5 @@ libs:
 	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
-	Test2::Suite
+	Test2::Suite \
+	UUID
