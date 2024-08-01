@@ -39,9 +39,11 @@
 ;; magit-delta requires git-delta
 (setq package-selected-packages
       '(
+         cider
          company
          company-go
          consult
+         clojure-mode
          dockerfile-mode
          fish-completion
          fish-mode
