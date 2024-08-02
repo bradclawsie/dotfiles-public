@@ -58,13 +58,13 @@
          magit
          magit-delta
          markdown-mode
+         paredit
          perl-doc
          pinentry
          systemd
          toml-mode
          yaml-mode
          yasnippet
-         zig-mode
          ))
 
 (setq package-native-compile t
@@ -199,8 +199,8 @@
 (add-hook 'markdown-mode-hook #'auto-fill-mode)
 (add-hook 'text-mode-hook #'auto-fill-mode)
 
-;; zig
-(setq lsp-zig-zls-executable "/usr/bin/zls")
+;; clojure
+(add-hook 'clojure-mode-hook 'enable-paredit-mode)
 
 ;; -------------------------------------------------------------
 ;; time-related funcs
