@@ -26,15 +26,15 @@ set -gx PAGER less
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
 
-if test -f $HOME/bin
+if test -d $HOME/bin
     fish_add_path -p $HOME/bin
 end
 
-if test -f $HOME/go/bin
+if test -d $HOME/go/bin
     fish_add_path -p $HOME/go/bin
 end
 
-if test -f $HOME/.rustup/toolchains/stable-x86_64-linux-gnu/bin
+if test -d $HOME/.rustup/toolchains/stable-x86_64-linux-gnu/bin
     fish_add_path -p $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
 end
 
