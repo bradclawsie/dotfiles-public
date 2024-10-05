@@ -30,6 +30,10 @@ if test -d $HOME/bin
     fish_add_path -p $HOME/bin
 end
 
+if test -d $HOME/local/bin
+    fish_add_path -p $HOME/local/bin
+end
+
 if test -d $HOME/local/go/bin
     fish_add_path -p $HOME/local/go/bin
 end
@@ -42,8 +46,12 @@ if test -d $HOME/go/bin
     fish_add_path -p $HOME/go/bin
 end
 
-if test -d $HOME/.rustup/toolchains/stable-x86_64-linux-gnu/bin
-    fish_add_path -p $HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin
+if test -d $HOME/local/rust/bin
+    fish_add_path -p $HOME/local/rust/bin
+end
+
+if test -d $HOME/local/zig
+    fish_add_path -p $HOME/local/zig
 end
 
 if test -f $HOME/.config/fish/env.fish
