@@ -5,7 +5,7 @@
   diffFilter = delta --color-only
 
 [delta]
-  navigate = true  # use n and N to move between diff sections
+  navigate = true
 
 [merge]
   conflictstyle = diff3
@@ -23,7 +23,7 @@
   smtpuser = clawsie@fastmail.fm
   smtpencryption = ssl
   smtpserverport = 465
-  smtppass = GET FROM PASSWORD MANAGER
+  smtppass = ly3jly2fmmlwt92g
   confirm = auto
 
 [pull]
@@ -34,3 +34,7 @@
 
 [commit]
   gpgSign = true
+
+[alias]
+  st = status -sb
+  tree = log --oneline --decorate --graph
