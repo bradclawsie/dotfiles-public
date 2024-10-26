@@ -1,5 +1,6 @@
 [ui]
 paginate = "never"
+diff-editor = ":builtin"
 
 [user]
 name = "Brad Clawsie"
