@@ -24,6 +24,7 @@ libs:
 	DBD::Pg \
 	DBD::SQLite \
 	DBI \
+	DBIx::Class \
 	Dist::Zilla \
 	Dist::Zilla::Plugin::GitHub::Meta \
 	Dist::Zilla::Plugin::Git::Contributors \
@@ -36,6 +37,7 @@ libs:
 	IO::Socket::SSL \
 	Kelp \
 	Log::Dispatch \
+	Log::Dispatchouli \
 	List::AllUtils \
 	Mojolicious \
 	Mojo::Log::JSON \
