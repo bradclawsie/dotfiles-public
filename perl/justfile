@@ -33,6 +33,7 @@ libs:
 	File::Slurp \
 	Git::Raw \
 	IO::All \
+	IO::Async \
 	IO::Socket::Socks \
 	IO::Socket::SSL \
 	Kelp \
