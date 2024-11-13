@@ -56,6 +56,13 @@ if test -d $HOME/local/zig
     fish_add_path -p $HOME/local/zig
 end
 
+if test -d $HOME/local/rakudo
+    fish_add_path -p $HOME/local/rakudo/bin
+    fish_add_path -p $HOME/local/rakudo/share/perl6/site/bin
+    fish_add_path -p $HOME/local/rakudo/share/perl6/vendor/bin
+    fish_add_path -p $HOME/local/rakudo/share/perl6/core/bin
+end
+
 if test -f $HOME/.config/fish/env.fish
     source $HOME/.config/fish/env.fish
 end
