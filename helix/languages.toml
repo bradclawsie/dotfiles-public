@@ -15,8 +15,26 @@ language-servers = [ "gopls"]
 
 [[language]]
 name = "perl"
-file-types = ["t", "pl", "pm"]
+scope = "source.perl"
+file-types = ["pl", "pm", "t", "psgi", "raku", "rakumod", "rakutest", "rakudoc", "nqp", "p6", "pl6", "pm6"]
+shebangs = ["perl"]
+comment-token = "#"
+# language-servers = [ "perlnavigator" ]
 indent = { tab-width = 2, unit = "  " }
+
+[[grammar]]
+name = "perl"
+source = { git = "https://github.com/tree-sitter-perl/tree-sitter-perl", rev = "e99bb5283805db4cb86c964722d709df21b0ac16" }
+
+[[language]]
+name = "pod"
+scope = "source.pod"
+injection-regex = "pod"
+file-types = ["pod"]
+
+[[grammar]]
+name = "pod"
+source = { git = "https://github.com/tree-sitter-perl/tree-sitter-pod", rev = "39da859947b94abdee43e431368e1ae975c0a424" }
 
 # https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers#deno
 [[language]]
