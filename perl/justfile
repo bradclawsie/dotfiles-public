@@ -46,6 +46,7 @@ libs:
 	Mojo::Pg \
 	Mojo::SQLite \
 	MooseX::Extended \
+	Object::Pad \
 	Perl::Critic \
 	Perl::Critic::TooMuchCode \
 	Perl::Critic::StricterSubs \
