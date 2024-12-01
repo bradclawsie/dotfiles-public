@@ -32,6 +32,7 @@ libs:
 	Dist::Zilla::PluginBundle::Basic \
 	File::Slurp \
 	Git::Raw \
+	Hash::Ordered \
 	IO::All \
 	IO::Async \
 	IO::Socket::Socks \
@@ -44,6 +45,7 @@ libs:
 	Mojo::Log::JSON \
 	Mojo::Pg \
 	Mojo::SQLite \
+	MooseX::Extended \
 	Perl::Critic \
 	Perl::Critic::TooMuchCode \
 	Perl::Critic::StricterSubs \
