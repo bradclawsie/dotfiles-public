@@ -20,6 +20,7 @@ libs:
 	Crypt::Argon2 \
 	Crypt::JWT \
 	Crypt::Random \
+	Data::Pretty \
 	DateTime \
 	DBD::Pg \
 	DBD::SQLite \
@@ -33,6 +34,8 @@ libs:
 	File::Slurp \
 	Git::Raw \
 	Hash::Ordered \
+	HTTP::XSHeaders \
+	HTTP::XSCookies \
 	IO::All \
 	IO::Async \
 	IO::Socket::Socks \
@@ -55,6 +58,7 @@ libs:
 	Perl::Tidy \
 	Perl::Tidy::Sweetened \
 	Pod::Perldoc \
+	Ref::Util \
 	Scalar::Util \
 	strictures \
 	Syntax::Keyword::Try \
@@ -62,4 +66,6 @@ libs:
 	Test::Kwalitee \
 	Test2::Harness \
 	Test2::Suite \
-	UUID
+	UUID \
+	URI::XSEscape
+
