@@ -50,6 +50,7 @@ libs:
 	Mojo::SQLite \
 	MooseX::Extended \
 	Object::Pad \
+	Parallel::Forkmanager \
 	Perl::Critic \
 	Perl::Critic::TooMuchCode \
 	Perl::Critic::StricterSubs \
