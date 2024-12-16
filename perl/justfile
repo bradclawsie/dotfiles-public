@@ -26,6 +26,9 @@ libs:
 	DBD::SQLite \
 	DBI \
 	DBIx::Class \
+	DBIx::Connector \
+	DBIx::Connector::Driver::Pg \
+	DBIx::Connector::Driver::SQLite \
 	Dist::Zilla \
 	Dist::Zilla::Plugin::GitHub::Meta \
 	Dist::Zilla::Plugin::Git::Contributors \
