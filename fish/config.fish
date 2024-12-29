@@ -3,6 +3,9 @@ alias h="history"
 alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
 alias gl="git log --graph --pretty=\"tformat:%C(always,yellow)%h%C(always,reset) %C(always,green)%ar%C(always,reset){%C(always,bold blue)%an%C(always,reset){%C(always,red)%d%C(always,reset) %s\" | column -t -s '{' | less -XRS --quit-if-one-screen"
 alias remove-untracked-files="git ls-files --other --exclude-standard | xargs rm -rf"
+alias start-dev="machinectl start dev"
+alias shell-dev="machinectl shell --setenv=\"TERM=xterm-256color\" brad@dev"
+alias off-dev="machinectl poweroff dev"
 
 if status is-interactive
     set -gx LANG en_US.UTF-8
