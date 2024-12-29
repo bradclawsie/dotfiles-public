@@ -13,6 +13,7 @@ Host b7j0c
 	Port 512
 	IdentityFile ~/.ssh/id_ed25519_20230101
 	IdentitiesOnly yes
+	SetEnv TERM=xterm-256color
 
 Host sr.ht
 	HostName git.sr.ht
