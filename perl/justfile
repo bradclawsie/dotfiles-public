@@ -16,6 +16,7 @@ libs:
 	cpanm -n \
 	App::Ack \
 	App::perlimports \
+	Carp::Assert::More \
 	Cpanel::JSON::XS \
 	CryptX \
 	Crypt::Argon2 \
