@@ -16,13 +16,16 @@ libs:
 	cpanm -n \
 	App::Ack \
 	App::perlimports \
+	bareword::filehandles \
 	Carp::Assert::More \
+	Clone \
 	Cpanel::JSON::XS \
 	CryptX \
 	Crypt::Argon2 \
 	Crypt::JWT \
 	Crypt::Random \
 	Data::Pretty \
+	Data::UUID \
 	DateTime \
 	DBD::Pg \
 	DBD::SQLite \
@@ -42,6 +45,7 @@ libs:
 	Hash::Ordered \
 	HTTP::XSHeaders \
 	HTTP::XSCookies \
+	indirect \
 	IO::All \
 	IO::Async \
 	IO::Socket::Socks \
@@ -55,8 +59,11 @@ libs:
 	Mojo::Pg \
 	Mojo::SQLite \
 	MooseX::Extended \
+	multidimensional \
 	Object::Pad \
 	Parallel::ForkManager \
+	Params::Util \
+	Params::Validate \
 	Perl::Critic \
 	Perl::Critic::TooMuchCode \
 	Perl::Critic::StricterSubs \
@@ -65,10 +72,12 @@ libs:
 	Perl::Tidy \
 	Perl::Tidy::Sweetened \
 	Pod::Perldoc \
+	Pod::PlainText \
 	Ref::Util \
 	Scalar::Util \
 	strictures \
 	Syntax::Keyword::Try \
+	Sub::Identify \
 	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
