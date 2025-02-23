@@ -1,8 +1,6 @@
 alias c="clear"
 alias h="history"
 alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
-alias gl="git log --graph --pretty=\"tformat:%C(always,yellow)%h%C(always,reset) %C(always,green)%ar%C(always,reset){%C(always,bold blue)%an%C(always,reset){%C(always,red)%d%C(always,reset) %s\" | column -t -s '{' | less -XRS --quit-if-one-screen"
-alias remove-untracked-files="git ls-files --other --exclude-standard | xargs rm -rf"
 alias start-dev="machinectl start dev"
 alias shell-dev="machinectl shell --setenv=\"TERM=xterm-256color\" brad@dev"
 alias off-dev="machinectl poweroff dev"
@@ -53,17 +51,6 @@ end
 
 if test -d $HOME/local/rust/bin
     fish_add_path -p $HOME/local/rust/bin
-end
-
-if test -d $HOME/local/zig
-    fish_add_path -p $HOME/local/zig
-end
-
-if test -d $HOME/local/rakudo
-    fish_add_path -p $HOME/local/rakudo/bin
-    fish_add_path -p $HOME/local/rakudo/share/perl6/site/bin
-    fish_add_path -p $HOME/local/rakudo/share/perl6/vendor/bin
-    fish_add_path -p $HOME/local/rakudo/share/perl6/core/bin
 end
 
 if test -f $HOME/.config/fish/env.fish
