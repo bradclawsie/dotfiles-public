@@ -7,6 +7,6 @@ name = "Brad Clawsie"
 email = "brad@b7j0c.org"
 
 [signing]
-sign-all = true
+signing-behavior = "own"
 backend = "gpg"
 key = "B1C1F1462CE76E5F2D994FB3D817E42DCCB5AB08"
