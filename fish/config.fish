@@ -28,6 +28,7 @@ end
 set -gx PAGER less
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
+set -gx PERL5LIB $HOME/cpan/lib/perl5
 
 if test -d $HOME/bin
     fish_add_path -p $HOME/bin
@@ -53,10 +54,10 @@ if test -d $HOME/local/rust/bin
     fish_add_path -p $HOME/local/rust/bin
 end
 
-if test -f $HOME/.config/fish/env.fish
-    source $HOME/.config/fish/env.fish
+if test -d $HOME/cpan/bin
+    fish_add_path -p $HOME/cpan/bin
 end
 
-if test -f $HOME/perl5/perlbrew/etc/perlbrew.fish
-    source $HOME/perl5/perlbrew/etc/perlbrew.fish
+if test -f $HOME/.config/fish/env.fish
+    source $HOME/.config/fish/env.fish
 end

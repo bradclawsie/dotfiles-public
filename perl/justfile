@@ -13,7 +13,7 @@ pkgs:
 	libgit2
 
 libs:
-	cpanm -n \
+	cpanm -l ~/cpan -n \
 	App::Ack \
 	App::perlimports \
 	bareword::filehandles \
