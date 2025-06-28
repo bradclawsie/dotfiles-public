@@ -2,16 +2,16 @@
 name = "dockerfile"
 file-types = ["Dockerfile", "Dockerfile.base", "Dockerfile.dev"]
 
-[language-server.gopls]
-command = "gopls"
-config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, "analyses" = { "fieldalignment" = true, "nilness" = true, unusedparams = true, unusedwrite = true, useany = true }, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
-
 [[language]]
 name = "go"
 roots = ["go.work", "go.mod"]
 auto-format = true
 comment-token = "//"
 language-servers = [ "gopls"]
+
+[language-server.gopls]
+command = "gopls"
+config = { "gofumpt" = true, "local" = "goimports", "semanticTokens" = true, "staticcheck" = true, "verboseOutput" = true, "analyses" = { "nilness" = true, unusedparams = true, unusedwrite = true, useany = true }, usePlaceholders = true, completeUnimported = true, hints = { "assignVariableType" = true, "compositeLiteralFields" = true, "compositeLiteralTypes" = true, "constantValues" = true, "functionTypeParameters" = true, "parameterNames" = true, "rangeVariableTypes" = true } }
 
 [[language]]
 name = "perl"
@@ -36,35 +36,36 @@ file-types = ["pod"]
 name = "pod"
 source = { git = "https://github.com/tree-sitter-perl/tree-sitter-pod", rev = "39da859947b94abdee43e431368e1ae975c0a424" }
 
-# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers#deno
 [[language]]
-name = "typescript"
-shebangs = ["deno"]
-roots = ["deno.json", "deno.jsonc"]
-file-types = ["js", "ts", "jsx", "tsx"]
-language-servers = ["deno-lsp"]
+name = "python"
+scope = "source.python"
+injection-regex = "python"
+file-types = ["py","pyi","py3","pyw",".pythonstartup",".pythonrc"]
+shebangs = ["python"]
+roots = [".", "pyproject.toml", "pyrightconfig.json"]
+comment-token = "#"
+language-servers = ["pyright", "ruff"]
+indent = { tab-width = 4, unit = "    " }
 auto-format = true
-indent = { tab-width = 2, unit = "  " }
 
-[language-server.deno-lsp]
-command = "deno"
-args = ["lsp"]
-environment = { NO_COLOR = "1" }
+[language.formatter]
+command = "ruff"
+args = ["format", "-"]
 
-[language-server.deno-lsp.config.deno]
-enable = true
-# Uncomment to enable completion of unstable features of Deno
-# unstable = true
-# Uncomment to cache dependencies on save
-# cacheOnSave = true
-# Enable completion of importing from registries
-# Enable completion of function calls
-suggest = { completeFunctionCalls = false, imports = { hosts = { "https://deno.land" = true } } }
-# suggest = { imports = { hosts = { "https://deno.land" = true, "https://crux.land" = true, "https://x.nest.land" = true } } }
-# Uncomment to enable inlay hints
-# inlayHints.parameterNames.enabled = "all"
-# inlayHints.parameterTypes.enabled = true
-# inlayHints.variableTypes.enabled = true
-# inlayHints.propertyDeclarationTypes.enabled  = true
-# inlayHints.functionLikeReturnTypes.enabled = true
-# inlayHints.enumMemberValues.enabled = true
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.pyright.config]
+reportMissingTypeStubs = false
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+autoImportCompletions = true
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config]
+settings = {run = "onSave" }
+
