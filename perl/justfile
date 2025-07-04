@@ -60,6 +60,7 @@ libs:
 	Mojo::SQLite \
 	MooseX::Extended \
 	multidimensional \
+	Net::IP \
 	Object::Pad \
 	Parallel::ForkManager \
 	Params::Util \
