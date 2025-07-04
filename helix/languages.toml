@@ -24,7 +24,7 @@ indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
 name = "perl"
-source = { git = "https://github.com/tree-sitter-perl/tree-sitter-perl", rev = "e99bb5283805db4cb86c964722d709df21b0ac16" }
+source = { git = "https://github.com/tree-sitter-perl/tree-sitter-perl", rev = "d02cd94a0437d15552ae788c7fa8f5000e682d8b" }
 
 [[language]]
 name = "pod"
@@ -34,5 +34,5 @@ file-types = ["pod"]
 
 [[grammar]]
 name = "pod"
-source = { git = "https://github.com/tree-sitter-perl/tree-sitter-pod", rev = "39da859947b94abdee43e431368e1ae975c0a424" }
+source = { git = "https://github.com/tree-sitter-perl/tree-sitter-pod", rev = "d02cd94a0437d15552ae788c7fa8f5000e682d8b" }
 
