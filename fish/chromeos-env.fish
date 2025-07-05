@@ -3,3 +3,5 @@ set -gx DATABASE_URL postgres://grokloc_root:grokloc@localhost:5432/app
 set -gx REPOSITORY_BASE /tmp
 set -gx CGO_ENABLED 1
 set -gx HELIX_RUNTIME "$HOME/repos/helix/runtime"
+
+. ~/perl5/perlbrew/etc/perlbrew.fish
