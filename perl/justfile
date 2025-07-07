@@ -74,6 +74,7 @@ libs:
 	Perl::Tidy::Sweetened \
 	Pod::Perldoc \
 	Pod::PlainText \
+	Readonly \
 	Ref::Util \
 	Scalar::Util \
 	strictures \
