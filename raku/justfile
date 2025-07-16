@@ -1,0 +1,25 @@
+set shell := ["fish", "-c"]
+set dotenv-load
+
+default:
+    @just --list
+
+pkgs:
+	sudo pacman -S \
+	ca-certificates \
+	openssl \
+	postgresql-libs 
+
+libs:
+	zef install --/test cro
+	zef install \
+	App::Prove6 \
+	DBIish \
+	Digest \
+	File-Find \
+	File-Temp \
+	HTTP-Easy \
+	JSON-Fast \
+	PSGI \
+	Linenoise \
+	LWP-Simple
