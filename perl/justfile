@@ -12,6 +12,7 @@ pkgs:
 	sqlite \
 	libgit2
 
+# get DBD::Pg from pacman
 libs:
 	cpanm -l ~/cpan -n \
 	App::Ack \
@@ -23,7 +24,8 @@ libs:
 	CryptX \
 	Crypt::Argon2 \
 	Crypt::JWT \
-	Crypt::Random \
+	Crypt::URandom \
+	Data::Checks \
 	Data::Pretty \
 	Data::UUID \
 	DateTime \
@@ -53,6 +55,7 @@ libs:
 	Kelp \
 	Log::Dispatch \
 	Log::Dispatchouli \
+	Log::Log4perl \
 	List::AllUtils \
 	Mojolicious \
 	Mojo::Log::JSON \
