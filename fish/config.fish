@@ -13,9 +13,9 @@ if status is-interactive
     set -gx HISTSIZE 10000
     set -gx SAVEHIST 10000
 
-    set -gx EDITOR helix
+    set -gx EDITOR nvim
     set -gx ALTERNATE_EDITOR nano
-    set -gx VISUAL helix
+    set -gx VISUAL nvim
 
     set -gx GPG_TTY (tty)
     gpg-connect-agent updatestartuptty /bye >/dev/null
