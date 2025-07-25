@@ -23,3 +23,6 @@ libs:
 	PSGI \
 	Linenoise \
 	LWP-Simple
+
+git:
+  zef -v install https://github.com/rawleyfowler/Humming-Bird.git
