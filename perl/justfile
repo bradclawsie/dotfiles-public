@@ -19,6 +19,7 @@ libs:
 	App::perlimports \
 	bareword::filehandles \
 	Carp::Assert::More \
+  Carton \
 	Clone \
 	Cpanel::JSON::XS \
 	CryptX \
