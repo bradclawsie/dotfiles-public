@@ -14,12 +14,13 @@ pkgs:
 
 # get DBD::Pg from pacman
 libs:
+	set -x PERL5LIB ~/cpan/lib/perl5; \
 	cpanm -l ~/cpan -n \
 	App::Ack \
 	App::perlimports \
 	bareword::filehandles \
 	Carp::Assert::More \
-  Carton \
+	Carton \
 	Clone \
 	Cpanel::JSON::XS \
 	CryptX \
