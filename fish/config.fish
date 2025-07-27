@@ -28,7 +28,6 @@ end
 set -gx PAGER less
 set -gx PERL_UNICODE AS
 set -gx PERL_READLINE_NOWARN yes
-set -gx PERL5LIB $HOME/cpan/lib/perl5
 
 if test -d $HOME/bin
     fish_add_path -p $HOME/bin
