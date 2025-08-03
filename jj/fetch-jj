@@ -1,0 +1,4 @@
+jj git fetch --remote b7j0c -b master
+jj git fetch --remote github -b master
+jj git fetch --remote codeberg -b master
+jj git fetch --remote sr.ht -b master
