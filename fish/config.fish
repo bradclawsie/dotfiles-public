@@ -4,6 +4,7 @@ alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
 alias start-dev="machinectl start dev"
 alias shell-dev="machinectl shell --setenv=\"TERM=xterm-256color\" brad@dev"
 alias off-dev="machinectl poweroff dev"
+alias re.pl="PERL5LIB=$HOME/cpan/lib/perl5 perl -de 0"
 
 if status is-interactive
     set -gx LANG en_US.UTF-8
