@@ -26,6 +26,8 @@ libs:
 	CryptX \
 	Crypt::Argon2 \
 	Crypt::JWT \
+	Crypt::Passphrase \
+	Crypt::Passphrase::Argon2 \
 	Crypt::URandom \
 	Data::Checks \
 	Data::Pretty \
