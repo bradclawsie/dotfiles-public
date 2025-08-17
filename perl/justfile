@@ -64,6 +64,7 @@ libs:
 	Mojolicious \
 	Mojo::Log::JSON \
 	Mojo::Pg \
+	Mojo::Redis \
 	Mojo::SQLite \
 	MooseX::Extended \
 	multidimensional \
