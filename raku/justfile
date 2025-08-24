@@ -12,17 +12,17 @@ pkgs:
 
 libs:
 	zef install --/test cro
-	zef install \
-	App::Prove6 \
-	DBIish \
-	Digest \
-	File-Find \
-	File-Temp \
-	HTTP-Easy \
-	JSON-Fast \
-	PSGI \
-	Linenoise \
-	LWP-Simple
+	zef install App::Prove6
+	zef install DBIish
+	zef install Digest
+	zef install File::Find
+	zef install File::Temp
+	zef install HTTP::Easy
+	zef install JSON::Fast
+	zef install PSGI
+	zef install Linenoise
+	zef install LWP::Simple
+	zef install OpenSSL
 
 git:
   zef -v install https://github.com/rawleyfowler/Humming-Bird.git
