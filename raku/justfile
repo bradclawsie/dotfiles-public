@@ -23,6 +23,7 @@ libs:
 	zef install Linenoise
 	zef install LWP::Simple
 	zef install OpenSSL
+	zef install UUID::V4
 
 git:
   zef -v install https://github.com/rawleyfowler/Humming-Bird.git
