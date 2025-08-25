@@ -70,6 +70,7 @@ libs:
 	multidimensional \
 	Net::IP \
 	Object::Pad \
+	Object::Pad::FieldAttr::Checked \
 	Parallel::ForkManager \
 	Params::Util \
 	Params::Validate \
@@ -86,8 +87,10 @@ libs:
 	Ref::Util \
 	Scalar::Util \
 	strictures \
+	Signature::Attribute::Checked \
 	Syntax::Keyword::Try \
 	Sub::Identify \
+	Sublike::Extended \
 	Term::ReadLine::Gnu \
 	Test::Kwalitee \
 	Test2::Harness \
