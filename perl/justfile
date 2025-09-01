@@ -74,6 +74,7 @@ libs:
 	Net::IP \
 	Object::Pad \
 	Object::Pad::FieldAttr::Checked \
+	Package::Alias \
 	Parallel::ForkManager \
 	Params::Util \
 	Params::Validate \
