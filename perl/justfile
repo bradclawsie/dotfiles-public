@@ -67,6 +67,8 @@ libs:
 	Mojo::Pg \
 	Mojo::Redis \
 	Mojo::SQLite \
+	Moose \
+	MooseX::Enumeration \
 	MooseX::Extended \
 	multidimensional \
 	Net::IP \
