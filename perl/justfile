@@ -1,104 +1,104 @@
 set shell := ["fish", "-c"]
-set dotenv-load
+set dotenv-load := true
 
 default:
     @just --list
 
 pkgs:
-	sudo pacman -S \
-	ca-certificates \
-	openssl \
-	postgresql-libs \
-	sqlite \
-	libgit2
+    sudo pacman -S \
+    ca-certificates \
+    openssl \
+    postgresql-libs \
+    sqlite \
+    libgit2
 
 # get DBD::Pg from pacman
 libs:
-	set -x PERL5LIB ~/cpan/lib/perl5; \
-	cpanm -l ~/cpan -n \
-	App::Ack \
-	App::perlimports \
-	bareword::filehandles \
-	Bytes::Random::Secure \
-	Carp::Assert::More \
-	Carton \
-	Clone \
-	Cpanel::JSON::XS \
-	CryptX \
-	Crypt::Argon2 \
-	Crypt::JWT \
-	Crypt::Passphrase \
-	Crypt::Passphrase::Argon2 \
-	Crypt::URandom \
-	Data::Checks \
-	Data::Pretty \
-	Data::UUID \
-	DateTime \
-	DBD::Pg \
-	DBD::SQLite \
-	DBI \
-	DBIx::Class \
-	DBIx::Connector \
-	DBIx::Connector::Driver::Pg \
-	DBIx::Connector::Driver::SQLite \
-	Dist::Zilla \
-	Dist::Zilla::Plugin::GitHub::Meta \
-	Dist::Zilla::Plugin::Git::Contributors \
-	Dist::Zilla::Plugin::RewriteVersion \
-	Dist::Zilla::PluginBundle::Basic \
-	e \
-	File::Slurp \
-	Git::Raw \
-	Hash::Ordered \
-	HTTP::XSHeaders \
-	HTTP::XSCookies \
-	indirect \
-	IO::All \
-	IO::Async \
-	IO::Socket::Socks \
-	IO::Socket::SSL \
-	Kelp \
-	Log::Dispatch \
-	Log::Dispatchouli \
-	Log::Log4perl \
-	List::AllUtils \
-	Mojolicious \
-	Mojo::Log::JSON \
-	Mojo::Pg \
-	Mojo::Redis \
-	Mojo::SQLite \
-	Moose \
-	MooseX::Enumeration \
-	MooseX::Extended \
-	multidimensional \
-	Net::IP \
-	Object::Pad \
-	Object::Pad::FieldAttr::Checked \
-	Package::Alias \
-	Parallel::ForkManager \
-	Params::Util \
-	Params::Validate \
-	Perl::Critic \
-	Perl::Critic::TooMuchCode \
-	Perl::Critic::StricterSubs \
-	Perl::Critic::Community \
-	Perl::Critic::Bangs \
-	Perl::Tidy \
-	Perl::Tidy::Sweetened \
-	Pod::Perldoc \
-	Pod::PlainText \
-	Readonly \
-	Ref::Util \
-	Scalar::Util \
-	strictures \
-	Signature::Attribute::Checked \
-	Syntax::Keyword::Try \
-	Sub::Identify \
-	Sublike::Extended \
-	Term::ReadLine::Gnu \
-	Test::Kwalitee \
-	Test2::Harness \
-	Test2::Suite \
-	UUID \
-	URI::XSEscape
-
+    set -x PERL5LIB ~/cpan/lib/perl5; \
+    cpanm -l ~/cpan -n \
+    App::Ack \
+    App::perlimports \
+    bareword::filehandles \
+    Bytes::Random::Secure \
+    Carp::Assert::More \
+    Carton \
+    Clone \
+    Cpanel::JSON::XS \
+    CryptX \
+    Crypt::Argon2 \
+    Crypt::JWT \
+    Crypt::Passphrase \
+    Crypt::Passphrase::Argon2 \
+    Crypt::URandom \
+    Data::Checks \
+    Data::Pretty \
+    Data::UUID \
+    DateTime \
+    DBD::Pg \
+    DBD::SQLite \
+    DBI \
+    DBIx::Class \
+    DBIx::Connector \
+    DBIx::Connector::Driver::Pg \
+    DBIx::Connector::Driver::SQLite \
+    Dist::Zilla \
+    Dist::Zilla::Plugin::GitHub::Meta \
+    Dist::Zilla::Plugin::Git::Contributors \
+    Dist::Zilla::Plugin::RewriteVersion \
+    Dist::Zilla::PluginBundle::Basic \
+    e \
+    File::Slurp \
+    Git::Raw \
+    Hash::Ordered \
+    HTTP::XSHeaders \
+    HTTP::XSCookies \
+    indirect \
+    IO::All \
+    IO::Async \
+    IO::Socket::Socks \
+    IO::Socket::SSL \
+    Kelp \
+    Log::Dispatch \
+    Log::Dispatchouli \
+    Log::Log4perl \
+    List::AllUtils \
+    Mojolicious \
+    Mojo::Log::JSON \
+    Mojo::Pg \
+    Mojo::Redis \
+    Mojo::SQLite \
+    Moose \
+    MooseX::Enumeration \
+    MooseX::Extended \
+    multidimensional \
+    Neovim::Ext \
+    Net::IP \
+    Object::Pad \
+    Object::Pad::FieldAttr::Checked \
+    Package::Alias \
+    Parallel::ForkManager \
+    Params::Util \
+    Params::Validate \
+    Perl::Critic \
+    Perl::Critic::TooMuchCode \
+    Perl::Critic::StricterSubs \
+    Perl::Critic::Community \
+    Perl::Critic::Bangs \
+    Perl::Tidy \
+    Perl::Tidy::Sweetened \
+    Pod::Perldoc \
+    Pod::PlainText \
+    Readonly \
+    Ref::Util \
+    Scalar::Util \
+    strictures \
+    Signature::Attribute::Checked \
+    Syntax::Keyword::Try \
+    Sub::Identify \
+    Sublike::Extended \
+    Term::ReadLine::Gnu \
+    Test::Kwalitee \
+    Test2::Harness \
+    Test2::Suite \
+    UUID \
+    URI::XSEscape
