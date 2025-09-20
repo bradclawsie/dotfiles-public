@@ -39,10 +39,6 @@ if test -d $HOME/local/bin
     fish_add_path -p $HOME/local/bin
 end
 
-if test -d $HOME/local/go/bin
-    fish_add_path -p $HOME/local/go/bin
-end
-
 if test -d $HOME/go
     set -gx GOPATH $HOME/go
 end
@@ -51,8 +47,8 @@ if test -d $HOME/go/bin
     fish_add_path -p $HOME/go/bin
 end
 
-if test -d $HOME/local/rust/bin
-    fish_add_path -p $HOME/local/rust/bin
+if test -d $HOME/local/go/bin
+    fish_add_path -p $HOME/local/go/bin
 end
 
 if test -d $HOME/cpan/bin
