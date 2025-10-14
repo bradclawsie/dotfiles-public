@@ -1,0 +1,1 @@
+sudo pacstrap -K -c /var/lib/machines/dev aspell aspell-en base base-devel bat cpanminus fish git git-delta gnupg jujutsu just nvim less man-db man-pages pinentry postgresql postgresql-libs ripgrep sudo tmux
