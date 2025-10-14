@@ -15,6 +15,7 @@ pkgs:
 # get DBD::Pg from pacman
 libs:
     set -x PERL5LIB ~/cpan/lib/perl5; \
+    cpanm -l ~/cpan -n --configure-args "OPTIMIZE='-std=gnu17'" DBD::Pg && \
     cpanm -l ~/cpan -n \
     App::Ack \
     App::perlimports \
