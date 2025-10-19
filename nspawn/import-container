@@ -1,5 +1,6 @@
 #!/bin/sh
 # call like 'import-container grokloc'
-gunzip "$1.tar.gz"
-mv "$1.tar" "$1"
+# assumes file like grokloc-export.tar.gz
+gunzip "$1-export.tar.gz"
+mv "$1-export.tar" "$1"
 sudo machinectl import-tar "$1"
