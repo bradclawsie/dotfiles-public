@@ -1,5 +1,0 @@
-#!/bin/sh
-# dev should be tar-export, important file be named dev
-# as that is how it will be imported in /var/lib/machines
-sudo machinectl import-tar dev
-

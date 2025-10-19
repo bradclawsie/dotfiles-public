@@ -1,6 +1,0 @@
-#!/bin/sh
-sudo machinectl export-tar dev > dev-export
-mv dev-export dev-export.tar
-echo "gziping..."
-gzip dev-export.tar
-

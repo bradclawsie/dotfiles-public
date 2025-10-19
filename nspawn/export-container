@@ -1,0 +1,6 @@
+#!/bin/sh
+sudo machinectl export-tar "$1" > "$1-export"
+mv "$1-export" "$1-export.tar"
+echo "gziping..."
+gzip "$1-export.tar"
+
