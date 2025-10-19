@@ -1,0 +1,10 @@
+# /etc/systemd/nspawn/grokloc.nspawn
+
+[Exec]
+Boot=on
+
+[Files]
+Bind=/var/local/nspawn-shared:/var/local/nspawn-shared
+
+[Network]
+VirtualEthernet=no
