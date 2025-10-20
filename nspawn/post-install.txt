@@ -1,0 +1,5 @@
+root passwd
+adduser brad
+echo 'brad ALL=(ALL) ALL' > /etc/sudoers.d/00_brad
+edit locale.gen
+sudo loginctl enable-linger brad
