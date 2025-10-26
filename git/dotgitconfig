@@ -18,14 +18,6 @@
   email = brad@b7j0c.org
   signingkey = B1C1F1462CE76E5F2D994FB3D817E42DCCB5AB08
 
-[sendemail]
-  smtpserver = smtp.fastmail.com
-  smtpuser = clawsie@fastmail.fm
-  smtpencryption = ssl
-  smtpserverport = 465
-  smtppass = ly3jly2fmmlwt92g
-  confirm = auto
-
 [pull]
   ff = only
 

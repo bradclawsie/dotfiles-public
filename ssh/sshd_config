@@ -1,4 +1,4 @@
-Port 22
+Port 512
 ListenAddress 0.0.0.0
 PasswordAuthentication no
 ChallengeResponseAuthentication no
@@ -7,5 +7,4 @@ PermitEmptyPasswords no
 PubkeyAuthentication yes
 UsePAM yes
 Subsystem sftp /usr/lib/ssh/sftp-server
-AllowUsers brad grokloc
-
+AllowUsers brad
