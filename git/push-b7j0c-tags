@@ -1,2 +1,0 @@
-#!/bin/sh
-git push --tags github master; git push --tags gitlab master; git push --tags b7j0c master; git push --tags sr.ht master; git push --tags codeberg master

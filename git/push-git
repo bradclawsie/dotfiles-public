@@ -1,0 +1,13 @@
+#!/usr/bin/env fish
+
+set branch "master"
+if set -q argv[1]
+  set branch argv[1]
+end
+echo "push to: $branch"
+
+git push b7j0c $branch
+git push github $branch
+git push sr.ht $branch
+git push codeberg $branch
+
