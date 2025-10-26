@@ -1,11 +1,11 @@
 [core]
-  repositoryformatversion = 0
+	repositoryformatversion = 0
 	filemode = true
 	bare = false
 	logallrefupdates = true
 [remote "origin"]
-	url = git@github:bradclawsie/dotfiles-public.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+	url = ssh://b7j0c:/home/brad/bare-repos/dotfiles-public
+	fetch = +refs/heads/*:refs/remotes/b7j0c/*
 [remote "github"]
 	url = git@github:bradclawsie/dotfiles-public.git
 	fetch = +refs/heads/*:refs/remotes/github/*
