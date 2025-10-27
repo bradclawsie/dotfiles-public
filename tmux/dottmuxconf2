@@ -1,3 +1,0 @@
-set -g status-bg grey16
-set -g status-fg white
-set -g status-right "%H:%M"

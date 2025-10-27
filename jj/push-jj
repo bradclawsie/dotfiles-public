@@ -1,4 +1,0 @@
-jj git push --remote b7j0c -b master
-jj git push --remote github -b master
-jj git push --remote codeberg -b master
-jj git push --remote sr.ht -b master
