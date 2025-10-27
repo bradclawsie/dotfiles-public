@@ -6,8 +6,8 @@ if set -q $argv[1]
 end
 echo "pull from $branch"
 
-git push b7j0c $branch
-git push github $branch
-git push sr.ht $branch
-git push codeberg $branch
+git pull b7j0c $branch
+git pull github $branch
+git pull sr.ht $branch
+git pull codeberg $branch
 
