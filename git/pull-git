@@ -4,7 +4,7 @@ set branch "master"
 if set -q $argv[1]
   set branch $argv[1]
 end
-echo "push to $branch"
+echo "pull from $branch"
 
 git push b7j0c $branch
 git push github $branch
