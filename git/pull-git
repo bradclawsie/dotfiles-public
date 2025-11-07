@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 set branch "master"
-if set -q $argv[1]
+if test (count $argv) -eq 1
   set branch $argv[1]
 end
 echo "pull from $branch"
