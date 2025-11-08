@@ -1,0 +1,11 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[diff "age"]
+	binary = true
+	textconv = "age -d "
+[remote "b7j0c"]
+	url = ssh://b7j0c-git/srv/git/passage
+	fetch = +refs/heads/*:refs/remotes/b7j0c/*
