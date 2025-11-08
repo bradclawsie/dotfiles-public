@@ -15,6 +15,13 @@ Host b7j0c
 	IdentitiesOnly yes
 	SetEnv TERM=xterm-256color
 
+Host b7j0c-git
+	HostName b7j0c.org
+	User git
+	Port 512
+	IdentityFile ~/.ssh/id_ed25519_20230101
+	IdentitiesOnly yes
+
 Host sr.ht
 	HostName git.sr.ht
 	User git
@@ -33,12 +40,6 @@ Host github
 	IdentityFile ~/.ssh/id_ed25519_20230101
 	IdentitiesOnly yes
 
-Host gitlab
-	HostName gitlab.com
-	User git
-	IdentityFile ~/.ssh/id_ed25519_20230101
-	IdentitiesOnly yes
-
 Host codeberg
 	HostName codeberg.org
 	User git
@@ -46,20 +47,6 @@ Host codeberg
 	IdentitiesOnly yes
 
 # grokloc
-
-Host grokloc
-	Hostname b7j0c.org
-	User brad
-	Port 512
-	IdentityFile ~/.ssh/id_ed25519_20230101
-	IdentitiesOnly yes
-
-Host grokloc-grokloc
-	HostName grokloc.com
-	User grokloc
-	Port 512
-	IdentityFile ~/.ssh/grokloc_ed25519_20230101
-	IdentitiesOnly yes
 
 Host sr.ht-grokloc
 	HostName git.sr.ht
@@ -69,12 +56,6 @@ Host sr.ht-grokloc
 
 Host github-grokloc
 	HostName github.com
-	User git
-	IdentityFile ~/.ssh/grokloc_ed25519_20230101
-	IdentitiesOnly yes
-
-Host gitlab-grokloc
-	HostName gitlab.com
 	User git
 	IdentityFile ~/.ssh/grokloc_ed25519_20230101
 	IdentitiesOnly yes
