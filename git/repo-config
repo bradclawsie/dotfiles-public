@@ -10,7 +10,7 @@
 	url = git@sr.ht:~bradclawsie/dotfiles-public
 	fetch = +refs/heads/*:refs/remotes/sr.ht/*
 [remote "b7j0c"]
-	url = ssh://b7j0c-git:/srv/git/dotfiles-public
+	url = ssh://b7j0c-git/srv/git/dotfiles-public
 	fetch = +refs/heads/*:refs/remotes/b7j0c/*
 [remote "codeberg"]
 	url = git@codeberg:bradclawsie/dotfiles-public.git
