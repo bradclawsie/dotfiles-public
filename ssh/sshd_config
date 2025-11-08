@@ -7,4 +7,4 @@ PermitEmptyPasswords no
 PubkeyAuthentication yes
 UsePAM yes
 Subsystem sftp /usr/lib/ssh/sftp-server
-AllowUsers brad
+AllowUsers brad git
