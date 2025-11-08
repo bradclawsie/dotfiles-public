@@ -61,55 +61,15 @@ require("lazy").setup({
   },
 
   {
-    'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    opts = {}
-  },
-
-  {
     'kylechui/nvim-surround',
     version = "*",
     event = "VeryLazy",
   },
 
-  -- [[ Comment.nvim Keymaps ]]
-  --
-  -- This plugin provides "operators" that work with motions.
-  -- 'gc' is for line comments (e.g., //)
-  -- 'gb' is for block comments (e.g., /* ... */)
-
-  -- --- Normal Mode (Line Comments) ---
-  -- gc + [motion]
-  --   gcc   - Toggle comment for the current line
-  --   gc5j  - Toggle comment for the 5 lines below
-  --   gcG   - Toggle comment from cursor to end of file
-  --   gcap  - Toggle comment for the current paragraph
-  --   gcaw  - Toggle comment for the current word
-
-  -- --- Visual Mode (Line Comments) ---
-  -- Select text (v, V, Ctrl-v) and press 'gc'
-  --   gc    - Toggles line comments for each line in the visual selection.
-  --           (This keymap is often set manually in the config, as shown in the plugin setup)
-
-  -- --- Normal Mode (Block Comments) ---
-  -- gb + [motion]
-  --   gbc   - Toggle block comment for the current line
-  --   gbap  - Toggle block comment for the current paragraph (as a single block)
-  --   gbiw  - Toggle block comment for the inner word
-
-  -- --- Visual Mode (Block Comments) ---
-  -- Select text (v, V, Ctrl-v) and press 'gb'
-  --   gb    - Adds a single block comment around the entire visual selection.
-  --           (e.g., /* selected text */)
-
   {
-    'numToStr/Comment.nvim',
-    event = "VeryLazy",
-    opts = {},
-    config = function(_, opts)
-      require('Comment').setup(opts)
-      vim.keymap.set('v', 'gc', '<Plug>(Comment.nvim)', { silent = true, desc = "Comment visual selection" })
-    end
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
   },
 
 })
