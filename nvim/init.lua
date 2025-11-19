@@ -12,6 +12,22 @@ vim.g.perl_host_prog = "/usr/bin/perl"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.api.nvim_create_autocmd("LspAttach", {
+    desc = "LSP actions",
+    callback = function(event)
+        local opts = { buffer = event.buf }
+
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+        
+        -- Diagnostics (optional but helpful)
+        vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+    end,
+})
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -72,4 +88,26 @@ require("lazy").setup({
     config = true
   },
 
+  {
+    "williamboman/mason.nvim",
+    dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "neovim/nvim-lspconfig",
+    },
+    config = function()
+        require("mason").setup({
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
+            }
+        })
+
+        require("mason-lspconfig").setup({
+            ensure_installed = { "lua_ls" }, 
+        })
+    end
+  }
 })
