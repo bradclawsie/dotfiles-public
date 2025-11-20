@@ -1,8 +1,3 @@
-vim.opt.tabstop = 2
-vim.opt.softtabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', '<C-o>:w<CR>', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>gv', { noremap = true, silent = true })
@@ -13,19 +8,19 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.api.nvim_create_autocmd("LspAttach", {
-    desc = "LSP actions",
-    callback = function(event)
-        local opts = { buffer = event.buf }
+  desc = "LSP actions",
+  callback = function(event)
+    local opts = { buffer = event.buf }
 
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-        
-        -- Diagnostics (optional but helpful)
-        vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
-    end,
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+
+    -- Diagnostics (optional but helpful)
+    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+  end,
 })
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -91,23 +86,43 @@ require("lazy").setup({
   {
     "williamboman/mason.nvim",
     dependencies = {
-        "williamboman/mason-lspconfig.nvim",
-        "neovim/nvim-lspconfig",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
     },
     config = function()
-        require("mason").setup({
-            ui = {
-                icons = {
-                    package_installed = "✓",
-                    package_pending = "➜",
-                    package_uninstalled = "✗"
-                }
-            }
-        })
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
 
-        require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls" }, 
-        })
+      require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls" },
+      })
     end
-  }
+  },
+
+  {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    keys = {
+      { "<leader>fm", function() require("conform").format() end, desc = "Format file" },
+    },
+    opts = {
+      formatters_by_ft = {
+        go = { "goimports" },
+      },
+
+      format_on_save = {
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      },
+    },
+    dependencies = { "mason.nvim" },
+  },
 })
