@@ -1,28 +1,37 @@
+-- ctrl-s as save
 vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })
 vim.keymap.set('i', '<C-s>', '<C-o>:w<CR>', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-s>', '<Esc>:w<CR>gv', { noremap = true, silent = true })
 
-vim.g.perl_host_prog = "/usr/bin/perl"
+-- default indent
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-vim.api.nvim_create_autocmd("LspAttach", {
-  desc = "LSP actions",
-  callback = function(event)
-    local opts = { buffer = event.buf }
-
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-
-    -- Diagnostics (optional but helpful)
-    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+-- go indent
+local go_augroup = vim.api.nvim_create_augroup("GoSpecificSettings", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  group = go_augroup,
+  callback = function()
+    vim.opt_local.tabstop = 8
+    vim.opt_local.softtabstop = 8
+    vim.opt_local.shiftwidth = 8
+    vim.opt_local.expandtab = false
   end,
 })
 
+-- perl settings
+vim.g.perl_host_prog = "/usr/bin/perl"
+
+-- leader key
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -36,6 +45,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- lazy plugins
 require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
@@ -126,3 +136,37 @@ require("lazy").setup({
     dependencies = { "mason.nvim" },
   },
 })
+
+-- lsp actions
+vim.api.nvim_create_autocmd("LspAttach", {
+  desc = "LSP actions",
+  callback = function(event)
+    local opts = { buffer = event.buf }
+
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+
+    -- diagnostics
+    vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
+  end,
+})
+
+vim.lsp.config['gopls'] = {
+  cmd = { "gopls" },
+  filetypes = { "go", "gomod", "gotmpl", "gowork" },
+  root_dir = require('lspconfig.util').root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholders = true,
+      analyses = {
+        unusedparams = true,
+        staticcheck = true,
+      },
+    },
+  },
+}
+vim.lsp.enable('gopls')
