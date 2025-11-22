@@ -153,20 +153,3 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, opts)
   end,
 })
-
-vim.lsp.config['gopls'] = {
-  cmd = { "gopls" },
-  filetypes = { "go", "gomod", "gotmpl", "gowork" },
-  root_dir = require('lspconfig.util').root_pattern("go.work", "go.mod", ".git"),
-  settings = {
-    gopls = {
-      completeUnimported = true,
-      usePlaceholders = true,
-      analyses = {
-        unusedparams = true,
-        staticcheck = true,
-      },
-    },
-  },
-}
-vim.lsp.enable('gopls')
