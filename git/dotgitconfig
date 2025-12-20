@@ -30,3 +30,7 @@
 [alias]
   st = status -sb
   tree = log --oneline --decorate --graph
+
+[tig]
+  main-view-date-display = no
+
