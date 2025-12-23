@@ -6,8 +6,11 @@ useradd -m -G wheel -s /usr/bin/fish brad
 passwd brad
 echo 'brad ALL=(ALL) ALL' > /etc/sudoers.d/00_brad
 edit locale.gen # https://wiki.archlinux.org/title/Locale
+
+# do this as root AND as brad
 systemctl --user enable ssh-agent.service
 systemctl --user start ssh-agent.service
+
 loginctl enable-linger brad
 
 # make a tarball of stuff to cp over
