@@ -9,3 +9,7 @@ edit locale.gen # https://wiki.archlinux.org/title/Locale
 systemctl --user enable ssh-agent.service
 systemctl --user start ssh-agent.service
 loginctl enable-linger brad
+
+# make a tarball of stuff to cp over
+tar -rvf d.tar .gitconfig .tmux.conf .ssh .gnupg .config/fish .config/nvim repos/bradclawsie/dotfiles-public/.git/config
+
