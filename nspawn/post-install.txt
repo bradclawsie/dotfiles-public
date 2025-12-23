@@ -11,5 +11,5 @@ systemctl --user start ssh-agent.service
 loginctl enable-linger brad
 
 # make a tarball of stuff to cp over
-tar -rvf d.tar .gitconfig .tmux.conf .ssh .gnupg .config/fish .config/nvim repos/bradclawsie/dotfiles-public/.git/config
+tar -rvf d.tar .gitconfig .tmux.conf .ssh .gnupg .config/fish .config/nvim bin/pull-git.pl bin/push-git.pl repos/bradclawsie/dotfiles-public/.git/config
 
