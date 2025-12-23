@@ -1,5 +1,11 @@
-root passwd
-adduser brad
+# set root passwd
+systemd-nspawn -D /var/lib/machines/{$machine} /usr/bin/passwd
+pacman-key --init
+pacman-key --populate archlinux
+useradd -m -G wheel -s /usr/bin/fish brad
+passwd brad
 echo 'brad ALL=(ALL) ALL' > /etc/sudoers.d/00_brad
-edit locale.gen
-sudo loginctl enable-linger brad
+edit locale.gen # https://wiki.archlinux.org/title/Locale
+systemctl --user enable ssh-agent.service
+systemctl --user start ssh-agent.service
+loginctl enable-linger brad
