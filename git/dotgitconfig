@@ -1,47 +1,76 @@
-[core]
-  pager = delta
-
-[interactive]
-  diffFilter = delta --color-only
-
-[delta]
-  navigate = true
-
-[merge]
-  conflictstyle = diff3
-
-[diff]
-  colorMoved = default
-
 [user]
-  name = Brad Clawsie
-  email = brad@b7j0c.org
-  signingkey = ~/.ssh/id_ed25519.pub
+    name = Brad Clawsie
+    email = brad@b7j0c.org
+    signingkey = ~/.ssh/id_ed25519.pub
 
-[pull]
-  ff = only
+[core]
+    pager = delta
+    editor = nvim
+    autocrlf = input
 
 [init]
-  defaultBranch = master
+    defaultBranch = master
 
 [commit]
-  gpgsign = true
+    gpgsign = true
 
 [gpg]
-  format = ssh
+    format = ssh
 
 [gpg "ssh"]
-  allowedSignersFile = ~/.ssh/allowed_signers
+    allowedSignersFile = ~/.ssh/allowed_signers
 
-[tig]
-  main-view-date-display = no
+[pull]
+    ff = only
 
-[tig "bind"]
-  status = C !git commit -S
+[push]
+    autoSetupRemote = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
 
 [alias]
-  st = status -sb
-  tree = log --oneline --decorate --graph
-  undo = reflog show --pretty=format:'%C(auto)%h %C(blue)%gd%C(reset) %C(yellow)%s%C(reset) %C(green)(%cr)%C(reset)' --date=relative
-  ghosts = !"git fsck --lost-found | grep commit | cut -d ' ' -f 3 | xargs -n 1 git log -n 1 --pretty=format:'%C(red)%h%C(reset) %s' --color"
+    st     = status -sb
+    tree   = log --graph --pretty=format:'%C(yellow)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    undo   = reset --soft HEAD~1
+    ghosts = !"git fsck --lost-found | grep commit | cut -d ' ' -f 3 | xargs -n 1 git log -n 1 --pretty=format:'%C(red)%h%C(reset) %s' --color"
+    last   = log -1 HEAD
+
+[tig]
+    main-view-date-display = no
+    # Refresh the view automatically when the focus returns to tig
+    refresh-mode = auto
+
+[tig "bind"]
+    # --- Status & Committing ---
+    # 'C' to commit with signature (your original)
+    status = C !git commit -S
+    # 'A' to amend the last commit (crucial for quick fixes)
+    status = A !git commit --amend
+
+    # --- Staging & Hunks ---
+    # While 'u' stages a whole file, '\' in the status/stage view 
+    # will split a hunk if it's too large to stage at once.
+    
+    # --- Stashing (Global bindings) ---
+    # 'Z' to stash everything (including untracked files)
+    generic = Z !git stash -u
+    # 'P' to pop the most recent stash
+    generic = P !git stash pop
+    # 'S' to stash ONLY what you have staged (great for "saving" a specific piece of work)
+    generic = S !git stash push --staged -m \"%(prompt Stash Name: )\"
+
+    # --- Branch Management ---
+    # 'B' in the 'main' view to quickly create a new branch
+    main = B !?git checkout -b "%(prompt New branch name: )"
 
