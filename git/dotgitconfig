@@ -25,12 +25,13 @@
   defaultBranch = master
 
 [commit]
-	gpgsign = true
+  gpgsign = true
 
 [gpg]
   format = ssh
+
 [gpg "ssh"]
-	allowedSignersFile = ~/.ssh/allowed_signers
+  allowedSignersFile = ~/.ssh/allowed_signers
 
 [tig]
   main-view-date-display = no
@@ -41,10 +42,6 @@
 [alias]
   st = status -sb
   tree = log --oneline --decorate --graph
-
-[alias]
   undo = reflog show --pretty=format:'%C(auto)%h %C(blue)%gd%C(reset) %C(yellow)%s%C(reset) %C(green)(%cr)%C(reset)' --date=relative
-
-[alias]
   ghosts = !"git fsck --lost-found | grep commit | cut -d ' ' -f 3 | xargs -n 1 git log -n 1 --pretty=format:'%C(red)%h%C(reset) %s' --color"
 
