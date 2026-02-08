@@ -1,1 +1,0 @@
-sudo pacstrap -K -c /var/lib/machines/grokloc aspell aspell-en base base-devel bat cpanminus fish fzf git git-delta gnupg just neovim less man-db man-pages openssh pinentry postgresql postgresql-libs readline ripgrep sudo tig tmux unzip zip

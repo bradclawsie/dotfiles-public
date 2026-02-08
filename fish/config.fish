@@ -1,6 +1,5 @@
 alias c="clear"
 alias h="history"
-alias gpg-agent-restart="gpg-connect-agent reloadagent /bye"
 
 if status is-interactive
     set -gx LANG en_US.UTF-8
@@ -13,9 +12,6 @@ if status is-interactive
     set -gx EDITOR nvim
     set -gx ALTERNATE_EDITOR nano
     set -gx VISUAL nvim
-
-    set -gx GPG_TTY (tty)
-    gpg-connect-agent updatestartuptty /bye >/dev/null
 
     set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
