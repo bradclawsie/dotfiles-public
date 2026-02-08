@@ -1,1 +1,1 @@
-sudo pacstrap -K -c /var/lib/machines/d aspell aspell-en base base-devel bat dmd dtools fish fzf git git-delta gnupg just neovim less man-db man-pages openssh pinentry readline ripgrep sudo tig tmux unzip zip
+sudo pacstrap -K -c /var/lib/machines/d aspell aspell-en base base-devel bat dmd dtools dub fish fzf git git-delta gnupg just neovim less man-db man-pages openssh pinentry readline ripgrep sudo tig tmux unzip zip
