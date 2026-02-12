@@ -30,6 +30,10 @@ if test -d $HOME/local/bin
     fish_add_path -p $HOME/local/bin
 end
 
+if test -d $HOME/.local/bin
+    fish_add_path -p $HOME/.local/bin
+end
+
 if test -d $HOME/go/bin
     fish_add_path -p $HOME/go/bin
 end
