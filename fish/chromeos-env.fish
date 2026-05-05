@@ -8,4 +8,8 @@ if test -d $HOME/local/dmd2/linux/bin64
     fish_add_path -p $HOME/local/dmd2/linux/bin64
 end
 
+if test -d $HOME/go/bin
+    fish_add_path -p $HOME/.radicle/bin
+end
+
 . ~/perl5/perlbrew/etc/perlbrew.fish
