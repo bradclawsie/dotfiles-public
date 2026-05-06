@@ -38,6 +38,10 @@ if test -d $HOME/go/bin
     fish_add_path -p $HOME/go/bin
 end
 
+if test -d $HOME/.radicle/bin
+    fish_add_path -p $HOME/.radicle/bin
+end
+
 if test -f $HOME/.config/fish/env.fish
     source $HOME/.config/fish/env.fish
 end
