@@ -8,4 +8,6 @@ if test -d $HOME/local/dmd2/linux/bin64
     fish_add_path -p $HOME/local/dmd2/linux/bin64
 end
 
+source "$HOME/.cargo/env.fish"
+
 . ~/perl5/perlbrew/etc/perlbrew.fish
