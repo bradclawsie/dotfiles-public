@@ -1,5 +1,7 @@
-# set root passwd
-systemd-nspawn -D /var/lib/machines/{$machine} /usr/bin/passwd
+# set root passwd from local shell
+sudo systemd-nspawn -D /var/lib/machines/{$machine} /usr/bin/passwd
+
+# do sudo systemd-nspawn -b -D /var/lib/machines/{$machine} to log in as root and do...
 pacman-key --init
 pacman-key --populate archlinux
 useradd -m -G wheel -s /usr/bin/fish brad
