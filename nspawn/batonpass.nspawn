@@ -1,0 +1,10 @@
+# /etc/systemd/nspawn/batonpass.nspawn
+
+[Exec]
+Boot=on
+
+[Files]
+Bind=/var/local/nspawn-shared:/var/local/nspawn-shared
+
+[Network]
+VirtualEthernet=no

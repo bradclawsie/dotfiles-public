@@ -1,0 +1,1 @@
+sudo pacstrap -K -c /var/lib/machines/batonpass aspell aspell-en base base-devel bat fish fzf git git-delta go golangci-lint just neovim less man-db man-pages openssh pinentry postgresql ripgrep staticcheck sudo tig tmux unzip zip
