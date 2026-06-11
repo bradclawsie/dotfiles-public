@@ -8,3 +8,7 @@ grokloc.com {
 	file_server
 }
 
+batonpass.systems {
+	root * /usr/local/www-batonpass
+	file_server
+}
