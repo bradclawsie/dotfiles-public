@@ -46,22 +46,3 @@ Host codeberg
 	IdentityFile ~/.ssh/id_ed25519_20230101
 	IdentitiesOnly yes
 
-# grokloc
-
-Host sr.ht-grokloc
-	HostName git.sr.ht
-	User git
-	IdentityFile ~/.ssh/grokloc_ed25519_20230101
-	IdentitiesOnly yes
-
-Host github-grokloc
-	HostName github.com
-	User git
-	IdentityFile ~/.ssh/grokloc_ed25519_20230101
-	IdentitiesOnly yes
-
-Host codeberg-grokloc
-	HostName codeberg.org
-	User git
-	IdentityFile ~/.ssh/grokloc_ed25519_20230101
-	IdentitiesOnly yes
