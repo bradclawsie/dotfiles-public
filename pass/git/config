@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[diff "gpg"]
+	binary = true
+	textconv = gpg -d --quiet --yes --compress-algo=none --no-encrypt-to --batch --use-agent
+[remote "b7j0c"]
+	url = ssh://b7j0c-git/srv/git/pass
+	fetch = +refs/heads/*:refs/remotes/b7j0c/*
+[branch "master"]
+	remote = b7j0c
+	merge = refs/heads/master
