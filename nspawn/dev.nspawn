@@ -1,4 +1,4 @@
-# /etc/systemd/nspawn/d.nspawn
+# /etc/systemd/nspawn/dev.nspawn
 
 [Exec]
 Boot=on

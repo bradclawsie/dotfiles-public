@@ -1,1 +1,0 @@
-sudo pacstrap -K -c /var/lib/machines/go aspell aspell-en base base-devel bat cpanminus fish fzf git git-delta go just neovim less man-db man-pages openssh pinentry readline ripgrep sudo tig tmux unzip zip
