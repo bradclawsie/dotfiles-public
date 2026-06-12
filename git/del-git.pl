@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-use v5.42;
+use v5.40;
 
 my $branch = $ARGV[0];
 $branch =~ s/\s+$//g;

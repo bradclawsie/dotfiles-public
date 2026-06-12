@@ -1,5 +1,5 @@
 #!/usr/bin/env perl
-use v5.42;
+use v5.40;
 
 my $branch = `git branch --show-current`;
 $branch =~ s/\s+$//g;
