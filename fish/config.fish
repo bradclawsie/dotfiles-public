@@ -13,8 +13,8 @@ if status is-interactive
     set -gx ALTERNATE_EDITOR nano
     set -gx VISUAL nvim
 
-    set -gx SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
-
+    keychain --eval --agents ssh id_ed25519 | source
+    
     clear
 end
 
