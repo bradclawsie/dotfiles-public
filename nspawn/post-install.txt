@@ -4,13 +4,13 @@ sudo systemd-nspawn -D /var/lib/machines/{$machine} /usr/bin/passwd
 # do sudo systemd-nspawn -b -D /var/lib/machines/{$machine} to log in as root and do...
 /usr/sbin/useradd -m -s /usr/bin/fish brad
 passwd brad
-apt install locale sudo tmux git fish
+apt install locales sudo tmux git fish git-delta tig keychain
 /usr/sbin/usermod -a -G sudo brad
 /usr/sbin/dpkg-reconfigure locales
 
-# do this as root AND as brad
-systemctl --user enable ssh-agent.service
-systemctl --user start ssh-agent.service
+# do this as root AND as brad (not needed if you are running keychain!)
+# systemctl --user enable ssh-agent.service
+# systemctl --user start ssh-agent.service
 
 loginctl enable-linger brad
 
