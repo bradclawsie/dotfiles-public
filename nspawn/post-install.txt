@@ -4,7 +4,7 @@ sudo systemd-nspawn -D /var/lib/machines/{$machine} /usr/bin/passwd
 # do sudo systemd-nspawn -b -D /var/lib/machines/{$machine} to log in as root and do...
 /usr/sbin/useradd -m -s /usr/bin/fish brad
 passwd brad
-apt install locales sudo tmux git fish git-delta tig keychain
+apt install locales sudo tmux git fish git-delta tig keychain build-essential cmake wget curl
 /usr/sbin/usermod -a -G sudo brad
 /usr/sbin/dpkg-reconfigure locales
 
