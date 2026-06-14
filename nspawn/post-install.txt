@@ -8,6 +8,8 @@ apt install locales sudo tmux git fish git-delta tig keychain
 /usr/sbin/usermod -a -G sudo brad
 /usr/sbin/dpkg-reconfigure locales
 
+edit /etc/hosts to add 'debian' to first two lines
+
 # do this as root AND as brad (not needed if you are running keychain!)
 # systemctl --user enable ssh-agent.service
 # systemctl --user start ssh-agent.service
