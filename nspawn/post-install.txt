@@ -1,21 +1,14 @@
-# set root passwd from local shell
-sudo systemd-nspawn -D /var/lib/machines/{$machine} /usr/bin/passwd
+sudo systemd-nspawn -D /var/lib/machines/dev /usr/bin/passwd
 
-# do sudo systemd-nspawn -b -D /var/lib/machines/{$machine} to log in as root and do...
+login: sudo systemd-nspawn -b -D /var/lib/machines/dev
+
+apt install locales sudo tmux just git fish git-delta tig keychain build-essential cmake wget curl
 /usr/sbin/useradd -m -s /usr/bin/fish brad
 passwd brad
-apt install locales sudo tmux just git fish git-delta tig keychain build-essential cmake wget curl
 /usr/sbin/usermod -a -G sudo brad
 /usr/sbin/dpkg-reconfigure locales
 
 edit /etc/hosts to add 'debian' to first two lines
-
-# do this as root AND as brad (not needed if you are running keychain!)
-# systemctl --user enable ssh-agent.service
-# systemctl --user start ssh-agent.service
-
 loginctl enable-linger brad
 
-# make a tarball of stuff to cp over
-tar -rvf d.tar .gitconfig .tmux.conf .ssh .gnupg .config/fish .config/nvim bin/pull-git.pl bin/push-git.pl repos/bradclawsie/dotfiles-public/.git/config
 
