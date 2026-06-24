@@ -2,7 +2,7 @@ sudo systemd-nspawn -D /var/lib/machines/dev /usr/bin/passwd
 
 login: sudo systemd-nspawn -b -D /var/lib/machines/dev
 
-apt install locales sudo tmux just git fish git-delta tig keychain build-essential cmake wget curl
+apt install locales sudo tmux just git ripgrep fish git-delta tig keychain build-essential cmake wget curl
 /usr/sbin/useradd -m -s /usr/bin/fish brad
 passwd brad
 /usr/sbin/usermod -a -G sudo brad
