@@ -1,10 +1,12 @@
-Port 512
-ListenAddress 0.0.0.0
+Include /etc/ssh/sshd_config.d/*.conf
+KbdInteractiveAuthentication no
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem	sftp	/usr/lib/openssh/sftp-server
 PasswordAuthentication no
-ChallengeResponseAuthentication no
 PermitRootLogin no
 PermitEmptyPasswords no
 PubkeyAuthentication yes
-UsePAM yes
-Subsystem sftp /usr/lib/ssh/sftp-server
 AllowUsers brad git

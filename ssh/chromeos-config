@@ -10,7 +10,6 @@ AddKeysToAgent yes
 Host b7j0c
 	HostName b7j0c.org
 	User brad
-	Port 512
 	IdentityFile ~/.ssh/id_ed25519
 	IdentitiesOnly yes
 	SetEnv TERM=xterm-256color
@@ -18,7 +17,6 @@ Host b7j0c
 Host b7j0c-git
 	HostName b7j0c.org
 	User git
-	Port 512
 	IdentityFile ~/.ssh/id_ed25519
 	IdentitiesOnly yes
 
