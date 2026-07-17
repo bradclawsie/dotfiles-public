@@ -49,7 +49,6 @@ Host codeberg
 Host batonpass-git
 	HostName batonpass.systems
 	User git
-	Port 512
 	IdentityFile ~/.ssh/batonpass_ed25519
 	IdentitiesOnly yes
 
