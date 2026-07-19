@@ -135,6 +135,22 @@ require("lazy").setup({
     },
     dependencies = { "mason.nvim" },
   },
+
+  {
+    "sainnhe/sonokai",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optional: Choose a variant (e.g., 'shusia', 'maia', 'espresso', 'atlantis', or 'andromeda')
+      vim.g.sonokai_style = 'atlantis'
+
+      -- Optional: Enable transparent background
+      vim.g.sonokai_transparent_background = '1'
+
+      vim.cmd.colorscheme("sonokai")
+    end,
+  },
+
 })
 
 -- lsp actions
