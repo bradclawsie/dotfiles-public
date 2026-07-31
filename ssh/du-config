@@ -1,0 +1,10 @@
+ConnectionAttempts 1
+ForwardAgent yes
+ForwardX11 no
+KeepAlive yes
+AddKeysToAgent yes
+
+Host github.com github
+  User git
+  IdentityFile ~/.ssh/id_defenseunicorns
+  IdentitiesOnly yes
