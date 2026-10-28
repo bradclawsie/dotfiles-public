@@ -34,7 +34,8 @@
 ;; rustup component add rust-analyzer
 
 (setq treesit-language-source-alist
-      '((go . ("https://github.com/tree-sitter/tree-sitter-go"))
+      '((go . ("https://github.com/tree-sitter/tree-sitter-go"
+               "v0.23.4"))
         (rust . ("https://github.com/tree-sitter/tree-sitter-rust"
                  "v0.23.3"))))
 
