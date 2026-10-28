@@ -9,12 +9,12 @@ if status is-interactive
     set -gx HISTSIZE 10000
     set -gx SAVEHIST 10000
 
-    set -gx EDITOR nvim
+    set -gx EDITOR emacs
     set -gx ALTERNATE_EDITOR nano
-    set -gx VISUAL nvim
+    set -gx VISUAL emacs
 
     keychain --eval --agents ssh id_ed25519 | source
-    
+
     clear
 end
 

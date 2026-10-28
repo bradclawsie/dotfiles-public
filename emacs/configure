@@ -1,0 +1,10 @@
+sudo apt install libgnutls28-dev libgccjit-14-dev zlib1g-dev libtree-sitter-dev pkgconf libncurses-dev;
+./configure \
+    --prefix="$HOME/local/emacs" \
+    --without-x \
+    --without-pgtk \
+    --without-ns \
+    --with-native-compilation \
+    --with-tree-sitter \
+    --with-gnutls=ifavailable;
+
