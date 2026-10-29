@@ -7,6 +7,7 @@
 (setq-default display-line-numbers-type t)
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
+(blink-cursor-mode -1)
 
 ;; Editing
 (global-set-key (kbd "C-l") #'goto-line)

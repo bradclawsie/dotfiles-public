@@ -9,9 +9,9 @@ if status is-interactive
     set -gx HISTSIZE 10000
     set -gx SAVEHIST 10000
 
-    set -gx EDITOR emacs
+    set -gx EDITOR emacsclient
     set -gx ALTERNATE_EDITOR nano
-    set -gx VISUAL emacs
+    set -gx VISUAL emacsclient
 
     keychain --eval --agents ssh id_ed25519 | source
 
@@ -36,6 +36,10 @@ end
 
 if test -d $HOME/go/bin
     fish_add_path -p $HOME/go/bin
+end
+
+if not pgrep -x "emacs" > /dev/null
+    emacs --daemon
 end
 
 if test -f $HOME/.config/fish/env.fish
