@@ -1,4 +1,7 @@
-sudo apt install build-essential libgnutls28-dev libgccjit-14-dev zlib1g-dev libtree-sitter-dev pkgconf libncurses-dev;
+#!/usr/bin/env fish
+set gcc_version (gcc -dumpversion | string split -f1 .);
+sudo apt install -y libgccjit-$gcc_version-dev;
+sudo apt install -y build-essential libgnutls28-dev zlib1g-dev libtree-sitter-dev pkgconf libncurses-dev;
 ./configure \
     --prefix="$HOME/local/emacs" \
     --without-x \
