@@ -50,6 +50,15 @@
 
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 
+;; packages: run M-x eval expression on each
+;;
+;; magit
+;;
+;; (package-vc-install
+;;  '(magit :url "https://github.com/magit/magit.git"
+;;          :lisp-dir "lisp"))
+(global-set-key (kbd "C-x g") #'magit-status)
+
 ;; LSP support (available on demand)
 ;; M-x eglot
 
