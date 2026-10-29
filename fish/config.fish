@@ -38,8 +38,10 @@ if test -d $HOME/go/bin
     fish_add_path -p $HOME/go/bin
 end
 
-if not pgrep -x "emacs" > /dev/null
-    emacs --daemon
+if status is-interactive
+   if not pgrep -x "emacs" > /dev/null
+      emacs --daemon
+   end
 end
 
 if test -f $HOME/.config/fish/env.fish
