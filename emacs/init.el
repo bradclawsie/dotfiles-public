@@ -21,6 +21,12 @@
 (setq eshell-prompt-function (lambda () "> ")
       eshell-prompt-regexp "^> ")
 
+;; Terminal emulation for Eshell
+(use-package eat
+  :ensure t
+  :hook (eshell-load . eat-eshell-mode)
+  :custom (eshell-visual-commands nil))
+
 ;; Completion and file finding
 (fido-vertical-mode 1)
 
