@@ -16,6 +16,7 @@
 (setq auto-save-default nil)
 (global-set-key (kbd "C-x w") #'kill-region)
 (electric-pair-mode 1)
+(add-hook 'text-mode-hook #'visual-line-mode)
 
 ;; Eshell
 (setq eshell-prompt-function (lambda () "> ")
@@ -33,7 +34,7 @@
 ;; Project navigation
 (global-set-key (kbd "C-c p f") #'project-find-file)
 
-;; Languages
+;; Treesit Languages
 (require 'treesit)
 
 (setq major-mode-remap-alist
@@ -54,12 +55,19 @@
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
+;; Perl
 (setq auto-mode-alist
       (append '(("\\.pl\\'" . cperl-mode)
                 ("\\.pm\\'" . cperl-mode))
               auto-mode-alist))
 
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
+
+;; Markdown
+(use-package markdown-mode
+  :ensure t
+  :mode ("\\.md\\'" . gfm-mode)
+  :hook (markdown-mode . visual-line-mode))
 
 ;; packages: run M-x eval expression on each
 ;;
