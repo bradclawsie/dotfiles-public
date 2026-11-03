@@ -1,50 +1,49 @@
 ;;; init.el --- Emacs configuration -*- lexical-binding: t; -*-
 
-;; Appearance
+;;; Appearance
+
 (menu-bar-mode -1)
-(setq inhibit-startup-screen t)
-(setq ring-bell-function 'ignore)
+(setq inhibit-startup-screen t
+      ring-bell-function 'ignore)
 (setq-default display-line-numbers-type t)
 (global-display-line-numbers-mode 1)
 (column-number-mode 1)
 (blink-cursor-mode -1)
 
-;; Editing
+;;; Editing
+
 (global-set-key (kbd "C-l") #'goto-line)
 (setq-default indent-tabs-mode nil)
-(setq make-backup-files nil)
-(setq auto-save-default nil)
+(setq make-backup-files nil
+      auto-save-default nil)
 (global-set-key (kbd "C-x w") #'kill-region)
 (electric-pair-mode 1)
 (add-hook 'text-mode-hook #'visual-line-mode)
 
-;; Eshell
+;;; Eshell
+
 (setq eshell-prompt-function (lambda () "> ")
       eshell-prompt-regexp "^> ")
 
-;; Terminal emulation for Eshell
 (use-package eat
   :ensure t
   :hook (eshell-load . eat-eshell-mode)
   :custom (eshell-visual-commands nil))
 
-;; Completion and file finding
+;;; Navigation and completion
+
 (fido-vertical-mode 1)
 
-;; Project navigation
 (global-set-key (kbd "C-c p f") #'project-find-file)
 
-;; Treesit Languages
+;;; Languages
+
+;; Install grammars with M-x treesit-install-language-grammar.
 (require 'treesit)
 
 (setq major-mode-remap-alist
       '((go-mode . go-ts-mode)
         (rust-mode . rust-ts-mode)))
-
-;; M-x treesit-install-language-grammar RET go RET
-;; M-x treesit-install-language-grammar RET rust RET
-;; go install golang.org/x/tools/gopls@latest
-;; rustup component add rust-analyzer
 
 (setq treesit-language-source-alist
       '((go . ("https://github.com/tree-sitter/tree-sitter-go"
@@ -55,7 +54,6 @@
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
-;; Perl
 (setq auto-mode-alist
       (append '(("\\.pl\\'" . cperl-mode)
                 ("\\.pm\\'" . cperl-mode))
@@ -63,25 +61,37 @@
 
 (add-to-list 'interpreter-mode-alist '("perl" . cperl-mode))
 
-;; Markdown
 (use-package markdown-mode
   :ensure t
   :mode ("\\.md\\'" . gfm-mode)
   :hook (markdown-mode . visual-line-mode))
 
-;; packages: run M-x eval expression on each
-;;
-;; magit
-;;
-;; (package-vc-install
-;;  '(magit :url "https://github.com/magit/magit.git"
-;;          :lisp-dir "lisp"))
+;;; Git
+
 (global-set-key (kbd "C-x g") #'magit-status)
+;; Git verifies SSH signatures using gpg.ssh.allowedSignersFile.
+;; Show signature status on commit hashes by default.
+(with-eval-after-load 'magit-log
+  (let ((defaults (get 'magit-log-mode 'magit-log-default-arguments)))
+    (put 'magit-log-mode 'magit-log-default-arguments
+         (cl-adjoin "--show-signature" defaults :test #'equal))))
 
-;; LSP support (available on demand)
-;; M-x eglot
+;;; SSH agent
 
-;;; init.el ends here
+(defun my/refresh-keychain-env ()
+  "Query the keychain tool directly to import SSH agent configurations."
+  (interactive)
+  (when (executable-find "keychain")
+    (let ((env (shell-command-to-string "keychain -q --noask --eval")))
+      (when (string-match "SSH_AUTH_SOCK[=\\s]\\\"?\\([^\\s;\\n\\\"]*\\)" env)
+        (setenv "SSH_AUTH_SOCK" (match-string 1 env)))
+      (when (string-match "SSH_AGENT_PID[=\\s]\\\"?\\([0-9]*\\)" env)
+        (setenv "SSH_AGENT_PID" (match-string 1 env))))))
+
+(my/refresh-keychain-env)
+
+;;; Package selections managed by Customize
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -94,3 +104,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;; init.el ends here
